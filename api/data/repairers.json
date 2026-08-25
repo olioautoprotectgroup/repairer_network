@@ -49,7 +49,7 @@
     "id": "rehul-autohaus",
     "companyName": "Rehul AutoHaus",
     "tradingAddress": "x1",
-    "postcode": null,
+    "postcode": "CM202UB",
     "phoneNumber": "1214684358",
     "emailAddress": "info@rehalautohaus.co.uk",
     "mainContactName": "Amar Rehal\r\nTej Rehal",
@@ -82,9 +82,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": "Labour rate discount",
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.780887,
+    "lon": 0.099122,
+    "geocoded": true
   },
   {
     "id": "a30-auto-service-centre",
