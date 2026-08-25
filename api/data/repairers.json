@@ -400,7 +400,7 @@
     "id": "mastercars-biggleswade-ltd",
     "companyName": "Mastercars Biggleswade Ltd",
     "tradingAddress": "152 Shortmead Street,Biggleswade Ltd",
-    "postcode": "SG18 0BL",
+    "postcode": "CO2 8HT",
     "phoneNumber": "1767600414",
     "emailAddress": "master-cars@btconnect.com",
     "mainContactName": "Simon Walker",
@@ -430,8 +430,8 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mastercars",
     "apgComments": null,
-    "lat": 52.092246,
-    "lon": -0.268096,
+    "lat": 51.877053,
+    "lon": 0.931081,
     "geocoded": true
   },
   {
