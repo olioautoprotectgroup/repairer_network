@@ -135,7 +135,17 @@ just saved sees their own change immediately, since the save endpoint
 returns the new record directly). Azure Static Web Apps' managed Functions
 are deployed read-only, so this can't also write to local disk for
 instant same-instance visibility — the GitHub commit is the only
-persistence step. This keeps everything on already-free services. If
+persistence step.
+
+Writes always read the *current* file straight from GitHub right before
+merging in an edit (`getCurrentRepairers()`), never the local copy search/
+list use for fast reads — that copy can be stale by design, and building a
+"full array" write on top of it would silently erase anyone else's change
+made in the meantime. The commit is sent with the sha it was read at, so a
+genuine conflict (two saves landing at once) fails with a clear "please
+retry" instead of one silently overwriting the other.
+
+This keeps everything on already-free services. If
 instant writes are ever needed before the Databricks migration, swapping
 in Azure Table Storage is
 a small, isolated change to `api/src/lib/data.ts`.

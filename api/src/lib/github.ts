@@ -87,13 +87,35 @@ async function githubRequest(url: string, token: string, init?: RequestInit) {
   return res.json();
 }
 
-/** Commits the given JSON content to the data file, replacing it entirely. */
-export async function commitRepairersJson(content: unknown, commitMessage: string): Promise<void> {
+/**
+ * Fetches the repairer list straight from GitHub, along with the blob's
+ * current sha. Every write must build on this rather than the local file
+ * (which only reflects whatever was deployed last, up to ~1 minute stale)
+ * -- otherwise two saves close together each silently overwrite the
+ * other's change when they both write back a "full array" built from the
+ * same outdated snapshot, even though each individual git commit succeeds.
+ */
+export async function getCurrentRepairers<T>(): Promise<{ data: T; sha: string }> {
   const { owner, repo, branch, path, token } = repoConfig();
   const contentsUrl = `${GITHUB_API}/repos/${owner}/${repo}/contents/${path}?ref=${branch}`;
+  const file = (await githubRequest(contentsUrl, token)) as { sha: string; content: string };
+  const decoded = Buffer.from(file.content, "base64").toString("utf-8");
+  return { data: JSON.parse(decoded) as T, sha: file.sha };
+}
 
-  const existing = (await githubRequest(contentsUrl, token)) as { sha: string };
-
+/**
+ * Commits the given JSON content to the data file, replacing it entirely.
+ * `expectedSha` must be the sha from the getCurrentRepairers() call this
+ * write was based on -- GitHub rejects the commit with a 409 if the file
+ * has moved on since (someone else saved in between), which surfaces as a
+ * clear "please retry" error instead of silently discarding either edit.
+ */
+export async function commitRepairersJson(
+  content: unknown,
+  expectedSha: string,
+  commitMessage: string,
+): Promise<void> {
+  const { owner, repo, branch, path, token } = repoConfig();
   const body = JSON.stringify(content, null, 2) + "\n";
   const encoded = Buffer.from(body, "utf-8").toString("base64");
 
@@ -102,7 +124,7 @@ export async function commitRepairersJson(content: unknown, commitMessage: strin
     body: JSON.stringify({
       message: commitMessage,
       content: encoded,
-      sha: existing.sha,
+      sha: expectedSha,
       branch,
     }),
   });

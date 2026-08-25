@@ -1,5 +1,6 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { loadRepairers, saveRepairers } from "../lib/data";
+import { loadRepairers } from "../lib/data";
+import { getCurrentRepairers, commitRepairersJson } from "../lib/github";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
 import { isAuthorizedStaff } from "../lib/auth";
@@ -21,6 +22,22 @@ async function geocodeOrNull(postcode: string | null) {
   }
 }
 
+function saveFailureResponse(err: unknown): HttpResponseInit {
+  const message = err instanceof Error ? err.message : String(err);
+  if (message.includes("GitHub API 409")) {
+    return {
+      status: 409,
+      jsonBody: {
+        error: "Someone else saved a change to the repairer list just now. Please retry your edit.",
+      },
+    };
+  }
+  return {
+    status: 500,
+    jsonBody: { error: "Failed to save repairer", detail: message },
+  };
+}
+
 export async function listRepairers(request: HttpRequest): Promise<HttpResponseInit> {
   if (!isAuthorizedStaff(request)) return FORBIDDEN;
   return { jsonBody: loadRepairers() };
@@ -33,7 +50,11 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
     return { status: 400, jsonBody: { error: "companyName is required" } };
   }
 
-  const repairers = loadRepairers();
+  // Read straight from GitHub, not the local (up to ~1 minute stale) file
+  // copy -- otherwise a save built on an outdated snapshot would silently
+  // overwrite anyone else's change made in the meantime.
+  const { data: repairers, sha } = await getCurrentRepairers<Repairer[]>();
+
   const coords = await geocodeOrNull(input.postcode);
   if (input.postcode && !coords) {
     context.warn(`Could not geocode postcode "${input.postcode}" for new repairer`);
@@ -49,13 +70,10 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
 
   const updated = [...repairers, newRepairer];
   try {
-    await saveRepairers(updated, `Add repairer: ${newRepairer.companyName}`);
+    await commitRepairersJson(updated, sha, `Add repairer: ${newRepairer.companyName}`);
   } catch (err) {
     context.error("Failed to save new repairer", err);
-    return {
-      status: 500,
-      jsonBody: { error: "Failed to save repairer", detail: err instanceof Error ? err.message : String(err) },
-    };
+    return saveFailureResponse(err);
   }
 
   return { status: 201, jsonBody: newRepairer };
@@ -66,18 +84,13 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
   const id = request.params.id;
   const input = (await request.json()) as Partial<RepairerInput>;
 
-  const repairers = loadRepairers();
+  const { data: repairers, sha } = await getCurrentRepairers<Repairer[]>();
   const index = repairers.findIndex((r) => r.id === id);
   if (index === -1) {
     return { status: 404, jsonBody: { error: `No repairer with id "${id}"` } };
   }
 
   const existing = repairers[index];
-  // Always re-geocode when a postcode is submitted, rather than only on a
-  // detected change: "existing" comes from this instance's local file
-  // copy, which lags behind the real data by up to ~1 minute (writes only
-  // land via a GitHub commit + redeploy), so a same-postcode comparison
-  // against it can't be trusted to correctly detect "no change".
   const postcodeProvided = Boolean(input.postcode?.trim());
   const coords = postcodeProvided ? await geocodeOrNull(input.postcode ?? null) : null;
   if (postcodeProvided && !coords) {
@@ -96,13 +109,10 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
   const updated = [...repairers];
   updated[index] = merged;
   try {
-    await saveRepairers(updated, `Update repairer: ${merged.companyName}`);
+    await commitRepairersJson(updated, sha, `Update repairer: ${merged.companyName}`);
   } catch (err) {
     context.error("Failed to save updated repairer", err);
-    return {
-      status: 500,
-      jsonBody: { error: "Failed to save repairer", detail: err instanceof Error ? err.message : String(err) },
-    };
+    return saveFailureResponse(err);
   }
 
   return { jsonBody: merged };
