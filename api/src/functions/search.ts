@@ -2,9 +2,14 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 import { loadRepairers } from "../lib/data";
 import { geocodePostcode } from "../lib/geocode";
 import { haversineMiles } from "../lib/distance";
+import { isAuthorizedStaff } from "../lib/auth";
 import type { SearchResult } from "../lib/types";
 
 export async function search(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
+  if (!isAuthorizedStaff(request)) {
+    return { status: 403, jsonBody: { error: "Access restricted to AutoProtect Group staff" } };
+  }
+
   const postcode = request.query.get("postcode");
   if (!postcode) {
     return { status: 400, jsonBody: { error: "postcode query parameter is required" } };

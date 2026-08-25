@@ -66,8 +66,8 @@ npm run build
 npm start
 ```
 
-`GetRoles`-based auth isn't emulated by `func start` alone; use the [Azure
-Static Web Apps CLI](https://learn.microsoft.com/azure/static-web-apps/local-development)
+Login and the `x-ms-client-principal` header aren't emulated by `func start`
+alone; use the [Azure Static Web Apps CLI](https://learn.microsoft.com/azure/static-web-apps/local-development)
 (`swa start`) if you need to exercise the login-gated UI locally.
 
 ## Azure setup (one-off, per environment)
@@ -91,32 +91,39 @@ Static Web Apps CLI](https://learn.microsoft.com/azure/static-web-apps/local-dev
    connect the Static Web App to GitHub through the portal — nothing to do
    here.
 
-**No Entra ID app registration needed.** Azure Static Web Apps' Free tier
-doesn't support configuring a custom Entra ID app registration for login
-(the `identityProviders` block in `staticwebapp.config.json` needing your
-own tenant/client ID is a **Standard SKU** feature, ~$9+/month) — the portal
-will reject a deploy that includes one on the Free tier. Instead this app
-uses Free tier's built-in, Microsoft-managed "Sign in with Microsoft"
-provider (any Microsoft/Entra account can attempt to log in) and relies
-entirely on `GetRoles` for the actual restriction — see below. This is still
-a solid gate: nobody can forge a verified `@autoprotectgroup.co.uk` UPN
-without a real, DNS-verified AutoProtect Group account.
+**No Entra ID app registration needed, and no `auth` block in
+`staticwebapp.config.json` at all.** Azure Static Web Apps' Free tier
+rejects *any* deploy that configures a custom identity provider or custom
+roles (`rolesSource`) — both are **Standard SKU** features (~$9+/month).
+Free tier only has two built-in roles: `anonymous` and `authenticated` (any
+successfully logged-in user, any provider, any tenant). So the routes in
+`staticwebapp.config.json` just require `authenticated`, and the real
+`@autoprotectgroup.co.uk` check happens in application code instead — see
+below. This is still a solid gate: nobody can forge a verified
+`@autoprotectgroup.co.uk` UPN without a real, DNS-verified AutoProtect Group
+account.
 
 ## How access control works
 
 - Login goes through Azure Static Web Apps' built-in AAD provider
   (`/.auth/login/aad`) — free, but not scoped to any particular tenant, so
-  any Microsoft account can reach the login screen.
-- `api/src/functions/getRoles.ts` is where the real restriction happens: it
-  only grants the `authenticated-staff` role (which every route requires,
-  per `staticwebapp.config.json`) if the signed-in user's email ends with
-  `@autoprotectgroup.co.uk`. Anyone else authenticates successfully but gets
-  no role and can't reach any route.
+  any Microsoft account can reach the login screen and get the built-in
+  `authenticated` role that every route requires.
+- The actual domain restriction happens in two places, both reading the
+  `x-ms-client-principal` header SWA attaches to every request once a user
+  is logged in:
+  - **Server-side (the real enforcement)**: `api/src/lib/auth.ts`'s
+    `isAuthorizedStaff()` is checked at the top of every function in
+    `api/src/functions/` (`search`, `repairers` list/create/update) — a
+    logged-in user from outside `@autoprotectgroup.co.uk` gets a 403 from
+    every endpoint.
+  - **Client-side (UX only)**: `src/App.tsx` shows an "access restricted"
+    screen instead of the app for the same reason, so an unauthorized user
+    doesn't just see the app fail silently against 403s.
 - If a Standard-SKU custom Entra app registration (single-tenant, so
   outside accounts can't even reach the login screen) is wanted later for
-  belt-and-braces, it's an additive change to `staticwebapp.config.json`'s
-  `auth.identityProviders` block plus the SKU upgrade — `GetRoles` keeps
-  working unchanged either way.
+  belt-and-braces, it's an additive change plus the SKU upgrade —
+  `isAuthorizedStaff()` keeps working unchanged either way.
 
 ## Data storage (today)
 

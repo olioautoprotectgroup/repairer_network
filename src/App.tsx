@@ -4,6 +4,8 @@ import Search from "./pages/Search";
 import ManageRepairers from "./pages/ManageRepairers";
 import { getClientPrincipal, type ClientPrincipal } from "./lib/api";
 
+const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
+
 function navClass({ isActive }: { isActive: boolean }) {
   return `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
     isActive ? "bg-brand-600 text-white" : "text-slate-600 hover:bg-slate-100"
@@ -41,6 +43,25 @@ export default function App() {
           className="rounded-full bg-brand-600 px-6 py-3 font-medium text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
         >
           Sign in with Microsoft
+        </a>
+      </div>
+    );
+  }
+
+  if (!principal.userDetails.toLowerCase().endsWith(ALLOWED_DOMAIN)) {
+    return (
+      <div className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-brand-50 to-slate-100 px-6 text-center">
+        <h1 className="text-2xl font-semibold text-slate-800">Access restricted</h1>
+        <p className="max-w-sm text-slate-500">
+          This tool is restricted to AutoProtect Group staff. You're signed in as{" "}
+          <strong>{principal.userDetails}</strong>, which isn't an{" "}
+          {ALLOWED_DOMAIN} account.
+        </p>
+        <a
+          href="/.auth/logout?post_logout_redirect_uri=/"
+          className="rounded-full bg-brand-600 px-6 py-3 font-medium text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
+        >
+          Sign out and try a different account
         </a>
       </div>
     );
