@@ -400,7 +400,7 @@
     "id": "mastercars-biggleswade-ltd",
     "companyName": "Mastercars Biggleswade Ltd",
     "tradingAddress": "152 Shortmead Street,Biggleswade Ltd",
-    "postcode": "CO2 8HT",
+    "postcode": "SG18 0BL",
     "phoneNumber": "1767600414",
     "emailAddress": "master-cars@btconnect.com",
     "mainContactName": "Simon Walker",
@@ -430,9 +430,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mastercars",
     "apgComments": null,
-    "lat": 51.877053,
-    "lon": 0.931081,
-    "geocoded": true
+    "lat": null,
+    "lon": null,
+    "geocoded": false
   },
   {
     "id": "cedar-garage-limited",
