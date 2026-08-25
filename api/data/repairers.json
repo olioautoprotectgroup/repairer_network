@@ -1495,7 +1495,7 @@
     "id": "colchester-fuel-injection-ltd",
     "companyName": "Colchester Fuel injection Ltd",
     "tradingAddress": "Haven Road",
-    "postcode": null,
+    "postcode": "CO2 8HT",
     "phoneNumber": "1206862049",
     "emailAddress": "daniel.boley@colfuel.co.uk",
     "mainContactName": "Daniel boley",
@@ -1525,9 +1525,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.877053,
+    "lon": 0.931081,
+    "geocoded": true
   },
   {
     "id": "jaggarage-ltd",
@@ -3995,7 +3995,7 @@
     "id": "aj-garage-services-limited",
     "companyName": "AJ Garage Services Limited",
     "tradingAddress": "Unit 26 Star Trading Estate Caerleon NP181 PQ",
-    "postcode": "NP18 1PQ",
+    "postcode": null,
     "phoneNumber": "1633431305",
     "emailAddress": "info@ajgarageservices.com",
     "mainContactName": "Andrew Joenn",
@@ -4031,8 +4031,8 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": 51.62472,
-    "lon": -2.964011,
-    "geocoded": true
+    "lat": null,
+    "lon": null,
+    "geocoded": false
   }
 ]
