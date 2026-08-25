@@ -2,8 +2,15 @@ import type { Repairer, SearchFilters, SearchResponse } from "./types";
 
 async function handle<T>(res: Response): Promise<T> {
   if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`Request failed (${res.status}): ${body || res.statusText}`);
+    const text = await res.text().catch(() => "");
+    let message = text || res.statusText;
+    try {
+      const parsed = JSON.parse(text) as { error?: string; detail?: string };
+      if (parsed.error) message = [parsed.error, parsed.detail].filter(Boolean).join(" — ");
+    } catch {
+      // not JSON -- use the raw text as-is
+    }
+    throw new Error(`Request failed (${res.status}): ${message}`);
   }
   return res.json() as Promise<T>;
 }

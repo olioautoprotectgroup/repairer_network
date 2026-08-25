@@ -48,7 +48,15 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
   };
 
   const updated = [...repairers, newRepairer];
-  await saveRepairers(updated, `Add repairer: ${newRepairer.companyName}`);
+  try {
+    await saveRepairers(updated, `Add repairer: ${newRepairer.companyName}`);
+  } catch (err) {
+    context.error("Failed to save new repairer", err);
+    return {
+      status: 500,
+      jsonBody: { error: "Failed to save repairer", detail: err instanceof Error ? err.message : String(err) },
+    };
+  }
 
   return { status: 201, jsonBody: newRepairer };
 }
@@ -82,7 +90,15 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
 
   const updated = [...repairers];
   updated[index] = merged;
-  await saveRepairers(updated, `Update repairer: ${merged.companyName}`);
+  try {
+    await saveRepairers(updated, `Update repairer: ${merged.companyName}`);
+  } catch (err) {
+    context.error("Failed to save updated repairer", err);
+    return {
+      status: 500,
+      jsonBody: { error: "Failed to save repairer", detail: err instanceof Error ? err.message : String(err) },
+    };
+  }
 
   return { jsonBody: merged };
 }
