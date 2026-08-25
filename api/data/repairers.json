@@ -41,9 +41,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.501077,
+    "lon": -2.006771,
+    "geocoded": true
   },
   {
     "id": "rehul-autohaus",
@@ -121,9 +121,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.420657,
+    "lon": -4.828944,
+    "geocoded": true
   },
   {
     "id": "wvc-service-ltd",
@@ -166,9 +166,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.338437,
+    "lon": -0.475269,
+    "geocoded": true
   },
   {
     "id": "iautouk",
@@ -214,9 +214,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.375173,
+    "lon": -0.121159,
+    "geocoded": true
   },
   {
     "id": "apex-automotive-centre",
@@ -260,9 +260,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Sytner / Marshall / Fish Brothers / Dick Lovett",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.552852,
+    "lon": -1.808478,
+    "geocoded": true
   },
   {
     "id": "g-p-motors-teddington-ltd",
@@ -303,9 +303,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Ford, Mercedes, BWM,",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.429246,
+    "lon": -0.352478,
+    "geocoded": true
   },
   {
     "id": "elm-tree-motor-company-ltd",
@@ -345,9 +345,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": "Labour rate discount",
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.420287,
+    "lon": -1.722831,
+    "geocoded": true
   },
   {
     "id": "boringdon-manor-garage-ltd",
@@ -392,9 +392,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "JLR, MERCEDES, BMW, VOLVO,",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.388584,
+    "lon": -4.070002,
+    "geocoded": true
   },
   {
     "id": "mastercars-biggleswade-ltd",
@@ -477,9 +477,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.817742,
+    "lon": -0.395593,
+    "geocoded": true
   },
   {
     "id": "cedar-garage-limited-2",
@@ -525,9 +525,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.834963,
+    "lon": -0.338905,
+    "geocoded": true
   },
   {
     "id": "lkq-electriq-ltd",
@@ -563,9 +563,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.833356,
+    "lon": -0.291146,
+    "geocoded": true
   },
   {
     "id": "impress-autocentres-t-a-hi-q-tyres-and-autocare-portslade",
@@ -603,9 +603,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.831881,
+    "lon": -0.219528,
+    "geocoded": true
   },
   {
     "id": "herts-beds-transmissions-ltd",
@@ -645,9 +645,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Ford, Seat, Renault",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.018963,
+    "lon": -0.202121,
+    "geocoded": true
   },
   {
     "id": "ds-autos",
@@ -684,9 +684,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "W18 Car Sales",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.853492,
+    "lon": -2.166426,
+    "geocoded": true
   },
   {
     "id": "apex-automotive-centre-2",
@@ -729,9 +729,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Apex Cars Direct",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.552852,
+    "lon": -1.808478,
+    "geocoded": true
   },
   {
     "id": "auto-smart-repair-network-ltd",
@@ -766,9 +766,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 55.978912,
+    "lon": -4.573466,
+    "geocoded": true
   },
   {
     "id": "liverpool-mercedes-ltd",
@@ -809,9 +809,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.422994,
+    "lon": -2.951721,
+    "geocoded": true
   },
   {
     "id": "a1-premier-transmissions",
@@ -846,9 +846,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.079457,
+    "lon": -0.266722,
+    "geocoded": true
   },
   {
     "id": "specialist-vehicles-of-plymouth-ltd",
@@ -889,9 +889,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.396073,
+    "lon": -4.041722,
+    "geocoded": true
   },
   {
     "id": "the-thatched-garage-limited",
@@ -928,9 +928,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.911824,
+    "lon": 0.155021,
+    "geocoded": true
   },
   {
     "id": "rusheer-ltd-t-a-car-check-centre",
@@ -971,9 +971,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Spectrum Insurance service ltd / car giant Ltd",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.556257,
+    "lon": -0.384317,
+    "geocoded": true
   },
   {
     "id": "e-carparts-ltd-t-a-b-s-motors",
@@ -1014,9 +1014,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.135032,
+    "lon": -0.283767,
+    "geocoded": true
   },
   {
     "id": "forge-garage-otford",
@@ -1060,9 +1060,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.298819,
+    "lon": 0.195892,
+    "geocoded": true
   },
   {
     "id": "autotechnica",
@@ -1105,9 +1105,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.746711,
+    "lon": -0.393766,
+    "geocoded": true
   },
   {
     "id": "autocar-repairs-west-fulwich-service-station-limited-trading-as",
@@ -1150,9 +1150,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.436822,
+    "lon": -0.094645,
+    "geocoded": true
   },
   {
     "id": "sussex-vehicle-services-ltd",
@@ -1193,9 +1193,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.955488,
+    "lon": -0.148485,
+    "geocoded": true
   },
   {
     "id": "bex-s-4x4-ltd",
@@ -1233,9 +1233,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Lookers Land Rover Colchester",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.703726,
+    "lon": 0.699407,
+    "geocoded": true
   },
   {
     "id": "mg-rover-tech-ltd",
@@ -1277,9 +1277,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mercedes Benz Carlisle, Parks Motor Group, Arnold Clark (BMW, JAECOO, MINI, RENAULT GROUP Dumfries), Lloyd Motor Group Carlisle, Telford Citroen Carlisle",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 54.990385,
+    "lon": -3.262257,
+    "geocoded": true
   },
   {
     "id": "leziate-drove-garage-ltd",
@@ -1323,9 +1323,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.761319,
+    "lon": 0.518653,
+    "geocoded": true
   },
   {
     "id": "xclusive-motor-services-ltd",
@@ -1364,9 +1364,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.471247,
+    "lon": -1.886407,
+    "geocoded": true
   },
   {
     "id": "vertu-motors-ford-bromley",
@@ -1408,9 +1408,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.398299,
+    "lon": 0.021149,
+    "geocoded": true
   },
   {
     "id": "steebings-car-centre-limited",
@@ -1451,9 +1451,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Stebbings Car Centre limited",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.734387,
+    "lon": 0.407482,
+    "geocoded": true
   },
   {
     "id": "turbo-technics-ltd",
@@ -1487,9 +1487,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.217368,
+    "lon": -0.859443,
+    "geocoded": true
   },
   {
     "id": "colchester-fuel-injection-ltd",
@@ -1607,9 +1607,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.472,
+    "lon": 0.341835,
+    "geocoded": true
   },
   {
     "id": "m-cars-surrey-ltd",
@@ -1649,9 +1649,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.182491,
+    "lon": -0.043908,
+    "geocoded": true
   },
   {
     "id": "mg-rover-tech-ltd-2",
@@ -1693,9 +1693,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Lloyd Motor Group, Telford Citroen, Trust Ford, Vertu Motors, Parks Motor Group",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 54.990385,
+    "lon": -3.262257,
+    "geocoded": true
   },
   {
     "id": "audio-video-care",
@@ -1734,9 +1734,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.664129,
+    "lon": -0.400681,
+    "geocoded": true
   },
   {
     "id": "bristol-transmissionsltd",
@@ -1774,9 +1774,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Too many to mention",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.470063,
+    "lon": -2.538218,
+    "geocoded": true
   },
   {
     "id": "tameside-automatics",
@@ -1810,9 +1810,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.481775,
+    "lon": -2.142766,
+    "geocoded": true
   },
   {
     "id": "atc-repair-centre",
@@ -1853,9 +1853,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "AA, RAC, Enterprise and other various warranty companies.",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.439726,
+    "lon": -1.338075,
+    "geocoded": true
   },
   {
     "id": "bell-colvill",
@@ -1897,9 +1897,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "We are a dealership",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.261974,
+    "lon": -0.565014,
+    "geocoded": true
   },
   {
     "id": "acs-autowerks-ltd",
@@ -1940,9 +1940,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "MERCEDES, PORSCHE , BMW , AUDI , VW",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.50948,
+    "lon": -0.459235,
+    "geocoded": true
   },
   {
     "id": "dartford-transmissions-autocare-ltd",
@@ -1985,9 +1985,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Bexley Car Sales, Pinnacle Car Sales, Cambridge Motors - The list goes on.",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.446419,
+    "lon": 0.229995,
+    "geocoded": true
   },
   {
     "id": "gateshead-garage-ltd",
@@ -2028,9 +2028,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 54.951201,
+    "lon": -1.618158,
+    "geocoded": true
   },
   {
     "id": "the-alignment-centre-ltd",
@@ -2070,9 +2070,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "lookers parkroyal / honda ruislip/ skoda ruislip/ cargiant",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.540537,
+    "lon": -0.318308,
+    "geocoded": true
   },
   {
     "id": "mcr",
@@ -2110,9 +2110,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Devon car Services / MCR Approved Cars / Bateman & Lynch / Select Cars",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.708784,
+    "lon": -3.527658,
+    "geocoded": true
   },
   {
     "id": "jf-auto-repairs-ltd",
@@ -2152,9 +2152,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.873689,
+    "lon": -2.778358,
+    "geocoded": true
   },
   {
     "id": "mercare-sw-ltd",
@@ -2196,9 +2196,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mercedes",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.421952,
+    "lon": -4.087745,
+    "geocoded": true
   },
   {
     "id": "gold-vehicles-ltd",
@@ -2238,9 +2238,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.705225,
+    "lon": -3.531521,
+    "geocoded": true
   },
   {
     "id": "russell-ham-ltd",
@@ -2276,9 +2276,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.385887,
+    "lon": -4.157556,
+    "geocoded": true
   },
   {
     "id": "pgs-garage-services-ltd",
@@ -2316,9 +2316,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.846257,
+    "lon": -1.117142,
+    "geocoded": true
   },
   {
     "id": "j-day-engineering",
@@ -2360,9 +2360,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.988,
+    "lon": -2.363204,
+    "geocoded": true
   },
   {
     "id": "gnd-motors-ltd",
@@ -2400,9 +2400,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.471135,
+    "lon": 0.268293,
+    "geocoded": true
   },
   {
     "id": "exeter-gearbox-centre",
@@ -2438,9 +2438,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.705762,
+    "lon": -3.525605,
+    "geocoded": true
   },
   {
     "id": "specialist-vehicles-of-plymouth-ltd-2",
@@ -2484,9 +2484,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Roger Young",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.396073,
+    "lon": -4.041722,
+    "geocoded": true
   },
   {
     "id": "burton-on-trent-renault-dacia",
@@ -2528,9 +2528,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.799342,
+    "lon": -1.633906,
+    "geocoded": true
   },
   {
     "id": "stourbridge-renault-dacia",
@@ -2572,9 +2572,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.443379,
+    "lon": -2.159133,
+    "geocoded": true
   },
   {
     "id": "warwick-renault-dacia",
@@ -2616,9 +2616,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.274832,
+    "lon": -1.545988,
+    "geocoded": true
   },
   {
     "id": "birmingham-renault-dacia",
@@ -2660,9 +2660,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.53426,
+    "lon": -1.879271,
+    "geocoded": true
   },
   {
     "id": "tamworth-renault-dacia",
@@ -2704,9 +2704,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.635314,
+    "lon": -1.711298,
+    "geocoded": true
   },
   {
     "id": "sutton-coldfield-kia",
@@ -2748,9 +2748,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.564492,
+    "lon": -1.878553,
+    "geocoded": true
   },
   {
     "id": "coventry-kia",
@@ -2792,9 +2792,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.444884,
+    "lon": -1.50998,
+    "geocoded": true
   },
   {
     "id": "djm-performance-ltd",
@@ -2833,9 +2833,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "CMG Prestige Cars",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 54.883187,
+    "lon": -1.746349,
+    "geocoded": true
   },
   {
     "id": "oxley-bros-limited-trading-as-a30-auto-centre",
@@ -2874,9 +2874,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.420657,
+    "lon": -4.828944,
+    "geocoded": true
   },
   {
     "id": "fitch-autos",
@@ -2923,9 +2923,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.653043,
+    "lon": -1.922418,
+    "geocoded": true
   },
   {
     "id": "gravesend-transmissions-services-ltd",
@@ -2959,9 +2959,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.442038,
+    "lon": 0.374767,
+    "geocoded": true
   },
   {
     "id": "andover-tyre-auto-services-ltd",
@@ -3002,9 +3002,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.216345,
+    "lon": -1.460497,
+    "geocoded": true
   },
   {
     "id": "london-motor-sports-ltd",
@@ -3044,9 +3044,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.515478,
+    "lon": -0.229829,
+    "geocoded": true
   },
   {
     "id": "s-c-motor-services-ltd",
@@ -3086,9 +3086,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.933374,
+    "lon": 1.093966,
+    "geocoded": true
   },
   {
     "id": "gas-autocenter",
@@ -3129,9 +3129,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Dodge",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.637857,
+    "lon": -1.824416,
+    "geocoded": true
   },
   {
     "id": "nexa-max-garages-ltd",
@@ -3215,9 +3215,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.925294,
+    "lon": -1.30941,
+    "geocoded": true
   },
   {
     "id": "albert-road-service-station-ltd",
@@ -3258,9 +3258,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.576254,
+    "lon": 0.190289,
+    "geocoded": true
   },
   {
     "id": "wylam-automotive-limited",
@@ -3297,9 +3297,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "car select  and  otter vale motor services",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.814229,
+    "lon": -3.165628,
+    "geocoded": true
   },
   {
     "id": "duckworth",
@@ -3340,9 +3340,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "JLR",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.628943,
+    "lon": 1.382772,
+    "geocoded": true
   },
   {
     "id": "browns-thame-ltd",
@@ -3386,9 +3386,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.739561,
+    "lon": -0.966526,
+    "geocoded": true
   },
   {
     "id": "j-r-auto-repairs",
@@ -3431,9 +3431,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.509973,
+    "lon": -1.969598,
+    "geocoded": true
   },
   {
     "id": "ron-skinner-and-sons",
@@ -3475,9 +3475,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.784668,
+    "lon": -3.282462,
+    "geocoded": true
   },
   {
     "id": "dash-logistic-services-ltd-t-a-dash-fleet-services",
@@ -3516,9 +3516,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.227412,
+    "lon": -5.251429,
+    "geocoded": true
   },
   {
     "id": "marieston-service-centre-ltd",
@@ -3562,9 +3562,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.527332,
+    "lon": -0.399671,
+    "geocoded": true
   },
   {
     "id": "station-garage",
@@ -3602,9 +3602,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 54.94739,
+    "lon": -1.420048,
+    "geocoded": true
   },
   {
     "id": "crago-auto-repairs-ltd",
@@ -3645,9 +3645,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.451671,
+    "lon": 0.219628,
+    "geocoded": true
   },
   {
     "id": "express-turbos-dpf-cleaning-co",
@@ -3682,9 +3682,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "All warranty companies",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 50.808628,
+    "lon": -1.076153,
+    "geocoded": true
   },
   {
     "id": "bell-colvill-2",
@@ -3725,9 +3725,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "We are a dealer",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.261974,
+    "lon": -0.565014,
+    "geocoded": true
   },
   {
     "id": "central-autopoint-corby-ltd",
@@ -3767,9 +3767,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "FOREST GATE, MARSHALLS, TPS, WOLLASTON",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.512232,
+    "lon": -0.692283,
+    "geocoded": true
   },
   {
     "id": "servo-engineering-ltd",
@@ -3855,9 +3855,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.477646,
+    "lon": 1.739515,
+    "geocoded": true
   },
   {
     "id": "csm-garage-services-ltd",
@@ -3902,9 +3902,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "csm",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.92345,
+    "lon": -1.463176,
+    "geocoded": true
   },
   {
     "id": "bedworth-m-o-t-centre-limited-voltz",
@@ -3943,9 +3943,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.484638,
+    "lon": -1.474167,
+    "geocoded": true
   },
   {
     "id": "muslin-hall-garage-ltd",
