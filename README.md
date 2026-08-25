@@ -86,6 +86,14 @@ alone; use the [Azure Static Web Apps CLI](https://learn.microsoft.com/azure/sta
      data edits.
    - `GITHUB_OWNER` = `olioautoprotectgroup`, `GITHUB_REPO` = `repairer_network`,
      `GITHUB_BRANCH` = the branch the Static Web App deploys from.
+   - `DATABRICKS_WRITEBACK_KEY` — a random shared secret (not an Azure/GitHub
+     credential). Authorizes the two Databricks-side automated jobs (see
+     [Databricks integration](#databricks-integration) below) to call
+     `POST /api/repairers` and `PUT /api/repair-counts` without a signed-in
+     AAD session, via an `x-writeback-key` header. Store the same value as a
+     Databricks secret on that side. Not required for the app's normal
+     human-facing functionality (search, Manage Repairers) — only for the
+     automated jobs.
 3. The deployment token secret (`AZURE_STATIC_WEB_APPS_API_TOKEN_...`) is
    added to this repo's GitHub Actions secrets automatically when you
    connect the Static Web App to GitHub through the portal — nothing to do
@@ -149,3 +157,40 @@ This keeps everything on already-free services. If
 instant writes are ever needed before the Databricks migration, swapping
 in Azure Table Storage is
 a small, isolated change to `api/src/lib/data.ts`.
+
+## Databricks integration
+
+`api/data/repairers.json` (via GitHub) stays the *only* writable source of
+truth — nothing below changes that. Three pieces, built incrementally
+(see the `Databricks_MetaData` repo's `catalogs/curated/repairer_network/`
+for the lake-side half of this):
+
+1. **Nightly mirror** — a Databricks Job reads this repo's
+   `api/data/repairers.json` (read-only PAT, separate from `GITHUB_TOKEN`)
+   and writes it to `curated.repairer_network.repairer`, so the data is
+   queryable/joinable in the lake without going through this app or GitHub.
+   One-way; that table is never written to directly.
+2. **New-repairer intake merge** — new repairer sign-ups arrive as
+   Microsoft Forms responses exported to Excel. An ad-hoc (manually
+   triggered, not scheduled) Databricks notebook anti-joins the export
+   against the mirror by company name, and calls `POST /api/repairers`
+   once per genuinely-new row using the `x-writeback-key` header — reusing
+   `createRepairer`'s existing geocoding, slug-uniqueness, and sha-safe
+   GitHub commit logic unchanged. `api/src/lib/auth.ts`'s
+   `isAuthorizedWriteback()` authorizes this alongside the normal
+   AAD-authenticated Manage Repairers path.
+3. **`recentRepairCount`** — once a validated repairer↔claim join exists in
+   the lake (unscoped analyst work, not yet done — see the schema docs), a
+   nightly job computes a trailing-window repair count per repairer and
+   batches it to `PUT /api/repair-counts` (`api/src/functions/
+   repair-counts.ts`, machine-auth only). `null` means "not yet computed,"
+   never treat it as zero. These two fields (`recentRepairCount`,
+   `repairCountAsOf` in `Repairer`) are deliberately excluded from the
+   Manage Repairers form (`RepairerFormValues`) and the create/update
+   `RepairerInput` type — they can only ever be set by this sync, never by
+   hand. Currently dark-launched: the fields exist in the type/data model
+   but nothing in the UI renders them yet.
+
+The full phased plan (cost tradeoffs, the join-key validation prerequisite,
+rollout/verification steps) is tracked outside this repo; ask before
+building the Databricks-side jobs if you don't have that context.

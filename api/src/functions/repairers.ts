@@ -3,7 +3,7 @@ import { loadRepairers } from "../lib/data";
 import { getCurrentRepairers, commitRepairersJson } from "../lib/github";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
-import { isAuthorizedStaff } from "../lib/auth";
+import { isAuthorizedStaff, isAuthorizedWriteback } from "../lib/auth";
 import type { Repairer } from "../lib/types";
 
 const FORBIDDEN: HttpResponseInit = {
@@ -11,7 +11,10 @@ const FORBIDDEN: HttpResponseInit = {
   jsonBody: { error: "Access restricted to AutoProtect Group staff" },
 };
 
-type RepairerInput = Omit<Repairer, "id" | "lat" | "lon" | "geocoded">;
+type RepairerInput = Omit<
+  Repairer,
+  "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf"
+>;
 
 async function geocodeOrNull(postcode: string | null) {
   if (!postcode) return null;
@@ -22,7 +25,7 @@ async function geocodeOrNull(postcode: string | null) {
   }
 }
 
-function saveFailureResponse(err: unknown): HttpResponseInit {
+export function saveFailureResponse(err: unknown): HttpResponseInit {
   const message = err instanceof Error ? err.message : String(err);
   if (message.includes("GitHub API 409")) {
     return {
@@ -44,7 +47,10 @@ export async function listRepairers(request: HttpRequest): Promise<HttpResponseI
 }
 
 export async function createRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return FORBIDDEN;
+  // Accepts either a signed-in AAD staff member (Manage Repairers form) or
+  // the Databricks new-repairer intake-merge job (shared-secret writeback
+  // auth) -- both go through the same geocoding/slug/sha-safe commit logic.
+  if (!isAuthorizedStaff(request) && !isAuthorizedWriteback(request)) return FORBIDDEN;
   const input = (await request.json()) as RepairerInput;
   if (!input.companyName?.trim()) {
     return { status: 400, jsonBody: { error: "companyName is required" } };
@@ -66,6 +72,8 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
     lat: coords?.lat ?? null,
     lon: coords?.lon ?? null,
     geocoded: Boolean(coords),
+    recentRepairCount: null,
+    repairCountAsOf: null,
   };
 
   const updated = [...repairers, newRepairer];

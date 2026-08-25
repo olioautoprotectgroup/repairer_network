@@ -33,7 +33,9 @@ export async function listRepairers(): Promise<Repairer[]> {
   return handle<Repairer[]>(res);
 }
 
-export async function createRepairer(repairer: Omit<Repairer, "id" | "lat" | "lon" | "geocoded">) {
+export async function createRepairer(
+  repairer: Omit<Repairer, "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf">,
+) {
   const res = await fetch("/api/repairers", {
     method: "POST",
     headers: { "Content-Type": "application/json" },

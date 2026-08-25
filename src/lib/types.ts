@@ -23,6 +23,11 @@ export interface Repairer {
   hasDealerRelationship: boolean | null;
   dealerNames: string | null;
   apgComments: string | null;
+  /** Populated by a scheduled Databricks job, never by the Manage Repairers
+   * form -- null means "not yet computed / no confirmed claims match," not
+   * "zero repairs." */
+  recentRepairCount: number | null;
+  repairCountAsOf: string | null;
 }
 
 export interface SearchResult extends Repairer {

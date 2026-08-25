@@ -1,7 +1,10 @@
 import { useState, type FormEvent } from "react";
 import type { Repairer } from "../lib/types";
 
-export type RepairerFormValues = Omit<Repairer, "id" | "lat" | "lon" | "geocoded">;
+export type RepairerFormValues = Omit<
+  Repairer,
+  "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf"
+>;
 
 const BLANK: RepairerFormValues = {
   companyName: "",

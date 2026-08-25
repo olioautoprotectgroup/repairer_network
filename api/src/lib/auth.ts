@@ -1,4 +1,5 @@
 import { HttpRequest } from "@azure/functions";
+import { timingSafeEqual } from "node:crypto";
 
 /**
  * Azure Static Web Apps' Free tier has no custom-role support (that's a
@@ -32,4 +33,24 @@ export function getClientPrincipal(request: HttpRequest): ClientPrincipal | null
 export function isAuthorizedStaff(request: HttpRequest): boolean {
   const principal = getClientPrincipal(request);
   return Boolean(principal?.userDetails?.toLowerCase().endsWith(ALLOWED_DOMAIN));
+}
+
+/**
+ * Authorizes a machine caller (a scheduled Databricks job, not a signed-in
+ * AAD user) via a shared secret in the `x-writeback-key` header, checked
+ * against the DATABRICKS_WRITEBACK_KEY app setting. Used by automated
+ * writes -- the repairer intake-merge job and the repair-count sync job --
+ * that can't produce an x-ms-client-principal header. Constant-time
+ * comparison so response timing can't be used to guess the key.
+ */
+export function isAuthorizedWriteback(request: HttpRequest): boolean {
+  const expected = process.env.DATABRICKS_WRITEBACK_KEY;
+  if (!expected) return false;
+  const provided = request.headers.get("x-writeback-key");
+  if (!provided) return false;
+
+  const expectedBuf = Buffer.from(expected, "utf-8");
+  const providedBuf = Buffer.from(provided, "utf-8");
+  if (expectedBuf.length !== providedBuf.length) return false;
+  return timingSafeEqual(expectedBuf, providedBuf);
 }
