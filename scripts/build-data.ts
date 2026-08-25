@@ -105,6 +105,23 @@ function toNullableString(raw: unknown): string | null {
   return trimmed ? trimmed : null;
 }
 
+/**
+ * Phone Number is stored as a number in the source spreadsheet, so xlsx
+ * parses it with the leading 0 already dropped (e.g. 01234567890 ->
+ * 1234567890) -- every UK number in the sheet loses it this way. Restore it
+ * when the raw value came through as a number and looks like a 10-digit UK
+ * national number missing exactly that digit. A value already stored as
+ * text (raw is a string) is left as-is, since it never lost the digit.
+ */
+function toPhoneNumber(raw: unknown): string | null {
+  if (typeof raw === "number") {
+    const digits = String(raw);
+    if (/^\d{10}$/.test(digits)) return `0${digits}`;
+    return digits;
+  }
+  return toNullableString(raw);
+}
+
 function slugify(name: string): string {
   return name
     .toLowerCase()
@@ -202,7 +219,7 @@ async function main() {
       companyName,
       tradingAddress: toNullableString(row["Trading Address"]) ?? "",
       postcode,
-      phoneNumber: toNullableString(row["Phone Number"]),
+      phoneNumber: toPhoneNumber(row["Phone Number"]),
       emailAddress: toNullableString(row["Email Address"]),
       mainContactName: toNullableString(row["Main Contact Name "]),
       openToRepeatWork: toBool(row["Open to repeat work?"]),
