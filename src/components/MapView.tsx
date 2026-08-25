@@ -44,7 +44,7 @@ export default function MapView({ results, searchPoint, selectedId, onSelect }: 
 
     if (searchPoint) {
       const el = document.createElement("div");
-      el.className = "h-4 w-4 rounded-full border-2 border-white bg-slate-900 shadow-md";
+      el.className = "h-4 w-4 rounded-full border-2 border-white bg-brand-900 shadow-md";
       searchMarkerRef.current = new maplibregl.Marker({ element: el })
         .setLngLat([searchPoint.lon, searchPoint.lat])
         .addTo(map);
@@ -57,7 +57,7 @@ export default function MapView({ results, searchPoint, selectedId, onSelect }: 
       const el = document.createElement("div");
       const isSelected = r.id === selectedId;
       el.className = `h-6 w-6 cursor-pointer rounded-full border-2 border-white shadow-md transition-transform ${
-        isSelected ? "scale-125 bg-brand-600" : "bg-brand-400"
+        isSelected ? "scale-125 bg-highlight" : "bg-brand-600"
       }`;
       el.addEventListener("click", () => onSelect(r.id));
       const marker = new maplibregl.Marker({ element: el }).setLngLat([r.lon, r.lat]).addTo(map);

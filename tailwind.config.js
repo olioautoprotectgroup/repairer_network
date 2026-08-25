@@ -4,18 +4,25 @@ export default {
   theme: {
     extend: {
       colors: {
+        // AutoProtect Master brand theme (navy primary)
         brand: {
-          50: "#eef6ff",
-          100: "#d9ebff",
-          200: "#bcdcff",
-          300: "#8ec4ff",
-          400: "#59a3ff",
-          500: "#3280ff",
-          600: "#1c5ff5",
-          700: "#164ce0",
-          800: "#193fb5",
-          900: "#1a398f",
+          50: "#F0F2F5",
+          100: "#DDE0E7",
+          200: "#BBC1D0",
+          300: "#929CB3",
+          400: "#5A698C",
+          500: "#31446F",
+          600: "#0D2356",
+          700: "#0B1D47",
+          800: "#081738",
+          900: "#06122B",
         },
+        // Brand highlight/accent colours
+        highlight: "#CF043C",
+        periwinkle: "#5E68CC",
+      },
+      fontFamily: {
+        sans: ["Lato", "Segoe UI", "DejaVu Sans", "Arial", "sans-serif"],
       },
     },
   },

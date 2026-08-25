@@ -21,7 +21,7 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
       onClick={() => onSelect(repairer.id)}
       className={`w-full rounded-2xl border p-4 text-left shadow-sm transition ${
         selected
-          ? "border-brand-500 bg-brand-50/60 ring-2 ring-brand-500/40"
+          ? "border-highlight bg-highlight/5 ring-2 ring-highlight/30"
           : "border-slate-200 bg-white hover:border-brand-300 hover:shadow-md"
       }`}
     >
@@ -30,7 +30,7 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
           <h3 className="font-semibold text-slate-900">{repairer.companyName}</h3>
           <p className="text-sm text-slate-500">{repairer.tradingAddress}</p>
         </div>
-        <div className="shrink-0 rounded-full bg-slate-900 px-3 py-1 text-sm font-semibold text-white">
+        <div className="shrink-0 rounded-full bg-brand-600 px-3 py-1 text-sm font-semibold text-white">
           {repairer.distanceMiles.toFixed(1)} mi
         </div>
       </div>

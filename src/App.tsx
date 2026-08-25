@@ -3,12 +3,13 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import Search from "./pages/Search";
 import ManageRepairers from "./pages/ManageRepairers";
 import { getClientPrincipal, type ClientPrincipal } from "./lib/api";
+import logo from "./assets/autoprotect-logo.png";
 
 const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
 
 function navClass({ isActive }: { isActive: boolean }) {
   return `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-    isActive ? "bg-brand-600 text-white" : "text-slate-600 hover:bg-slate-100"
+    isActive ? "bg-white/15 text-white" : "text-brand-100 hover:bg-white/10 hover:text-white"
   }`;
 }
 
@@ -24,7 +25,7 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="flex h-full items-center justify-center text-slate-400">
+      <div className="flex h-full items-center justify-center bg-brand-600 text-brand-200">
         Loading&hellip;
       </div>
     );
@@ -32,15 +33,16 @@ export default function App() {
 
   if (!principal) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-brand-50 to-slate-100 px-6 text-center">
-        <h1 className="text-2xl font-semibold text-slate-800">Repairer Network Search</h1>
-        <p className="max-w-sm text-slate-500">
+      <div className="flex h-full flex-col items-center justify-center gap-5 bg-gradient-to-br from-brand-600 to-brand-800 px-6 text-center">
+        <img src={logo} alt="AutoProtect" className="h-24 w-auto" />
+        <h1 className="text-2xl font-black text-white">Repairer Network Search</h1>
+        <p className="max-w-sm text-brand-100">
           This tool is restricted to AutoProtect Group staff. Sign in with your
           @autoprotectgroup.co.uk account to continue.
         </p>
         <a
           href="/.auth/login/aad?post_login_redirect_uri=/"
-          className="rounded-full bg-brand-600 px-6 py-3 font-medium text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
+          className="rounded-full bg-highlight px-6 py-3 font-bold text-white shadow-lg shadow-black/20 transition hover:brightness-110"
         >
           Sign in with Microsoft
         </a>
@@ -50,16 +52,17 @@ export default function App() {
 
   if (!principal.userDetails.toLowerCase().endsWith(ALLOWED_DOMAIN)) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-brand-50 to-slate-100 px-6 text-center">
-        <h1 className="text-2xl font-semibold text-slate-800">Access restricted</h1>
-        <p className="max-w-sm text-slate-500">
+      <div className="flex h-full flex-col items-center justify-center gap-5 bg-gradient-to-br from-brand-600 to-brand-800 px-6 text-center">
+        <img src={logo} alt="AutoProtect" className="h-24 w-auto" />
+        <h1 className="text-2xl font-black text-white">Access restricted</h1>
+        <p className="max-w-sm text-brand-100">
           This tool is restricted to AutoProtect Group staff. You're signed in as{" "}
-          <strong>{principal.userDetails}</strong>, which isn't an{" "}
+          <strong className="text-white">{principal.userDetails}</strong>, which isn't an{" "}
           {ALLOWED_DOMAIN} account.
         </p>
         <a
           href="/.auth/logout?post_logout_redirect_uri=/"
-          className="rounded-full bg-brand-600 px-6 py-3 font-medium text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700"
+          className="rounded-full bg-highlight px-6 py-3 font-bold text-white shadow-lg shadow-black/20 transition hover:brightness-110"
         >
           Sign out and try a different account
         </a>
@@ -69,9 +72,12 @@ export default function App() {
 
   return (
     <div className="flex h-full flex-col">
-      <header className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
+      <header className="flex items-center justify-between bg-brand-600 px-6 py-2.5 shadow-sm">
         <div className="flex items-center gap-6">
-          <span className="text-lg font-semibold text-brand-700">Repairer Network</span>
+          <img src={logo} alt="AutoProtect" className="h-9 w-auto" />
+          <span className="hidden text-sm font-bold uppercase tracking-wide text-brand-100 sm:inline">
+            Repairer Network
+          </span>
           <nav className="flex gap-1">
             <NavLink to="/" end className={navClass}>
               Search
@@ -81,9 +87,9 @@ export default function App() {
             </NavLink>
           </nav>
         </div>
-        <div className="flex items-center gap-3 text-sm text-slate-500">
+        <div className="flex items-center gap-3 text-sm text-brand-100">
           <span>{principal.userDetails}</span>
-          <a href="/.auth/logout" className="font-medium text-brand-600 hover:underline">
+          <a href="/.auth/logout" className="font-medium text-white hover:underline">
             Sign out
           </a>
         </div>
