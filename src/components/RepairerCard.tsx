@@ -14,12 +14,20 @@ function Badge({ children }: { children: string }) {
   );
 }
 
+function googleMapsUrl(lat: number, lon: number): string {
+  return `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+}
+
 export default function RepairerCard({ repairer, selected, onSelect }: Props) {
   return (
-    <button
-      type="button"
+    <div
+      role="button"
+      tabIndex={0}
       onClick={() => onSelect(repairer.id)}
-      className={`w-full rounded-2xl border p-4 text-left shadow-sm transition ${
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onSelect(repairer.id);
+      }}
+      className={`w-full cursor-pointer rounded-2xl border p-4 text-left shadow-sm transition ${
         selected
           ? "border-highlight bg-highlight/5 ring-2 ring-highlight/30"
           : "border-slate-200 bg-white hover:border-brand-300 hover:shadow-md"
@@ -65,6 +73,18 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
           </div>
         )}
       </div>
-    </button>
+
+      {repairer.lat != null && repairer.lon != null && (
+        <a
+          href={googleMapsUrl(repairer.lat, repairer.lon)}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:underline"
+        >
+          Open in Google Maps ↗
+        </a>
+      )}
+    </div>
   );
 }
