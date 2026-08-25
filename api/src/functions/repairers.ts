@@ -2,18 +2,13 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 import { loadRepairers, saveRepairers } from "../lib/data";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
-import { isAuthorizedStaff, debugPrincipalInfo } from "../lib/auth";
+import { isAuthorizedStaff } from "../lib/auth";
 import type { Repairer } from "../lib/types";
 
-function forbidden(request: HttpRequest): HttpResponseInit {
-  return {
-    status: 403,
-    jsonBody: {
-      error: "Access restricted to AutoProtect Group staff",
-      debug: debugPrincipalInfo(request),
-    },
-  };
-}
+const FORBIDDEN: HttpResponseInit = {
+  status: 403,
+  jsonBody: { error: "Access restricted to AutoProtect Group staff" },
+};
 
 type RepairerInput = Omit<Repairer, "id" | "lat" | "lon" | "geocoded">;
 
@@ -27,12 +22,12 @@ async function geocodeOrNull(postcode: string | null) {
 }
 
 export async function listRepairers(request: HttpRequest): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return forbidden(request);
+  if (!isAuthorizedStaff(request)) return FORBIDDEN;
   return { jsonBody: loadRepairers() };
 }
 
 export async function createRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return forbidden(request);
+  if (!isAuthorizedStaff(request)) return FORBIDDEN;
   const input = (await request.json()) as RepairerInput;
   if (!input.companyName?.trim()) {
     return { status: 400, jsonBody: { error: "companyName is required" } };
@@ -59,7 +54,7 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
 }
 
 export async function updateRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return forbidden(request);
+  if (!isAuthorizedStaff(request)) return FORBIDDEN;
   const id = request.params.id;
   const input = (await request.json()) as Partial<RepairerInput>;
 

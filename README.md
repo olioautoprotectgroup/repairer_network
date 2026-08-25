@@ -128,9 +128,14 @@ account.
 ## Data storage (today)
 
 There's no database. `api/data/repairers.json` is the source of truth.
-Saving a change in **Manage Repairers** writes it locally and commits it
-back to this file via the GitHub API (`api/src/lib/github.ts`), which
-triggers the existing CI/CD to redeploy — edits go live in about a minute.
-This keeps everything on already-free services. If instant writes are ever
-needed before the Databricks migration, swapping in Azure Table Storage is
+Saving a change in **Manage Repairers** commits it back to this file via the
+GitHub API (`api/src/lib/github.ts`), which triggers the existing CI/CD to
+redeploy — edits go live for everyone in about a minute (the person who
+just saved sees their own change immediately, since the save endpoint
+returns the new record directly). Azure Static Web Apps' managed Functions
+are deployed read-only, so this can't also write to local disk for
+instant same-instance visibility — the GitHub commit is the only
+persistence step. This keeps everything on already-free services. If
+instant writes are ever needed before the Databricks migration, swapping
+in Azure Table Storage is
 a small, isolated change to `api/src/lib/data.ts`.

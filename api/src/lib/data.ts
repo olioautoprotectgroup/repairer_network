@@ -12,11 +12,14 @@ export function loadRepairers(): Repairer[] {
 }
 
 /**
- * Writes the full repairer list to local disk immediately (so this warm
- * instance sees the change right away) and commits it back to the repo via
- * the GitHub API so the change survives the next deploy/restart.
+ * Commits the full repairer list back to the repo via the GitHub API,
+ * which triggers a redeploy (~1 minute) picking up the change for
+ * everyone. Azure Static Web Apps' managed Functions are deployed
+ * read-only ("Run From Package"), so this can't also write to local disk
+ * for immediate same-instance visibility -- callers already return the
+ * new/updated record directly in their response, so the caller who made
+ * the change sees it immediately regardless.
  */
 export async function saveRepairers(repairers: Repairer[], commitMessage: string): Promise<void> {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(repairers, null, 2) + "\n", "utf-8");
   await commitRepairersJson(repairers, commitMessage);
 }

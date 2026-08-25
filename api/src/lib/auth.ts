@@ -33,25 +33,3 @@ export function isAuthorizedStaff(request: HttpRequest): boolean {
   const principal = getClientPrincipal(request);
   return Boolean(principal?.userDetails?.toLowerCase().endsWith(ALLOWED_DOMAIN));
 }
-
-/**
- * TEMPORARY diagnostic helper (2026-08-25) — search works but Manage
- * Repairers save doesn't, despite both running isAuthorizedStaff() against
- * the same browser session. Surfaces exactly what this request saw so we
- * can tell whether x-ms-client-principal is missing, malformed, or present
- * but with unexpected content, without needing Azure log access. Remove
- * once the cause is found.
- */
-export function debugPrincipalInfo(request: HttpRequest) {
-  const header = request.headers.get("x-ms-client-principal");
-  if (!header) {
-    return { headerPresent: false };
-  }
-  const principal = getClientPrincipal(request);
-  return {
-    headerPresent: true,
-    headerLength: header.length,
-    parsedOk: principal !== null,
-    principal,
-  };
-}
