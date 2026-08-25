@@ -73,9 +73,14 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
   }
 
   const existing = repairers[index];
-  const postcodeChanged = input.postcode !== undefined && input.postcode !== existing.postcode;
-  const coords = postcodeChanged ? await geocodeOrNull(input.postcode ?? null) : null;
-  if (postcodeChanged && input.postcode && !coords) {
+  // Always re-geocode when a postcode is submitted, rather than only on a
+  // detected change: "existing" comes from this instance's local file
+  // copy, which lags behind the real data by up to ~1 minute (writes only
+  // land via a GitHub commit + redeploy), so a same-postcode comparison
+  // against it can't be trusted to correctly detect "no change".
+  const postcodeProvided = Boolean(input.postcode?.trim());
+  const coords = postcodeProvided ? await geocodeOrNull(input.postcode ?? null) : null;
+  if (postcodeProvided && !coords) {
     context.warn(`Could not geocode postcode "${input.postcode}" for repairer ${id}`);
   }
 
@@ -83,7 +88,7 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
     ...existing,
     ...input,
     id: existing.id,
-    ...(postcodeChanged
+    ...(postcodeProvided
       ? { lat: coords?.lat ?? null, lon: coords?.lon ?? null, geocoded: Boolean(coords) }
       : {}),
   };
