@@ -1495,7 +1495,7 @@
     "id": "colchester-fuel-injection-ltd",
     "companyName": "Colchester Fuel injection Ltd",
     "tradingAddress": "Haven Road",
-    "postcode": null,
+    "postcode": "CO2 8HT",
     "phoneNumber": "1206862049",
     "emailAddress": "daniel.boley@colfuel.co.uk",
     "mainContactName": "Daniel boley",
@@ -1525,15 +1525,15 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.877053,
+    "lon": 0.931081,
+    "geocoded": true
   },
   {
     "id": "jaggarage-ltd",
     "companyName": "jaggarage ltd",
     "tradingAddress": "unit 12a, 360 business park, askern road, DN68DG",
-    "postcode": "DN6 8DG",
+    "postcode": "DN68DG",
     "phoneNumber": "1302315260",
     "emailAddress": "ibi-han@hotmail.com",
     "mainContactName": "ibi han",
