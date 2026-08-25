@@ -14,8 +14,9 @@ function Badge({ children }: { children: string }) {
   );
 }
 
-function googleMapsUrl(lat: number, lon: number): string {
-  return `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+function googleMapsUrl(companyName: string, tradingAddress: string): string {
+  const query = encodeURIComponent(`${companyName}, ${tradingAddress}`);
+  return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
 
 export default function RepairerCard({ repairer, selected, onSelect }: Props) {
@@ -76,7 +77,7 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
 
       {repairer.lat != null && repairer.lon != null && (
         <a
-          href={googleMapsUrl(repairer.lat, repairer.lon)}
+          href={googleMapsUrl(repairer.companyName, repairer.tradingAddress)}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
