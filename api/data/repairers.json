@@ -1564,9 +1564,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "v12 sports and classics",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.580896,
+    "lon": -1.175164,
+    "geocoded": true
   },
   {
     "id": "horison-ltd-t-a-volvo-diagnostic",
