@@ -430,9 +430,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mastercars",
     "apgComments": null,
-    "lat": 52.092246,
-    "lon": -0.268096,
-    "geocoded": true
+    "lat": null,
+    "lon": null,
+    "geocoded": false
   },
   {
     "id": "cedar-garage-limited",
@@ -1533,7 +1533,7 @@
     "id": "jaggarage-ltd",
     "companyName": "jaggarage ltd",
     "tradingAddress": "unit 12a, 360 business park, askern road, DN68DG",
-    "postcode": "DN68DG",
+    "postcode": "DN6 8DG",
     "phoneNumber": "1302315260",
     "emailAddress": "ibi-han@hotmail.com",
     "mainContactName": "ibi han",
@@ -3137,7 +3137,7 @@
     "id": "nexa-max-garages-ltd",
     "companyName": "Nexa Max Garages LTD",
     "tradingAddress": "2 greycaine road\r\nUNIT A",
-    "postcode": null,
+    "postcode": "WD24 7GP",
     "phoneNumber": "7391155249",
     "emailAddress": "st@nexamaxgarages.co.uk",
     "mainContactName": "Andrew Stetsovsky",
@@ -3175,9 +3175,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 51.676866,
+    "lon": -0.387793,
+    "geocoded": true
   },
   {
     "id": "independent-car-and-van-servicing-ltd",
@@ -3775,7 +3775,7 @@
     "id": "servo-engineering-ltd",
     "companyName": "Servo Engineering Ltd",
     "tradingAddress": "12 Bittern Units, Sowton Ind. Est. Exeter, Devon",
-    "postcode": "EX2 7LW",
+    "postcode": null,
     "phoneNumber": "1392363247",
     "emailAddress": "admin@servoeng.com",
     "mainContactName": "Darin Ackford",
@@ -3811,9 +3811,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": 50.721999,
-    "lon": -3.470709,
-    "geocoded": true
+    "lat": null,
+    "lon": null,
+    "geocoded": false
   },
   {
     "id": "norwich-road-garage",
@@ -3951,7 +3951,7 @@
     "id": "muslin-hall-garage-ltd",
     "companyName": "Muslin Hall Garage Ltd",
     "tradingAddress": "New Mill Road Holmfirth Huddersfield West Yorkshire",
-    "postcode": null,
+    "postcode": "HD9 7SG",
     "phoneNumber": "1484684669",
     "emailAddress": "muslinhallgarage@gmail.com",
     "mainContactName": "Steven Parr",
@@ -3987,9 +3987,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.581234,
+    "lon": -1.77227,
+    "geocoded": true
   },
   {
     "id": "aj-garage-services-limited",
