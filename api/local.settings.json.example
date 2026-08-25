@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "GITHUB_TOKEN": "<fine-grained PAT with Contents: Read and write on this repo>",
+    "GITHUB_OWNER": "olioautoprotectgroup",
+    "GITHUB_REPO": "repairer_network",
+    "GITHUB_BRANCH": "main",
+    "GITHUB_DATA_PATH": "api/data/repairers.json"
+  }
+}

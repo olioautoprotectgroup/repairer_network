@@ -1,0 +1,4038 @@
+[
+  {
+    "id": "max-automotive-group-ltd",
+    "companyName": "MAX AUTOMOTIVE GROUP LTD",
+    "tradingAddress": "Unit 20 & 22 Springfield Ind Est, Oldbury , B69 4HH",
+    "postcode": "B69 4HH",
+    "phoneNumber": "7538706114",
+    "emailAddress": "nathan@maxautomotive.co.uk",
+    "mainContactName": "Nathan Bell",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 30,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "Jaltest"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 95,
+    "providesRecovery": true,
+    "recoveryChargeRate": 95,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "rehul-autohaus",
+    "companyName": "Rehul AutoHaus",
+    "tradingAddress": "x1",
+    "postcode": null,
+    "phoneNumber": "1214684358",
+    "emailAddress": "info@rehalautohaus.co.uk",
+    "mainContactName": "Amar Rehal\r\nTej Rehal",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "BMW, Mini - Mechanical and Electrical repairs only no body work.\r\nMain dealer alternative",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": "Labour rate discount",
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "a30-auto-service-centre",
+    "companyName": "A30 AUTO SERVICE CENTRE",
+    "tradingAddress": "UNIT 4B, VICTORIA INDUSTRIAL ESTATE, ROCHE , CORNWALL PL268LX",
+    "postcode": "PL26 8LX",
+    "phoneNumber": "1726890475",
+    "emailAddress": "a30autocentre@hotmail.com",
+    "mainContactName": "CHRIS OXLEY - MD",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "wvc-service-ltd",
+    "companyName": "WVC Service Ltd",
+    "tradingAddress": "4 Craven Court Canada Road Byfleet Surrey KT147PS",
+    "postcode": "KT14 7PS",
+    "phoneNumber": "1932346274",
+    "emailAddress": "service@weybridgevehicles.co.uk",
+    "mainContactName": "Karl Goad",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "VAG, Isuzu",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Snap-on",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "iautouk",
+    "companyName": "iAutoUK",
+    "tradingAddress": "UNIT B2, 24 PROGRESS WAY CROYDON, CR04XD",
+    "postcode": "CR0 4XD",
+    "phoneNumber": "2037014321",
+    "emailAddress": "CROYDON@IAUTOUK.COM",
+    "mainContactName": "SHAHROZE KHAN",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "Bosch",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 105,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "apex-automotive-centre",
+    "companyName": "Apex Automotive Centre",
+    "tradingAddress": "Unit 5\r\nRushy Platt\r\nCaen View\r\nSwindon\r\nSN5 8WQ",
+    "postcode": "SN5 8WQ",
+    "phoneNumber": "1793877477",
+    "emailAddress": "nathan@apexautomotivecentre.co.uk",
+    "mainContactName": "Nathan Hunt",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Auto Electrical",
+      "MOT",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Launch",
+      "Autocom",
+      "ODIS / TOPIX",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 100,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Sytner / Marshall / Fish Brothers / Dick Lovett",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "g-p-motors-teddington-ltd",
+    "companyName": "G P Motors Teddington Ltd",
+    "tradingAddress": "6 Alpha Road, Teddington, TW11 0QG",
+    "postcode": "TW11 0QG",
+    "phoneNumber": "2089434103",
+    "emailAddress": "gpmotorstedd@gmail.com",
+    "mainContactName": "AJ",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 60,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Ford, Mercedes, BWM,",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "elm-tree-motor-company-ltd",
+    "companyName": "Elm Tree Motor Company Ltd",
+    "tradingAddress": "Pelham Court, London Road, Marlborough, SN8 2AG",
+    "postcode": "SN8 2AG",
+    "phoneNumber": "1672511777",
+    "emailAddress": "service@elmtreecars.com",
+    "mainContactName": "Louisa Stuckey",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Tyre",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs",
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Diesel",
+      "Petrol",
+      "Hybrid"
+    ],
+    "labourRate": 129,
+    "providesRecovery": true,
+    "recoveryChargeRate": 70,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": "Labour rate discount",
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "boringdon-manor-garage-ltd",
+    "companyName": "BORINGDON MANOR GARAGE LTD",
+    "tradingAddress": "7 VALLEY ROAD, PLYMPTON, PLYMOUTH PL7 1RF",
+    "postcode": "PL7 1RF",
+    "phoneNumber": "1752343737",
+    "emailAddress": "lynn@bmgltd.co.uk",
+    "mainContactName": "LYNN BUCHAN",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Launch",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 85,
+    "providesRecovery": true,
+    "recoveryChargeRate": 50,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "JLR, MERCEDES, BMW, VOLVO,",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "mastercars-biggleswade-ltd",
+    "companyName": "Mastercars Biggleswade Ltd",
+    "tradingAddress": "152 Shortmead Street,Biggleswade Ltd",
+    "postcode": null,
+    "phoneNumber": "1767600414",
+    "emailAddress": "master-cars@btconnect.com",
+    "mainContactName": "Simon Walker",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 85,
+    "providesRecovery": true,
+    "recoveryChargeRate": 175,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Mastercars",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "cedar-garage-limited",
+    "companyName": "Cedar Garage Limited",
+    "tradingAddress": "307 Tarring Road\r\nWorthing\r\nWest Sussex\r\nBN11 5JG",
+    "postcode": "BN11 5JG",
+    "phoneNumber": "7364164546",
+    "emailAddress": "accounts@cedargarage.co.uk",
+    "mainContactName": "Ashley Hawkins",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 110,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "cedar-garage-limited-2",
+    "companyName": "Cedar Garage Limited",
+    "tradingAddress": "Unit 1 Rectory Farm Road\r\nSompting\r\nWest Sussex\r\nBN15 0DP",
+    "postcode": "BN15 0DP",
+    "phoneNumber": "7364164546",
+    "emailAddress": "accounts@cedargarage.co.uk",
+    "mainContactName": "Ashley Hawkins",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Specialists in:-\r\nVolkswagen\r\nAudi\r\nBMW\r\nMercedes\r\nPorsche\r\nSeat\r\nSkoda\r\n\r\nOpen to repairs on other vehicles including class VII commercial vehicles. Diagnostic capabilities are more limited on out of specialist makes.",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Bosch",
+      "ADAS Calibration"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 110,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "lkq-electriq-ltd",
+    "companyName": "LKQ Electriq Ltd",
+    "tradingAddress": "Unit 10 Cecil Pashley Way\r\nShoreham Airport\r\nShoreham-by-sea\r\nBN43 5FF",
+    "postcode": "BN43 5FF",
+    "phoneNumber": "1903924872",
+    "emailAddress": "accounts@lkqelectriq.co.uk",
+    "mainContactName": "Chris Lennon",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Auto Electrical"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Full EV"
+    ],
+    "labourRate": 150,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "impress-autocentres-t-a-hi-q-tyres-and-autocare-portslade",
+    "companyName": "Impress Autocentres T/A Hi Q Tyres and Autocare Portslade",
+    "tradingAddress": "Unit 1 William Street Trading Estate\r\nWilliam Street\r\nPortslade\r\nBN41 1PZ",
+    "postcode": "BN41 1PZ",
+    "phoneNumber": "1273430303",
+    "emailAddress": "accounts@hiqportslade.co.uk",
+    "mainContactName": "Steve Bourner",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "herts-beds-transmissions-ltd",
+    "companyName": "HERTS & BEDS TRANSMISSIONS LTD",
+    "tradingAddress": "UNIT 3 RADWELL GRANGE FARM\r\nRADWELL\r\nBALDOCK\r\nHERTS \r\nSG7 5EU",
+    "postcode": "SG7 5EU",
+    "phoneNumber": "7968158382",
+    "emailAddress": "info@hbtrans.co",
+    "mainContactName": "IAN GIBBINS",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 200,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "VW Odis Ford FDRS"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 120,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Ford, Seat, Renault",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "ds-autos",
+    "companyName": "DS AUTOS",
+    "tradingAddress": "Unit 3, Waterside Industrial Estate, Mill Green, Colne, Lancashire, BB8 0TA",
+    "postcode": "BB8 0TA",
+    "phoneNumber": "1282869690",
+    "emailAddress": "d.s.autos@outlook.com",
+    "mainContactName": "Darren Lionti",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "W18 Car Sales",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "apex-automotive-centre-2",
+    "companyName": "Apex Automotive Centre",
+    "tradingAddress": "Unit 5\r\nRushy Platt\r\nCaen View\r\nSwindon\r\nSN5 8WQ",
+    "postcode": "SN5 8WQ",
+    "phoneNumber": "1793877477",
+    "emailAddress": "bookings@apexautomotivecentre.co.uk",
+    "mainContactName": "Nathan Hunt",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Launch",
+      "Topix / Odis"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 100,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Apex Cars Direct",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "auto-smart-repair-network-ltd",
+    "companyName": "Auto smart repair network Ltd",
+    "tradingAddress": "5 dilichip gardens , Alexandria \r\nG83 9LN",
+    "postcode": "G83 9LN",
+    "phoneNumber": "7367346541",
+    "emailAddress": "Info@autosmartrepairnetworkltd.co.uk",
+    "mainContactName": "Mr Bernis feughouo",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "I do not use Diagnostics Equipment"
+    ],
+    "drivetrainTypes": [
+      "Full EV",
+      "Diesel",
+      "Hybrid",
+      "Petrol"
+    ],
+    "labourRate": 65,
+    "providesRecovery": true,
+    "recoveryChargeRate": 65,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "liverpool-mercedes-ltd",
+    "companyName": "Liverpool Mercedes LTD",
+    "tradingAddress": "Unit 2, Castor Street, Anfield, Liverpool, L6 5AT",
+    "postcode": "L6 5AT",
+    "phoneNumber": "7858130415",
+    "emailAddress": "info@liverpool-mercedes.co.uk",
+    "mainContactName": "Steven Madden",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Mercedes-Benz",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Genuine Mercedes-Benz Xentry"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Full EV",
+      "Diesel"
+    ],
+    "labourRate": 96,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "a1-premier-transmissions",
+    "companyName": "A1 Premier Transmissions",
+    "tradingAddress": "Unit 14, Albone Way, Biggleswade, Beds, SG18 8BN",
+    "postcode": "SG18 8BN",
+    "phoneNumber": "1767601207",
+    "emailAddress": "dave@a1pt.net",
+    "mainContactName": "Dave Mccoy",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 75,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 85,
+    "providesRecovery": true,
+    "recoveryChargeRate": 150,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "specialist-vehicles-of-plymouth-ltd",
+    "companyName": "Specialist Vehicles of Plymouth Ltd",
+    "tradingAddress": "6/7 Alder Court\r\nBell Close \r\nPL7 4JH",
+    "postcode": "PL7 4JH",
+    "phoneNumber": "1752343777",
+    "emailAddress": "tom@specialistvehicles.co.uk",
+    "mainContactName": "Tom Orr",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "the-thatched-garage-limited",
+    "companyName": "The Thatched Garage Limited",
+    "tradingAddress": "The Thatched Garage, Park Corner, East Hoathly, East Sussex, BN8 6RD",
+    "postcode": "BN8 6RD",
+    "phoneNumber": "1825841148",
+    "emailAddress": "info@thethatchedgarage.com",
+    "mainContactName": "Mr Ben Digby-Clarke",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Land Rover, Range Rover, Jaguar",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 125,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "rusheer-ltd-t-a-car-check-centre",
+    "companyName": "Rusheer Ltd t/a car check centre",
+    "tradingAddress": "17 stonefieldway stonefield close  south ruislip ha4 0xt",
+    "postcode": "HA4 0XT",
+    "phoneNumber": "2088411880",
+    "emailAddress": "carcheckcentre@outlook.com",
+    "mainContactName": "Mitesh shukal OR  Mehul Patel",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 90,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Spectrum Insurance service ltd / car giant Ltd",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "e-carparts-ltd-t-a-b-s-motors",
+    "companyName": "E-CARPARTS LTD\r\nT/A B S MOTORS",
+    "tradingAddress": "UNIT 3\r\n1 STOCKTON END\r\nSANDY\r\nBEDS SG19 1SB",
+    "postcode": "SG19 1SB",
+    "phoneNumber": "1767682206",
+    "emailAddress": "robscriven@aol.com",
+    "mainContactName": "ROB MAJDAN SCRIVEN",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "forge-garage-otford",
+    "companyName": "Forge Garage Otford",
+    "tradingAddress": "U1 B5 forge garage vestry trading estate Sevenoaks, Kent TN14 5EL",
+    "postcode": "TN14 5EL",
+    "phoneNumber": "1732762222",
+    "emailAddress": "info@forgegarage.net",
+    "mainContactName": "Pete Farwell",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Thinkcar",
+      "Autocom",
+      "Multiple others"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "autotechnica",
+    "companyName": "AutoTechnica",
+    "tradingAddress": "94 Calvert Lane, Hull, HU46BJ",
+    "postcode": "HU4 6BJ",
+    "phoneNumber": "1482353369",
+    "emailAddress": "service@autotechnica.co.uk",
+    "mainContactName": "Andrew Humble",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 30,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Audi, VW, SEAT, Skoda",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Texa"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "autocar-repairs-west-fulwich-service-station-limited-trading-as",
+    "companyName": "AUTOCAR REPAIRS\r\nWEST FULWICH SERVICE STATION LIMITED TRADING AS",
+    "tradingAddress": "71 ROSENDALE ROAD\r\nWEST DULWICH\r\nLONDON SE21 8EZ",
+    "postcode": "SE21 8EZ",
+    "phoneNumber": "2087615226",
+    "emailAddress": "INFO@AUTOCAR-REPAIRS.CO.UK",
+    "mainContactName": "JASON LIPSCOMBE",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "MOT"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "AUTODIAGNOS, VAG COM, REN COM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 135,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "sussex-vehicle-services-ltd",
+    "companyName": "Sussex vehicle services LTD",
+    "tradingAddress": "Unit  1, 55 Victoria Road.\r\nBurgess Hill\r\nRH15 9LH",
+    "postcode": "RH15 9LH",
+    "phoneNumber": "1444482777",
+    "emailAddress": "info@sussexvehicleservices.co.uk",
+    "mainContactName": "Barry Pickersgill",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "JLR",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 109.5,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "bex-s-4x4-ltd",
+    "companyName": "Bex’s 4x4 Ltd",
+    "tradingAddress": "Unit 6 Stud Farm\r\nMundon Road \r\nMundon, Maldon \r\nEssex\r\nCM9 6PN",
+    "postcode": "CM9 6PN",
+    "phoneNumber": "1621861805",
+    "emailAddress": "Accounts@bex4x4garage.co.uk",
+    "mainContactName": "Rebecca Woolnough-Hook",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Land Rover",
+    "capabilities": [
+      "Transmission and Drive Train Repairs",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Lookers Land Rover Colchester",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "mg-rover-tech-ltd",
+    "companyName": "MG Rover Tech LTD",
+    "tradingAddress": "Unit 4 Provost Mill\r\nQueensberry Street\r\nAnnan\r\nDumfries & Galloway\r\nDG12 5BL",
+    "postcode": "DG12 5BL",
+    "phoneNumber": "7931535428",
+    "emailAddress": "mgrovertech@hotmail.com",
+    "mainContactName": "Christopher Hodgson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Topdon",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Diesel",
+      "Petrol",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 70,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Mercedes Benz Carlisle, Parks Motor Group, Arnold Clark (BMW, JAECOO, MINI, RENAULT GROUP Dumfries), Lloyd Motor Group Carlisle, Telford Citroen Carlisle",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "leziate-drove-garage-ltd",
+    "companyName": "Leziate Drove Garage Ltd",
+    "tradingAddress": "83 Leziate Drove\r\nKings Lynn\r\nNorfolk\r\nPE321DD",
+    "postcode": "PE32 1DD",
+    "phoneNumber": "1553630999",
+    "emailAddress": "reception@leziatedrovegarageltd.co.uk",
+    "mainContactName": "Ash Tucker",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Launch",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "xclusive-motor-services-ltd",
+    "companyName": "Xclusive Motor Services ltd",
+    "tradingAddress": "75 Moseley St, Digbeth, Birmingham, B12 0RT",
+    "postcode": "B12 0RT",
+    "phoneNumber": "1216666121",
+    "emailAddress": "sales@xclusivemotorservices.com",
+    "mainContactName": "Ayaz Khan",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 50,
+    "providesRecovery": true,
+    "recoveryChargeRate": 80,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "vertu-motors-ford-bromley",
+    "companyName": "Vertu Motors Ford Bromley",
+    "tradingAddress": "Vertu Motors Ford Bromley 92 Masons Hill, Bromely Br2 9hs",
+    "postcode": "BR2 9HS",
+    "phoneNumber": "2082499000",
+    "emailAddress": "TIA.MORRIS@VERTUMOTORS.COM",
+    "mainContactName": "Tia Morris / John Williams",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Ford Passenger car only",
+    "capabilities": [
+      "Repairs Requiring Engine Removal",
+      "Tyre",
+      "MOT",
+      "Auto Electrical",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "delphi"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 168,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "steebings-car-centre-limited",
+    "companyName": "Steebings Car Centre Limited",
+    "tradingAddress": "Hamlin Way\r\nHardwick Narrows\r\nKings Lynn\r\nNorfolk\r\nPE30 4NG",
+    "postcode": "PE30 4NG",
+    "phoneNumber": "1553661661",
+    "emailAddress": "dale.hunt@stebbinhs.co.uk",
+    "mainContactName": "Dale Hunt",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Bosch",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": true,
+    "dealerNames": "Stebbings Car Centre limited",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "turbo-technics-ltd",
+    "companyName": "Turbo Technics Ltd",
+    "tradingAddress": "2 Sketty Close, Brackmills Ind Est, Northampton NN4 7PL",
+    "postcode": "NN4 7PL",
+    "phoneNumber": "1604705050",
+    "emailAddress": "enquiries@turbotechnics.com",
+    "mainContactName": "Ryan",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 0,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "I do not use Diagnostics Equipment"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 0,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "colchester-fuel-injection-ltd",
+    "companyName": "Colchester Fuel injection Ltd",
+    "tradingAddress": "Haven Road",
+    "postcode": null,
+    "phoneNumber": "1206862049",
+    "emailAddress": "daniel.boley@colfuel.co.uk",
+    "mainContactName": "Daniel boley",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Bosch",
+      "Autocom",
+      "Delphi"
+    ],
+    "drivetrainTypes": [
+      "Diesel",
+      "Petrol"
+    ],
+    "labourRate": 88,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "jaggarage-ltd",
+    "companyName": "jaggarage ltd",
+    "tradingAddress": "unit 12a, 360 business park, askern road, DN68DG",
+    "postcode": "DN6 8DG",
+    "phoneNumber": "1302315260",
+    "emailAddress": "ibi-han@hotmail.com",
+    "mainContactName": "ibi han",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 84,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "v12 sports and classics",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "horison-ltd-t-a-volvo-diagnostic",
+    "companyName": "HORISON LTD t/a VOLVO DIAGNOSTIC",
+    "tradingAddress": "Unit 19, Thurrock Park Way, Tilbury RM18 7HG",
+    "postcode": "RM18 7HG",
+    "phoneNumber": "1708208836",
+    "emailAddress": "contact@volvodiagnostic.com",
+    "mainContactName": "Lukasz Stojko",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "VOLVO",
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 80,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "m-cars-surrey-ltd",
+    "companyName": "M Cars Surrey ltd",
+    "tradingAddress": "Heathview, Eastbourne road, Blindley Heath, Lingfield, RH76LG",
+    "postcode": "RH7 6LG",
+    "phoneNumber": "1342836076",
+    "emailAddress": "mcarssurrey@gmail.com",
+    "mainContactName": "Hassan Saleem",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal",
+      "Tyre",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 70,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "mg-rover-tech-ltd-2",
+    "companyName": "MG Rover Tech Ltd",
+    "tradingAddress": "Unit 4 Provost Mills\r\nQueensberry Street\r\nAnnan\r\nDumfries & Galloway\r\nDG12 5BL",
+    "postcode": "DG12 5BL",
+    "phoneNumber": "7944764835",
+    "emailAddress": "mgrovertehc@hotmail.com",
+    "mainContactName": "Chris Hodgson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 30,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Bosch",
+      "Topdon"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 60,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Lloyd Motor Group, Telford Citroen, Trust Ford, Vertu Motors, Parks Motor Group",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "audio-video-care",
+    "companyName": "Audio Video care",
+    "tradingAddress": "7 Langley Road \r\nWatford \r\nWD174PS",
+    "postcode": "WD17 4PS",
+    "phoneNumber": "7968133778",
+    "emailAddress": "ash671@hotmail.co.uk",
+    "mainContactName": "ASH KHAN",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Auto Electrical"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autel",
+      "Launch",
+      "Thinkcar",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Full EV",
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 100,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "bristol-transmissionsltd",
+    "companyName": "Bristol TransmissionsLtd",
+    "tradingAddress": "Units 3/4/5/6 McArthur Buildings. Foundry Lane Bristol BS5 7UE",
+    "postcode": "BS5 7UE",
+    "phoneNumber": "1179524920",
+    "emailAddress": "miles@bristoltransmissions.co.uk",
+    "mainContactName": "Mile Brown or Hayley Morris",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 126,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": true,
+    "dealerNames": "Too many to mention",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "tameside-automatics",
+    "companyName": "Tameside Automatics",
+    "tradingAddress": "Albert st, Droylsden, M43 7BA",
+    "postcode": "M43 7BA",
+    "phoneNumber": "1613718885",
+    "emailAddress": "automatics@ttgb.org",
+    "mainContactName": "Joe",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 100,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "atc-repair-centre",
+    "companyName": "ATC Repair Centre",
+    "tradingAddress": "The Peck House, Unit 3 Shaw Road, Rotherham, S65 1SG",
+    "postcode": "S65 1SG",
+    "phoneNumber": "1709921761",
+    "emailAddress": "atcrepaircentre@gmail.com",
+    "mainContactName": "ATC Repair Centre",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Level 1 Maintenenance Services",
+      "Auto Electrical"
+    ],
+    "diagnosticsEquipment": [
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 55,
+    "providesRecovery": true,
+    "recoveryChargeRate": 0,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "AA, RAC, Enterprise and other various warranty companies.",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "bell-colvill",
+    "companyName": "Bell & Colvill",
+    "tradingAddress": "15 Westfield Road, Slyfield industrial estate, Guildford, GU1 1RR",
+    "postcode": "GU1 1RR",
+    "phoneNumber": "1483281000",
+    "emailAddress": "service@bellandcolvill.com",
+    "mainContactName": "James Viccari",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "McLaren, Lotus, Subaru, Saab, Morgan, EV brands",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 185,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "We are a dealership",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "acs-autowerks-ltd",
+    "companyName": "ACS AUTOWERKS LTD",
+    "tradingAddress": "UNIT 2 CHANCERYGATE IND CENTRE, HORTON CLOSE, WESTDRAYTON,MIDDX UB78EW",
+    "postcode": "UB7 8EW",
+    "phoneNumber": "1895448444",
+    "emailAddress": "info@acsautowerks.com",
+    "mainContactName": "RAJ CHOHAN",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "PORSCHE, MERCEDES ,BMW , AUDI , VW",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 110,
+    "providesRecovery": true,
+    "recoveryChargeRate": 150,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "MERCEDES, PORSCHE , BMW , AUDI , VW",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "dartford-transmissions-autocare-ltd",
+    "companyName": "Dartford Transmissions & Autocare Ltd",
+    "tradingAddress": "201 Fulwich Road\r\nDartford\r\nDA1 1UW",
+    "postcode": "DA1 1UW",
+    "phoneNumber": "1322281212",
+    "emailAddress": "reception@dartfordtransmissions.co.uk",
+    "mainContactName": "Sean Morris/Martin Hind",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 1,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "All makes and models are covered, We have Dealer diagnostic tools and experience in the following brands;\r\nJLR\r\nBMW\r\nFORD\r\nVAG Group",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Launch",
+      "Thinkcar",
+      "Various aftermarket tools"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 137,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Bexley Car Sales, Pinnacle Car Sales, Cambridge Motors - The list goes on.",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "gateshead-garage-ltd",
+    "companyName": "Gateshead garage ltd",
+    "tradingAddress": "Lobley hill road, Gateshead, NE8 2XN",
+    "postcode": "NE8 2XN",
+    "phoneNumber": "1917437777",
+    "emailAddress": "info@gatesheadgarage.co.uk",
+    "mainContactName": "01917437777",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Launch",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "the-alignment-centre-ltd",
+    "companyName": "the alignment centre ltd",
+    "tradingAddress": "173 bilton road\r\nperivale geenford\r\nub6 7hq",
+    "postcode": "UB6 7HQ",
+    "phoneNumber": "2089987486",
+    "emailAddress": "info@thealignmentcentre.co.uk",
+    "mainContactName": "mahesh halai (terry) 07949777258",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "texa"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "lookers parkroyal / honda ruislip/ skoda ruislip/ cargiant",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "mcr",
+    "companyName": "MCR",
+    "tradingAddress": "Unit 3, 8 Marsh Green Road, Marsh Barton, Exeter, EX2 8NY",
+    "postcode": "EX2 8NY",
+    "phoneNumber": "1392434348",
+    "emailAddress": "car@mcrltd.uk",
+    "mainContactName": "Bex",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT"
+    ],
+    "diagnosticsEquipment": [
+      "Bosch",
+      "VCDS"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 65,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Devon car Services / MCR Approved Cars / Bateman & Lynch / Select Cars",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "jf-auto-repairs-ltd",
+    "companyName": "JF Auto Repairs Ltd",
+    "tradingAddress": "Unit 3 Crewkerne Station, Crewkerne, Somerset, TA18 8AU",
+    "postcode": "TA18 8AU",
+    "phoneNumber": "1460247446",
+    "emailAddress": "info@jfautorepairs.net",
+    "mainContactName": "Donna Rodber\r\nJames Ford",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Transmission and Drive Train Repairs",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Bosch",
+      "TOPDON"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 67,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "mercare-sw-ltd",
+    "companyName": "Mercare SW LTD",
+    "tradingAddress": "Unit 19 Estover Close \r\nPlymouth \r\nPL6 7PL",
+    "postcode": "PL6 7PL",
+    "phoneNumber": "1752696233",
+    "emailAddress": "office@mercare.co",
+    "mainContactName": "Danielle Herbert",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 1000,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Mercedes Star",
+      "Bosch",
+      "Launch",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 87,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Mercedes",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "gold-vehicles-ltd",
+    "companyName": "Gold Vehicles LTD",
+    "tradingAddress": "unit 6 Grace Road west, Marsh Bartone, EX2 8PU",
+    "postcode": "EX2 8PU",
+    "phoneNumber": "1392323344",
+    "emailAddress": "goldvehicles@outlook.com",
+    "mainContactName": "Jake Bayliss",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "jaguar landrover",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 139,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "russell-ham-ltd",
+    "companyName": "Russell Ham Ltd",
+    "tradingAddress": "Britannia Garage, 4 Wolseley Road, Milehouse, Plymouth, PL2 3BH",
+    "postcode": "PL2 3BH",
+    "phoneNumber": "1752561905",
+    "emailAddress": "russellhamltd@yahoo.com",
+    "mainContactName": "Amy Higginson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 79.95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "pgs-garage-services-ltd",
+    "companyName": "PGS Garage Services Ltd",
+    "tradingAddress": "Unit 1a Hamilton Road Cosham Portsmouth PO6 4QE",
+    "postcode": "PO6 4QE",
+    "phoneNumber": "2392389060",
+    "emailAddress": "purbrook.garage@yahoo.co.uk",
+    "mainContactName": "John",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "j-day-engineering",
+    "companyName": "J Day Engineering",
+    "tradingAddress": "Bow Bridge, Henstridge, Templecombe, Somerset, BA8 0TF",
+    "postcode": "BA8 0TF",
+    "phoneNumber": "1963364432",
+    "emailAddress": "info@dayspeed.com",
+    "mainContactName": "Karl or Steve",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 85,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "gnd-motors-ltd",
+    "companyName": "GND Motors Ltd",
+    "tradingAddress": "5, Eurocourt\r\nOliver Close\r\nWest Thurrock\r\nRM20 3EE",
+    "postcode": "RM20 3EE",
+    "phoneNumber": "1708804945",
+    "emailAddress": "info@gndmotors.co.uk",
+    "mainContactName": "Petya Krumova",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "BMW, Land Rover, Jaguar, Audi, Mercedes",
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 110,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "exeter-gearbox-centre",
+    "companyName": "Exeter Gearbox Centre",
+    "tradingAddress": "Grace Road Central, Marsh Barton, Exeter, EX2 8QA",
+    "postcode": "EX2 8QA",
+    "phoneNumber": "1392434049",
+    "emailAddress": "info@exetergearboxcentre.co.uk",
+    "mainContactName": "Patrick Kelleher",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Launch",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 120,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "specialist-vehicles-of-plymouth-ltd-2",
+    "companyName": "Specialist Vehicles of Plymouth Ltd",
+    "tradingAddress": "6/7 Alder Court, \r\nPlympton\r\nPL7 4JH",
+    "postcode": "PL7 4JH",
+    "phoneNumber": "1752343777",
+    "emailAddress": "Service@specialistvehicles.co.uk",
+    "mainContactName": "Tom Orr",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Roger Young",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "burton-on-trent-renault-dacia",
+    "companyName": "Burton-On-Trent Renault & Dacia",
+    "tradingAddress": "Sutton Park Group, 37 Lichfield Street, Burton-On-Trent, Staffordshire, DE14 3RH",
+    "postcode": "DE14 3RH",
+    "phoneNumber": "1283740001",
+    "emailAddress": "Teri.Atkin@suttonparkgroup.co.uk",
+    "mainContactName": "Teri Atkin",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "stourbridge-renault-dacia",
+    "companyName": "Stourbridge Renault & Dacia",
+    "tradingAddress": "Sutton Park Group, Norton Road, Stourbridge, West Midlands, DY8 2TB",
+    "postcode": "DY8 2TB",
+    "phoneNumber": "1384396655",
+    "emailAddress": "Ben.crump@suttonparkgroup.co.uk",
+    "mainContactName": "Ben Crump",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "warwick-renault-dacia",
+    "companyName": "Warwick Renault & Dacia",
+    "tradingAddress": "Sutton Park Group, Tachbrook Park, Warwick, Warwickshire, CV34 6UL",
+    "postcode": "CV34 6UL",
+    "phoneNumber": "1926438800",
+    "emailAddress": "Ronnie.Cresswell@suttonparkgroup.co.uk",
+    "mainContactName": "Ronnie Cresswell",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "birmingham-renault-dacia",
+    "companyName": "Birmingham Renault & Dacia",
+    "tradingAddress": "Sutton Park Group, 390 College Road, Birmingham, West Midlands, B44 0HH",
+    "postcode": "B44 0HH",
+    "phoneNumber": "1212729370",
+    "emailAddress": "Daniel.Newby@suttonparkgroup.co.uk",
+    "mainContactName": "Dan Newby",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "tamworth-renault-dacia",
+    "companyName": "Tamworth Renault & Dacia",
+    "tradingAddress": "Sutton Park Group, Off Gagarin, Tamworth, Staffordshire, B79 7TP",
+    "postcode": "B79 7TP",
+    "phoneNumber": "1827305080",
+    "emailAddress": "Amy.winfield@suttonparkgroup.co.uk",
+    "mainContactName": "Amy Winfield",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "sutton-coldfield-kia",
+    "companyName": "Sutton Coldfield Kia",
+    "tradingAddress": "Sutton Park Group, 62 Chester Road North, Sutton Coldfield, West Midlands, B73 6SP",
+    "postcode": "B73 6SP",
+    "phoneNumber": "1213520022",
+    "emailAddress": "Ian.Millward@Suttonparkgroup.co.uk",
+    "mainContactName": "Ian Millward",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "coventry-kia",
+    "companyName": "Coventry Kia",
+    "tradingAddress": "Sutton Park Group, 318 Holbrook Lane, Coventry, West Midlands, CV6 4DG",
+    "postcode": "CV6 4DG",
+    "phoneNumber": "2476693366",
+    "emailAddress": "Debbie.Hipwell@suttonparkgroup.co.uk",
+    "mainContactName": "Debbie Hipwell",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 140,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "djm-performance-ltd",
+    "companyName": "DJM Performance Ltd",
+    "tradingAddress": "Wyndways Farm, North Road, Dipton, Stanley, Co. Durham, DH99JG",
+    "postcode": "DH9 9JG",
+    "phoneNumber": "7832463235",
+    "emailAddress": "david@djmperformance.co.uk",
+    "mainContactName": "David Johnson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 75,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "CMG Prestige Cars",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "oxley-bros-limited-trading-as-a30-auto-centre",
+    "companyName": "OXLEY BROS LIMITED TRADING AS A30 AUTO CENTRE",
+    "tradingAddress": "UNIT 4B VICTORIA INDUSTRIAL ESTATE, ROCHE, CORNWALL, PL268LX",
+    "postcode": "PL26 8LX",
+    "phoneNumber": "1726890475",
+    "emailAddress": "a30autocentre@hotmail.com",
+    "mainContactName": "STUART NICHOLLS",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 96,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "fitch-autos",
+    "companyName": "Fitch Autos",
+    "tradingAddress": "Unit 6, Chase Road Industrial Estate\r\nBrownhills\r\nWS8 6JT",
+    "postcode": "WS8 6JT",
+    "phoneNumber": "1543452630",
+    "emailAddress": "fitchautos@hotmail.co.uk",
+    "mainContactName": "Neil",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal",
+      "Level 1 Maintenenance Services",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "Bosch",
+      "Autocom",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "gravesend-transmissions-services-ltd",
+    "companyName": "Gravesend Transmissions Services Ltd.",
+    "tradingAddress": "Unit 1 Bentley Street ,Gravesend, kent, DA12 2DH",
+    "postcode": "DA12 2DH",
+    "phoneNumber": "1474564060",
+    "emailAddress": "gravesendtransmissions@yahoo.co.uk",
+    "mainContactName": "Jamie Cliffton",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 75,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "andover-tyre-auto-services-ltd",
+    "companyName": "Andover Tyre & Auto Services Ltd",
+    "tradingAddress": "Unit 1 Crown Way,\r\nWoolworth Business Park\r\nAndover\r\nHampshire\r\nSP105LU",
+    "postcode": "SP10 5LU",
+    "phoneNumber": "1264333500",
+    "emailAddress": "info@andovertyre.co.uk",
+    "mainContactName": "James Claridge",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Launch",
+      "Bosch",
+      "Snap-on",
+      "Autologic (Opus IVS)"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "london-motor-sports-ltd",
+    "companyName": "London Motor Sports Ltd",
+    "tradingAddress": "142 Bentworth Rd, London W12 7AH, United Kingdom",
+    "postcode": "W12 7AH",
+    "phoneNumber": "2033371839",
+    "emailAddress": "cs@londonmotorsports.co.uk",
+    "mainContactName": "Rehan Javed",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "MOT"
+    ],
+    "diagnosticsEquipment": [
+      "launch x431"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 65,
+    "providesRecovery": true,
+    "recoveryChargeRate": 100,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "s-c-motor-services-ltd",
+    "companyName": "S  & C MOTOR SERVICES LTD",
+    "tradingAddress": "DOVE HOUSE FARM, THE HEATH, MISTLEY, MANNINGTREE, CO11 2QL",
+    "postcode": "CO11 2QL",
+    "phoneNumber": "1206670208",
+    "emailAddress": "sncmotorservices@gmail.com",
+    "mainContactName": "SCOTT SPEAR",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 75,
+    "providesRecovery": true,
+    "recoveryChargeRate": 75,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "gas-autocenter",
+    "companyName": "Gas Autocenter",
+    "tradingAddress": "Unit 1 Blakes Business Park, Radcliffe Rd Huddersfield HD34LX",
+    "postcode": "HD3 4LX",
+    "phoneNumber": "1484649100",
+    "emailAddress": "mikeprinsuk@gmail.com",
+    "mainContactName": "Mike Scott",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 200,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Launch",
+      "Snap-on",
+      "RED"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 66,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Dodge",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "nexa-max-garages-ltd",
+    "companyName": "Nexa Max Garages LTD",
+    "tradingAddress": "2 greycaine road\r\nUNIT A",
+    "postcode": null,
+    "phoneNumber": "7391155249",
+    "emailAddress": "st@nexamaxgarages.co.uk",
+    "mainContactName": "Andrew Stetsovsky",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autel",
+      "Launch",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 90,
+    "providesRecovery": true,
+    "recoveryChargeRate": 50,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "independent-car-and-van-servicing-ltd",
+    "companyName": "Independent Car and Van Servicing Ltd",
+    "tradingAddress": "Unit 9c Herald Industrial Estate Hedge End Southampton Hampshire SO30 2JW",
+    "postcode": "SO30 2JW",
+    "phoneNumber": "1489798383",
+    "emailAddress": "info@icvs.org.uk",
+    "mainContactName": "Eleanor Hemsley",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "VW Group (Audi, VW, Seat, Skoda)",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "VCDS, VAGCOM, ODIS"
+    ],
+    "drivetrainTypes": [
+      "Petrol"
+    ],
+    "labourRate": 85,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "albert-road-service-station-ltd",
+    "companyName": "Albert Road Service Station LTD",
+    "tradingAddress": "161-163 Victoria Road Romford RM1 2LX",
+    "postcode": "RM1 2LX",
+    "phoneNumber": "1708744087",
+    "emailAddress": "info@albertroadltd.co.uk",
+    "mainContactName": "JAMIE/DANIEL OR LEE",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 8,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 100,
+    "providesRecovery": true,
+    "recoveryChargeRate": 100,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "wylam-automotive-limited",
+    "companyName": "WYLAM AUTOMOTIVE LIMITED",
+    "tradingAddress": "EX14 9QQ",
+    "postcode": "EX14 9QQ",
+    "phoneNumber": "1404642090",
+    "emailAddress": "niki@wylamautomotive.co.uk",
+    "mainContactName": "Niki",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 65,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "car select  and  otter vale motor services",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "duckworth",
+    "companyName": "Duckworth",
+    "tradingAddress": "Maple way, Postwick, NR13 5HB",
+    "postcode": "NR13 5HB",
+    "phoneNumber": "1603788887",
+    "emailAddress": "Robert.bennett@duckworth.co.uk",
+    "mainContactName": "Robert Bennett",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Land Rover and Jaguar",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "JLR Specfic"
+    ],
+    "drivetrainTypes": [
+      "Full EV",
+      "Diesel",
+      "Hybrid",
+      "Petrol"
+    ],
+    "labourRate": 220,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": true,
+    "dealerNames": "JLR",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "browns-thame-ltd",
+    "companyName": "Browns Thame Ltd",
+    "tradingAddress": "5b Lupton Road\r\nThame\r\nOxfordshire\r\nOX9 3SE",
+    "postcode": "OX9 3SE",
+    "phoneNumber": "1844217918",
+    "emailAddress": "alex@brownsthame.com",
+    "mainContactName": "Alex Brown\r\n\r\nTrevor Gunn",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Autel",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "j-r-auto-repairs",
+    "companyName": "J&R auto repairs",
+    "tradingAddress": "Colliery road \r\nB71 4JS",
+    "postcode": "B71 4JS",
+    "phoneNumber": "7827299494",
+    "emailAddress": "Jrautos2024@hotmail.com",
+    "mainContactName": "Jack",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "OEM",
+      "Snap-on",
+      "Bosch",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 180,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "ron-skinner-and-sons",
+    "companyName": "RON SKINNER AND SONS",
+    "tradingAddress": "THE CAR SHOWROOM, TAFARNAUBACH INDUSTRIAL ESTATE TREDEGAR NP22 3AA",
+    "postcode": "NP22 3AA",
+    "phoneNumber": "7735392797",
+    "emailAddress": "JACK.MORRIS@RONSKINNERANDSONS.CO.UK",
+    "mainContactName": "JACK MORRIS",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Launch",
+      "TOP DON"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 70,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "dash-logistic-services-ltd-t-a-dash-fleet-services",
+    "companyName": "Dash Logistic Services LTD T/A Dash Fleet Services",
+    "tradingAddress": "Unit 12D, Barncoose Industrial Estate, Redruth, Cornwall, TR153RQ",
+    "postcode": "TR15 3RQ",
+    "phoneNumber": "1209703775",
+    "emailAddress": "workshop@dashfleetservices.co.uk",
+    "mainContactName": "Helen Johnson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 40,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 65,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "marieston-service-centre-ltd",
+    "companyName": "Marieston Service centre Ltd",
+    "tradingAddress": "235 Yeading Lane, HAYES, Middlesex, UB4 9AD",
+    "postcode": "UB4 9AD",
+    "phoneNumber": "2081788031",
+    "emailAddress": "hello@mariestonservicecentre.co.uk",
+    "mainContactName": "Eesa Nasim",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT"
+    ],
+    "diagnosticsEquipment": [
+      "I do not use Diagnostics Equipment",
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 100,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "station-garage",
+    "companyName": "Station garage",
+    "tradingAddress": "Station Approach, East Boldon NE36 0AB",
+    "postcode": "NE36 0AB",
+    "phoneNumber": "1915362517",
+    "emailAddress": "service@stationgarage.co.uk",
+    "mainContactName": "Erik Thorius",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Diesel",
+      "Hybrid",
+      "Petrol"
+    ],
+    "labourRate": 90,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "crago-auto-repairs-ltd",
+    "companyName": "Crago Auto Repairs Ltd",
+    "tradingAddress": "Uni I1-I2 Riverside Industrial Estate, Riverside Way, Dartford, Kent DA1 5BS",
+    "postcode": "DA1 5BS",
+    "phoneNumber": "1322294404",
+    "emailAddress": "info@cragos.co.uk",
+    "mainContactName": "Pamela Jackson",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 30,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "BMW & MINI ONLY",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 132,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "express-turbos-dpf-cleaning-co",
+    "companyName": "Express turbos & dpf cleaning co",
+    "tradingAddress": "2 b Balliol rd\r\nPo27pp",
+    "postcode": "PO2 7PP",
+    "phoneNumber": "2392341048",
+    "emailAddress": "Wayne@expressturbos.co.uk",
+    "mainContactName": "Wayne Priddy",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 1000,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Autel",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 80,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "All warranty companies",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "bell-colvill-2",
+    "companyName": "Bell & Colvill",
+    "tradingAddress": "15 Westfield Road, Slyfield Industrial estate, Guildford, GU1 1RR",
+    "postcode": "GU1 1RR",
+    "phoneNumber": "1483281000",
+    "emailAddress": "service@bellandcolvill.com",
+    "mainContactName": "James Viccari & Chris Stewart",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "McLaren, Lotus, Saab, Subaru, Telsa, BMW, Mercedes, Polestar, Audi, BYD, EV's",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 174,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "We are a dealer",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "central-autopoint-corby-ltd",
+    "companyName": "Central Autopoint (corby) ltd",
+    "tradingAddress": "34. Maylan Road\r\nEarlsytree Ind. Est\r\nCorby\r\nNN174DR",
+    "postcode": "NN17 4DR",
+    "phoneNumber": "1536261619",
+    "emailAddress": "phil@centralautopoint.co.uk",
+    "mainContactName": "Phil Haines",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "TEXA, BRAINBEE, TOPDON"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 85,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": true,
+    "dealerNames": "FOREST GATE, MARSHALLS, TPS, WOLLASTON",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "servo-engineering-ltd",
+    "companyName": "Servo Engineering Ltd",
+    "tradingAddress": "12 Bittern Units, Sowton Ind. Est. Exeter, Devon",
+    "postcode": null,
+    "phoneNumber": "1392363247",
+    "emailAddress": "admin@servoeng.com",
+    "mainContactName": "Darin Ackford",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 64,
+    "providesRecovery": true,
+    "recoveryChargeRate": 80,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "norwich-road-garage",
+    "companyName": "Norwich road garage",
+    "tradingAddress": "91 Norwich road, Lowestoft. NR32 2BN",
+    "postcode": "NR32 2BN",
+    "phoneNumber": "1502560456",
+    "emailAddress": "norwichroadgarage@btconnect.com",
+    "mainContactName": "Catherine Leech",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Snap-on"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid",
+      "Full EV"
+    ],
+    "labourRate": 67.5,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "csm-garage-services-ltd",
+    "companyName": "CSM Garage Services Ltd",
+    "tradingAddress": "Unit 3a, Cranmer Road\r\nWest Meadows Industrial Estate\r\nDerby\r\nDe21 6JL",
+    "postcode": "DE21 6JL",
+    "phoneNumber": "1332831144",
+    "emailAddress": "info@csmgarage.co.uk",
+    "mainContactName": "Richard Hufton (Service Manager)",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel",
+      "Launch",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": null,
+    "recoveryChargeRate": 96,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": true,
+    "dealerNames": "csm",
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "bedworth-m-o-t-centre-limited-voltz",
+    "companyName": "Bedworth M.O.T. Centre Limited / VoltZ",
+    "tradingAddress": "116 Leicester Road, Bedworth, Warwickshire, CV12 8AG",
+    "postcode": "CV12 8AG",
+    "phoneNumber": "2476643030",
+    "emailAddress": "bedworthmotcentre@gmail.com",
+    "mainContactName": "Mark Spacey",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Wurth WOW"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 150,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "muslin-hall-garage-ltd",
+    "companyName": "Muslin Hall Garage Ltd",
+    "tradingAddress": "New Mill Road Holmfirth Huddersfield West Yorkshire",
+    "postcode": null,
+    "phoneNumber": "1484684669",
+    "emailAddress": "muslinhallgarage@gmail.com",
+    "mainContactName": "Steven Parr",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Auto Electrical"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 70,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  },
+  {
+    "id": "aj-garage-services-limited",
+    "companyName": "AJ Garage Services Limited",
+    "tradingAddress": "Unit 26 Star Trading Estate Caerleon NP181 PQ",
+    "postcode": null,
+    "phoneNumber": "1633431305",
+    "emailAddress": "info@ajgarageservices.com",
+    "mainContactName": "Andrew Joenn",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 15,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal",
+      "Tyre",
+      "MOT",
+      "Auto Electrical",
+      "Transmission and Drive Train Repairs"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 80,
+    "workshopRampVolume": "10+",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "lat": null,
+    "lon": null,
+    "geocoded": false
+  }
+]
