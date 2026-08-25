@@ -72,37 +72,51 @@ Static Web Apps CLI](https://learn.microsoft.com/azure/static-web-apps/local-dev
 
 ## Azure setup (one-off, per environment)
 
-1. **Create the Static Web App** (Free tier is enough) in the Azure Portal,
-   connected to this GitHub repo/branch. If you let the portal create the
-   GitHub Actions workflow itself, it may add its own file alongside
-   `.github/workflows/azure-static-web-apps.yml` — keep whichever one
-   targets the real resource and remove the other so you don't end up
-   deploying to two places.
-2. **Register an Entra ID app** (App registrations -> New registration),
-   "Accounts in this organizational directory only" (single-tenant) so only
-   AutoProtect Group accounts can even attempt to log in. Add a redirect URI
-   for `https://<your-app>.azurestaticapps.net/.auth/login/aad/callback`.
-3. In `staticwebapp.config.json`, replace `<AUTOPROTECT-TENANT-ID>` with the
-   real Entra tenant ID.
-4. In the Static Web App's **Configuration**, add application settings:
-   - `AAD_CLIENT_ID` / `AAD_CLIENT_SECRET` — from the app registration.
+1. **Create the Static Web App** (Free tier) in the Azure Portal, connected
+   to this GitHub repo/branch. If you let the portal create the GitHub
+   Actions workflow itself, it adds its own file (named after the app's
+   auto-generated hostname) — make sure `api_location` is set to `"api"` and
+   `output_location` to `"dist"` in it (the portal's defaults assume no API
+   and a Create-React-App-style `build/` output, neither of which matches
+   this project), and remove any other Azure SWA workflow file so you don't
+   end up deploying to two places.
+2. In the Static Web App's **Configuration**, add application settings:
    - `GITHUB_TOKEN` — a fine-grained PAT scoped only to this repo, with
      Contents: Read and write. Used by the Manage Repairers screen to commit
      data edits.
    - `GITHUB_OWNER` = `olioautoprotectgroup`, `GITHUB_REPO` = `repairer_network`,
      `GITHUB_BRANCH` = the branch the Static Web App deploys from.
-5. Add `AZURE_STATIC_WEB_APPS_API_TOKEN` as a GitHub Actions secret on this
-   repo (from the Static Web App's "Manage deployment token").
+3. The deployment token secret (`AZURE_STATIC_WEB_APPS_API_TOKEN_...`) is
+   added to this repo's GitHub Actions secrets automatically when you
+   connect the Static Web App to GitHub through the portal — nothing to do
+   here.
+
+**No Entra ID app registration needed.** Azure Static Web Apps' Free tier
+doesn't support configuring a custom Entra ID app registration for login
+(the `identityProviders` block in `staticwebapp.config.json` needing your
+own tenant/client ID is a **Standard SKU** feature, ~$9+/month) — the portal
+will reject a deploy that includes one on the Free tier. Instead this app
+uses Free tier's built-in, Microsoft-managed "Sign in with Microsoft"
+provider (any Microsoft/Entra account can attempt to log in) and relies
+entirely on `GetRoles` for the actual restriction — see below. This is still
+a solid gate: nobody can forge a verified `@autoprotectgroup.co.uk` UPN
+without a real, DNS-verified AutoProtect Group account.
 
 ## How access control works
 
-- The Entra app registration is single-tenant, so only AutoProtect Group
-  accounts can log in at all.
-- `api/src/functions/getRoles.ts` is a second, explicit check: it only
-  grants the `authenticated-staff` role (which every route requires, per
-  `staticwebapp.config.json`) if the signed-in user's email ends with
-  `@autoprotectgroup.co.uk` — defense-in-depth against a guest account ever
-  being invited into the tenant.
+- Login goes through Azure Static Web Apps' built-in AAD provider
+  (`/.auth/login/aad`) — free, but not scoped to any particular tenant, so
+  any Microsoft account can reach the login screen.
+- `api/src/functions/getRoles.ts` is where the real restriction happens: it
+  only grants the `authenticated-staff` role (which every route requires,
+  per `staticwebapp.config.json`) if the signed-in user's email ends with
+  `@autoprotectgroup.co.uk`. Anyone else authenticates successfully but gets
+  no role and can't reach any route.
+- If a Standard-SKU custom Entra app registration (single-tenant, so
+  outside accounts can't even reach the login screen) is wanted later for
+  belt-and-braces, it's an additive change to `staticwebapp.config.json`'s
+  `auth.identityProviders` block plus the SKU upgrade — `GetRoles` keeps
+  working unchanged either way.
 
 ## Data storage (today)
 
