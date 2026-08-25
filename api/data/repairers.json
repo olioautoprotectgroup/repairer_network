@@ -430,9 +430,9 @@
     "hasDealerRelationship": true,
     "dealerNames": "Mastercars",
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 52.092246,
+    "lon": -0.268096,
+    "geocoded": true
   },
   {
     "id": "cedar-garage-limited",
