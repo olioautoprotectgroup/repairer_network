@@ -26,13 +26,18 @@ export default function ManageRepairers() {
   }, []);
 
   async function handleSubmit(values: RepairerFormValues) {
+    // Apply the saved record directly instead of re-fetching the list: the
+    // API's own file copy won't reflect this write until the GitHub commit's
+    // redeploy finishes (~1 minute), so an immediate refresh() would show
+    // stale data and make the save look like it silently failed.
     if (editing === "new") {
-      await createRepairer(values);
+      const created = await createRepairer(values);
+      setRepairers((prev) => [...prev, created]);
     } else if (editing) {
-      await updateRepairer(editing.id, values);
+      const updated = await updateRepairer(editing.id, values);
+      setRepairers((prev) => prev.map((r) => (r.id === updated.id ? updated : r)));
     }
     setEditing(null);
-    await refresh();
   }
 
   const needsAttention = repairers.filter((r) => !r.geocoded);
