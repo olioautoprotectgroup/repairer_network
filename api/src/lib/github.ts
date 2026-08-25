@@ -52,6 +52,24 @@ function repoConfig() {
   };
 }
 
+/**
+ * Identifies a token's *type* from its prefix (classic vs fine-grained)
+ * without ever exposing the secret part -- these prefixes are a fixed,
+ * public part of GitHub's token format, not part of the secret itself.
+ */
+function describeTokenShape(token: string): string {
+  const prefix = token.match(/^[a-z]+_/)?.[0];
+  const kind =
+    prefix === "ghp_"
+      ? "classic PAT"
+      : prefix === "github_pat_"
+        ? "fine-grained PAT"
+        : prefix
+          ? `unrecognised prefix "${prefix}"`
+          : "no recognised prefix (old-style 40-char token?)";
+  return `${kind}, length ${token.length}`;
+}
+
 async function githubRequest(url: string, token: string, init?: RequestInit) {
   const res = await fetch(url, {
     ...init,
@@ -64,7 +82,7 @@ async function githubRequest(url: string, token: string, init?: RequestInit) {
   });
   if (!res.ok) {
     const body = await res.text().catch(() => "");
-    throw new Error(`GitHub API ${res.status}: ${body}`);
+    throw new Error(`GitHub API ${res.status} (using ${describeTokenShape(token)}): ${body}`);
   }
   return res.json();
 }
