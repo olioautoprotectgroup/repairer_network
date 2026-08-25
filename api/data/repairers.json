@@ -3137,7 +3137,7 @@
     "id": "nexa-max-garages-ltd",
     "companyName": "Nexa Max Garages LTD",
     "tradingAddress": "2 greycaine road\r\nUNIT A",
-    "postcode": "WD24 7GP",
+    "postcode": null,
     "phoneNumber": "7391155249",
     "emailAddress": "st@nexamaxgarages.co.uk",
     "mainContactName": "Andrew Stetsovsky",
@@ -3175,9 +3175,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": 51.676866,
-    "lon": -0.387793,
-    "geocoded": true
+    "lat": null,
+    "lon": null,
+    "geocoded": false
   },
   {
     "id": "independent-car-and-van-servicing-ltd",
@@ -3951,7 +3951,7 @@
     "id": "muslin-hall-garage-ltd",
     "companyName": "Muslin Hall Garage Ltd",
     "tradingAddress": "New Mill Road Holmfirth Huddersfield West Yorkshire",
-    "postcode": null,
+    "postcode": "HD9 7SG",
     "phoneNumber": "1484684669",
     "emailAddress": "muslinhallgarage@gmail.com",
     "mainContactName": "Steven Parr",
@@ -3987,9 +3987,9 @@
     "hasDealerRelationship": false,
     "dealerNames": null,
     "apgComments": null,
-    "lat": null,
-    "lon": null,
-    "geocoded": false
+    "lat": 53.581234,
+    "lon": -1.77227,
+    "geocoded": true
   },
   {
     "id": "aj-garage-services-limited",
