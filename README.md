@@ -162,14 +162,17 @@ a small, isolated change to `api/src/lib/data.ts`.
 
 `api/data/repairers.json` (via GitHub) stays the *only* writable source of
 truth — nothing below changes that. Three pieces, built incrementally
-(see the `Databricks_MetaData` repo's `catalogs/curated/repairer_network/`
-for the lake-side half of this):
+(see the `Databricks_MetaData` repo's `catalogs/curated/all_purpose/
+00_curated_all_purpose_INDEX.md`, "Canonical working views" section, for
+the lake-side pointer to this):
 
 1. **Nightly mirror** — a Databricks Job reads this repo's
    `api/data/repairers.json` (read-only PAT, separate from `GITHUB_TOKEN`)
-   and writes it to `curated.repairer_network.repairer`, so the data is
+   and writes it to `sandbox.oliver_oakes.repairer_network`, so the data is
    queryable/joinable in the lake without going through this app or GitHub.
-   One-way; that table is never written to directly.
+   One-way; that table is never written to directly. (Sandbox, not
+   `curated`, until/unless it's ever promoted — matches how every other
+   Databricks pipeline object feeding this org's tooling starts out.)
 2. **New-repairer intake merge** — new repairer sign-ups arrive as
    Microsoft Forms responses exported to Excel. An ad-hoc (manually
    triggered, not scheduled) Databricks notebook anti-joins the export
