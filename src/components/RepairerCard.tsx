@@ -19,6 +19,10 @@ function googleMapsUrl(companyName: string, tradingAddress: string): string {
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
 
+function formatAsOfDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
 export default function RepairerCard({ repairer, selected, onSelect }: Props) {
   return (
     <div
@@ -71,6 +75,15 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
         {repairer.mainContactName && (
           <div>
             Contact: <span className="font-medium text-slate-800">{repairer.mainContactName}</span>
+          </div>
+        )}
+        {repairer.recentRepairCount != null && (
+          <div className="col-span-2">
+            Annual Repair Volume:{" "}
+            <span className="font-medium text-slate-800">{repairer.recentRepairCount}</span>
+            {repairer.repairCountAsOf && (
+              <span className="text-slate-400"> (as of {formatAsOfDate(repairer.repairCountAsOf)})</span>
+            )}
           </div>
         )}
       </div>
