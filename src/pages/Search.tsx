@@ -6,23 +6,25 @@ import { searchRepairers } from "../lib/api";
 import type { SearchFilters, SearchResult } from "../lib/types";
 
 export default function Search() {
-  const [postcodeInput, setPostcodeInput] = useState("");
+  const [queryInput, setQueryInput] = useState("");
   const [filters, setFilters] = useState<SearchFilters>({});
   const [results, setResults] = useState<SearchResult[]>([]);
   const [searchPoint, setSearchPoint] = useState<{ lat: number; lon: number } | null>(null);
+  const [resolvedLabel, setResolvedLabel] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function runSearch(pc: string, f: SearchFilters) {
-    if (!pc.trim()) return;
+  async function runSearch(query: string, f: SearchFilters) {
+    if (!query.trim()) return;
     setLoading(true);
     setError(null);
     try {
-      const response = await searchRepairers(pc.trim(), f);
+      const response = await searchRepairers(query.trim(), f);
       setResults(response.results);
       setSearchPoint(response.searchPoint);
+      setResolvedLabel(response.resolvedLabel);
       setSelectedId(response.results[0]?.id ?? null);
       setHasSearched(true);
     } catch (err) {
@@ -39,7 +41,7 @@ export default function Search() {
 
   function handleFiltersChange(next: SearchFilters) {
     setFilters(next);
-    if (hasSearched) void runSearch(postcodeInput, next);
+    if (hasSearched) void runSearch(queryInput, next);
   }
 
   return (
@@ -49,14 +51,14 @@ export default function Search() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              void runSearch(postcodeInput, filters);
+              void runSearch(queryInput, filters);
             }}
             className="flex gap-2"
           >
             <input
-              value={postcodeInput}
-              onChange={(e) => setPostcodeInput(e.target.value)}
-              placeholder="Enter a postcode, e.g. SW1A 1AA"
+              value={queryInput}
+              onChange={(e) => setQueryInput(e.target.value)}
+              placeholder="Search by postcode, town, or repairer name"
               className="flex-1 rounded-xl border border-slate-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
             />
             <button
@@ -71,7 +73,9 @@ export default function Search() {
           </div>
           {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
           {hasSearched && !loading && (
-            <p className="mt-2 text-sm text-slate-500">{results.length} repairer(s) found</p>
+            <p className="mt-2 text-sm text-slate-500">
+              {results.length} repairer(s) found near {resolvedLabel}
+            </p>
           )}
         </div>
         <ResultsList

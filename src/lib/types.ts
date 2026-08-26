@@ -42,5 +42,8 @@ export interface SearchFilters {
 
 export interface SearchResponse {
   searchPoint: { lat: number; lon: number };
+  /** Human-readable description of what the search resolved to -- a
+   * matched repairer's name, or the place/postcode as typed. */
+  resolvedLabel: string;
   results: SearchResult[];
 }

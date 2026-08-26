@@ -16,10 +16,10 @@ async function handle<T>(res: Response): Promise<T> {
 }
 
 export async function searchRepairers(
-  postcode: string,
+  query: string,
   filters: SearchFilters = {},
 ): Promise<SearchResponse> {
-  const params = new URLSearchParams({ postcode });
+  const params = new URLSearchParams({ q: query });
   if (filters.vehicleManufacturer) params.set("make", filters.vehicleManufacturer);
   if (filters.capability) params.set("capability", filters.capability);
   if (filters.recoveryOnly) params.set("recoveryOnly", "true");
