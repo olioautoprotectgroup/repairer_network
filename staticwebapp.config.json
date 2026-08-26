@@ -9,6 +9,16 @@
       "allowedRoles": ["anonymous"]
     },
     {
+      "route": "/api/repairers",
+      "methods": ["POST"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/api/repair-counts",
+      "methods": ["PUT"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
       "route": "/*",
       "allowedRoles": ["authenticated"]
     }
