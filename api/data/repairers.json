@@ -43,7 +43,9 @@
     "apgComments": null,
     "lat": 52.501077,
     "lon": -2.006771,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "rehul-autohaus",
@@ -84,7 +86,9 @@
     "apgComments": "Labour rate discount",
     "lat": 52.48165,
     "lon": -1.73118,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "a30-auto-service-centre",
@@ -123,7 +127,9 @@
     "apgComments": null,
     "lat": 50.420657,
     "lon": -4.828944,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 45,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "wvc-service-ltd",
@@ -168,7 +174,9 @@
     "apgComments": null,
     "lat": 51.338437,
     "lon": -0.475269,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 12,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "iautouk",
@@ -216,7 +224,9 @@
     "apgComments": null,
     "lat": 51.375173,
     "lon": -0.121159,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 21,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "apex-automotive-centre",
@@ -305,7 +315,9 @@
     "apgComments": null,
     "lat": 51.429246,
     "lon": -0.352478,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "elm-tree-motor-company-ltd",
@@ -347,7 +359,9 @@
     "apgComments": "Labour rate discount",
     "lat": 51.420287,
     "lon": -1.722831,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "boringdon-manor-garage-ltd",
@@ -394,7 +408,9 @@
     "apgComments": null,
     "lat": 50.388584,
     "lon": -4.070002,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 292,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "mastercars-biggleswade-ltd",
@@ -432,7 +448,9 @@
     "apgComments": null,
     "lat": 52.092246,
     "lon": -0.268096,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 3,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "cedar-garage-limited",
@@ -565,7 +583,9 @@
     "apgComments": null,
     "lat": 50.833356,
     "lon": -0.291146,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "impress-autocentres-t-a-hi-q-tyres-and-autocare-portslade",
@@ -605,7 +625,9 @@
     "apgComments": null,
     "lat": 50.831881,
     "lon": -0.219528,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "herts-beds-transmissions-ltd",
@@ -647,7 +669,9 @@
     "apgComments": null,
     "lat": 52.018963,
     "lon": -0.202121,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 5,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "ds-autos",
@@ -686,7 +710,9 @@
     "apgComments": null,
     "lat": 53.853492,
     "lon": -2.166426,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 8,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "apex-automotive-centre-2",
@@ -768,7 +794,9 @@
     "apgComments": null,
     "lat": 55.978912,
     "lon": -4.573466,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "liverpool-mercedes-ltd",
@@ -811,7 +839,9 @@
     "apgComments": null,
     "lat": 53.422994,
     "lon": -2.951721,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "a1-premier-transmissions",
@@ -848,7 +878,9 @@
     "apgComments": null,
     "lat": 52.079457,
     "lon": -0.266722,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 14,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "specialist-vehicles-of-plymouth-ltd",
@@ -930,7 +962,9 @@
     "apgComments": null,
     "lat": 50.911824,
     "lon": 0.155021,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 3,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "rusheer-ltd-t-a-car-check-centre",
@@ -973,7 +1007,9 @@
     "apgComments": null,
     "lat": 51.556257,
     "lon": -0.384317,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 5,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "e-carparts-ltd-t-a-b-s-motors",
@@ -1016,7 +1052,9 @@
     "apgComments": null,
     "lat": 52.135032,
     "lon": -0.283767,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "forge-garage-otford",
@@ -1062,7 +1100,9 @@
     "apgComments": null,
     "lat": 51.298819,
     "lon": 0.195892,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "autotechnica",
@@ -1107,7 +1147,9 @@
     "apgComments": null,
     "lat": 53.746711,
     "lon": -0.393766,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "autocar-repairs-west-fulwich-service-station-limited-trading-as",
@@ -1152,7 +1194,9 @@
     "apgComments": null,
     "lat": 51.436822,
     "lon": -0.094645,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "sussex-vehicle-services-ltd",
@@ -1195,7 +1239,9 @@
     "apgComments": null,
     "lat": 50.955488,
     "lon": -0.148485,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 19,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "bex-s-4x4-ltd",
@@ -1235,7 +1281,9 @@
     "apgComments": null,
     "lat": 51.703726,
     "lon": 0.699407,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "mg-rover-tech-ltd",
@@ -1325,7 +1373,9 @@
     "apgComments": null,
     "lat": 52.761319,
     "lon": 0.518653,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 21,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "xclusive-motor-services-ltd",
@@ -1366,7 +1416,9 @@
     "apgComments": null,
     "lat": 52.471247,
     "lon": -1.886407,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "vertu-motors-ford-bromley",
@@ -1410,7 +1462,9 @@
     "apgComments": null,
     "lat": 51.398299,
     "lon": 0.021149,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "steebings-car-centre-limited",
@@ -1453,7 +1507,9 @@
     "apgComments": null,
     "lat": 52.734387,
     "lon": 0.407482,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "turbo-technics-ltd",
@@ -1489,7 +1545,9 @@
     "apgComments": null,
     "lat": 52.217368,
     "lon": -0.859443,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "colchester-fuel-injection-ltd",
@@ -1527,7 +1585,9 @@
     "apgComments": null,
     "lat": 51.877053,
     "lon": 0.931081,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 41,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "jaggarage-ltd",
@@ -1566,7 +1626,9 @@
     "apgComments": null,
     "lat": 53.580896,
     "lon": -1.175164,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "horison-ltd-t-a-volvo-diagnostic",
@@ -1609,7 +1671,9 @@
     "apgComments": null,
     "lat": 51.472,
     "lon": 0.341835,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "m-cars-surrey-ltd",
@@ -1651,7 +1715,9 @@
     "apgComments": null,
     "lat": 51.182491,
     "lon": -0.043908,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 35,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "mg-rover-tech-ltd-2",
@@ -1736,7 +1802,9 @@
     "apgComments": null,
     "lat": 51.664129,
     "lon": -0.400681,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 32,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "bristol-transmissionsltd",
@@ -1776,7 +1844,9 @@
     "apgComments": null,
     "lat": 51.470063,
     "lon": -2.538218,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "tameside-automatics",
@@ -1812,7 +1882,9 @@
     "apgComments": null,
     "lat": 53.481775,
     "lon": -2.142766,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "atc-repair-centre",
@@ -1855,7 +1927,9 @@
     "apgComments": null,
     "lat": 53.439726,
     "lon": -1.338075,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "bell-colvill",
@@ -1942,7 +2016,9 @@
     "apgComments": null,
     "lat": 51.50948,
     "lon": -0.459235,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "dartford-transmissions-autocare-ltd",
@@ -1987,7 +2063,9 @@
     "apgComments": null,
     "lat": 51.446419,
     "lon": 0.229995,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 16,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "gateshead-garage-ltd",
@@ -2030,7 +2108,9 @@
     "apgComments": null,
     "lat": 54.951201,
     "lon": -1.618158,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "the-alignment-centre-ltd",
@@ -2072,7 +2152,9 @@
     "apgComments": null,
     "lat": 51.540537,
     "lon": -0.318308,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "mcr",
@@ -2112,7 +2194,9 @@
     "apgComments": null,
     "lat": 50.708784,
     "lon": -3.527658,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 6,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "jf-auto-repairs-ltd",
@@ -2154,7 +2238,9 @@
     "apgComments": null,
     "lat": 50.873689,
     "lon": -2.778358,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 5,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "mercare-sw-ltd",
@@ -2198,7 +2284,9 @@
     "apgComments": null,
     "lat": 50.421952,
     "lon": -4.087745,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 8,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "gold-vehicles-ltd",
@@ -2240,7 +2328,9 @@
     "apgComments": null,
     "lat": 50.705225,
     "lon": -3.531521,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 252,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "russell-ham-ltd",
@@ -2278,7 +2368,9 @@
     "apgComments": null,
     "lat": 50.385887,
     "lon": -4.157556,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 98,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "pgs-garage-services-ltd",
@@ -2318,7 +2410,9 @@
     "apgComments": null,
     "lat": 50.846257,
     "lon": -1.117142,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 7,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "j-day-engineering",
@@ -2362,7 +2456,9 @@
     "apgComments": null,
     "lat": 50.988,
     "lon": -2.363204,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "gnd-motors-ltd",
@@ -2402,7 +2498,9 @@
     "apgComments": null,
     "lat": 51.471135,
     "lon": 0.268293,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "exeter-gearbox-centre",
@@ -2440,7 +2538,9 @@
     "apgComments": null,
     "lat": 50.705762,
     "lon": -3.525605,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 29,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "specialist-vehicles-of-plymouth-ltd-2",
@@ -2530,7 +2630,9 @@
     "apgComments": null,
     "lat": 52.799342,
     "lon": -1.633906,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "stourbridge-renault-dacia",
@@ -2574,7 +2676,9 @@
     "apgComments": null,
     "lat": 52.443379,
     "lon": -2.159133,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "warwick-renault-dacia",
@@ -2618,7 +2722,9 @@
     "apgComments": null,
     "lat": 52.274832,
     "lon": -1.545988,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "birmingham-renault-dacia",
@@ -2662,7 +2768,9 @@
     "apgComments": null,
     "lat": 52.53426,
     "lon": -1.879271,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "tamworth-renault-dacia",
@@ -2706,7 +2814,9 @@
     "apgComments": null,
     "lat": 52.635314,
     "lon": -1.711298,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "sutton-coldfield-kia",
@@ -2750,7 +2860,9 @@
     "apgComments": null,
     "lat": 52.564492,
     "lon": -1.878553,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "coventry-kia",
@@ -2794,7 +2906,9 @@
     "apgComments": null,
     "lat": 52.444884,
     "lon": -1.50998,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "djm-performance-ltd",
@@ -2835,7 +2949,9 @@
     "apgComments": null,
     "lat": 54.883187,
     "lon": -1.746349,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "oxley-bros-limited-trading-as-a30-auto-centre",
@@ -2876,7 +2992,9 @@
     "apgComments": null,
     "lat": 50.420657,
     "lon": -4.828944,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 6,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "fitch-autos",
@@ -2925,7 +3043,9 @@
     "apgComments": null,
     "lat": 52.653043,
     "lon": -1.922418,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 18,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "gravesend-transmissions-services-ltd",
@@ -2961,7 +3081,9 @@
     "apgComments": null,
     "lat": 51.442038,
     "lon": 0.374767,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "andover-tyre-auto-services-ltd",
@@ -3004,7 +3126,9 @@
     "apgComments": null,
     "lat": 51.216345,
     "lon": -1.460497,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 7,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "london-motor-sports-ltd",
@@ -3046,7 +3170,9 @@
     "apgComments": null,
     "lat": 51.515478,
     "lon": -0.229829,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "s-c-motor-services-ltd",
@@ -3088,7 +3214,9 @@
     "apgComments": null,
     "lat": 51.933374,
     "lon": 1.093966,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "gas-autocenter",
@@ -3131,7 +3259,9 @@
     "apgComments": null,
     "lat": 53.637857,
     "lon": -1.824416,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "nexa-max-garages-ltd",
@@ -3177,7 +3307,9 @@
     "apgComments": null,
     "lat": 51.676866,
     "lon": -0.387793,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "independent-car-and-van-servicing-ltd",
@@ -3217,7 +3349,9 @@
     "apgComments": null,
     "lat": 50.925294,
     "lon": -1.30941,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "albert-road-service-station-ltd",
@@ -3260,7 +3394,9 @@
     "apgComments": null,
     "lat": 51.576254,
     "lon": 0.190289,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "wylam-automotive-limited",
@@ -3299,7 +3435,9 @@
     "apgComments": null,
     "lat": 50.814229,
     "lon": -3.165628,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 5,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "duckworth",
@@ -3342,7 +3480,9 @@
     "apgComments": null,
     "lat": 52.628943,
     "lon": 1.382772,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "browns-thame-ltd",
@@ -3388,7 +3528,9 @@
     "apgComments": null,
     "lat": 51.739561,
     "lon": -0.966526,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "j-r-auto-repairs",
@@ -3433,7 +3575,9 @@
     "apgComments": null,
     "lat": 52.509973,
     "lon": -1.969598,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "ron-skinner-and-sons",
@@ -3477,7 +3621,9 @@
     "apgComments": null,
     "lat": 51.784668,
     "lon": -3.282462,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 160,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "dash-logistic-services-ltd-t-a-dash-fleet-services",
@@ -3518,7 +3664,9 @@
     "apgComments": null,
     "lat": 50.227412,
     "lon": -5.251429,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "marieston-service-centre-ltd",
@@ -3564,7 +3712,9 @@
     "apgComments": null,
     "lat": 51.527332,
     "lon": -0.399671,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "station-garage",
@@ -3604,7 +3754,9 @@
     "apgComments": null,
     "lat": 54.94739,
     "lon": -1.420048,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 5,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "crago-auto-repairs-ltd",
@@ -3647,7 +3799,9 @@
     "apgComments": null,
     "lat": 51.451671,
     "lon": 0.219628,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 10,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "express-turbos-dpf-cleaning-co",
@@ -3684,7 +3838,9 @@
     "apgComments": null,
     "lat": 50.808628,
     "lon": -1.076153,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "bell-colvill-2",
@@ -3769,7 +3925,9 @@
     "apgComments": null,
     "lat": 52.512232,
     "lon": -0.692283,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "servo-engineering-ltd",
@@ -3813,7 +3971,9 @@
     "apgComments": null,
     "lat": 50.721999,
     "lon": -3.470709,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 3,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "norwich-road-garage",
@@ -3857,7 +4017,9 @@
     "apgComments": null,
     "lat": 52.477646,
     "lon": 1.739515,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 1,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "csm-garage-services-ltd",
@@ -3904,7 +4066,9 @@
     "apgComments": null,
     "lat": 52.92345,
     "lon": -1.463176,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "bedworth-m-o-t-centre-limited-voltz",
@@ -3945,7 +4109,9 @@
     "apgComments": null,
     "lat": 52.484638,
     "lon": -1.474167,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "muslin-hall-garage-ltd",
@@ -3989,7 +4155,9 @@
     "apgComments": null,
     "lat": 53.581234,
     "lon": -1.77227,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "id": "aj-garage-services-limited",
@@ -4033,7 +4201,9 @@
     "apgComments": null,
     "lat": 51.62472,
     "lon": -2.964011,
-    "geocoded": true
+    "geocoded": true,
+    "recentRepairCount": 2,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   },
   {
     "companyName": "HORSHAM MOTOR SERVICES",
@@ -4075,7 +4245,7 @@
     "lat": 51.074749,
     "lon": -0.311291,
     "geocoded": true,
-    "recentRepairCount": null,
-    "repairCountAsOf": null
+    "recentRepairCount": 0,
+    "repairCountAsOf": "2026-08-26T13:43:25.109379+00:00"
   }
 ]
