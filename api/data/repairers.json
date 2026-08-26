@@ -4034,5 +4034,48 @@
     "lat": 51.62472,
     "lon": -2.964011,
     "geocoded": true
+  },
+  {
+    "companyName": "HORSHAM MOTOR SERVICES",
+    "tradingAddress": "UNIT 3-4 James Searle Ind est\nParsonage Way\nHORSHAM\nWest Sussex\nRH12 4ZF",
+    "postcode": "RH12 4ZF",
+    "phoneNumber": "249580",
+    "emailAddress": "info@horshammotorservices.co.uk",
+    "mainContactName": "MALCOLM BONNER",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 85,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "horsham-motor-services",
+    "lat": 51.074749,
+    "lon": -0.311291,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
