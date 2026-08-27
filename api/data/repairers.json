@@ -4555,5 +4555,33 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "Witham Motor Company",
+    "tradingAddress": "",
+    "postcode": "CM8 3DR",
+    "phoneNumber": "07710 444494",
+    "emailAddress": "terry@withammotorcompany.co.uk",
+    "mainContactName": "Terry Roberts",
+    "openToRepeatWork": null,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [],
+    "brandSpecifics": "",
+    "capabilities": [],
+    "diagnosticsEquipment": [],
+    "drivetrainTypes": [],
+    "labourRate": null,
+    "providesRecovery": null,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "",
+    "hasDealerRelationship": null,
+    "dealerNames": "",
+    "apgComments": "",
+    "id": "witham-motor-company",
+    "lat": 51.806932,
+    "lon": 0.646626,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
