@@ -4415,5 +4415,33 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "yp autos nw ltd",
+    "tradingAddress": "",
+    "postcode": "bl3 6uq",
+    "phoneNumber": "07955 366636",
+    "emailAddress": "ypautosnwltd@gmail.com",
+    "mainContactName": "sufiyan patel",
+    "openToRepeatWork": null,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [],
+    "brandSpecifics": "",
+    "capabilities": [],
+    "diagnosticsEquipment": [],
+    "drivetrainTypes": [],
+    "labourRate": null,
+    "providesRecovery": null,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "",
+    "hasDealerRelationship": null,
+    "dealerNames": "",
+    "apgComments": "",
+    "id": "yp-autos-nw-ltd",
+    "lat": 53.564463,
+    "lon": -2.444628,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
