@@ -6,10 +6,12 @@ import type { Repairer } from "./types";
 const DATA_FILE = path.join(__dirname, "..", "..", "..", "data", "repairers.json");
 
 /**
- * Fast read of the locally bundled copy -- used by search/list, where
- * being up to ~1 minute behind the latest edit is an acceptable tradeoff
- * for not hitting the GitHub API on every request. Writes must NOT use
- * this as their base (see github.ts's getCurrentRepairers).
+ * Fast read of the locally bundled copy -- used by search, where being up
+ * to ~1 minute behind the latest edit is an acceptable tradeoff for not
+ * hitting the GitHub API on every request. Manage Repairers' list endpoint
+ * reads live from GitHub instead (see github.ts's getCurrentRepairers) so
+ * staff see their own edits reliably. Writes must NOT use this as their
+ * base either, for the same staleness reason.
  */
 export function loadRepairers(): Repairer[] {
   const raw = fs.readFileSync(DATA_FILE, "utf-8");

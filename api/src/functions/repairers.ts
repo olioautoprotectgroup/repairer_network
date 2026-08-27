@@ -1,5 +1,4 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { loadRepairers } from "../lib/data";
 import { getCurrentRepairers, commitRepairersJson } from "../lib/github";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
@@ -43,7 +42,11 @@ export function saveFailureResponse(err: unknown): HttpResponseInit {
 
 export async function listRepairers(request: HttpRequest): Promise<HttpResponseInit> {
   if (!isAuthorizedStaff(request)) return FORBIDDEN;
-  return { jsonBody: loadRepairers() };
+  // Manage Repairers reads live from GitHub rather than the locally bundled
+  // (up to ~1 minute stale) copy -- staff expect a just-added repairer to
+  // show up on reload, not only within the tab that added it.
+  const { data } = await getCurrentRepairers<Repairer[]>();
+  return { jsonBody: data };
 }
 
 export async function createRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
