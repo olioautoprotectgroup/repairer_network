@@ -4303,5 +4303,33 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "Suttonz Garage",
+    "tradingAddress": "",
+    "postcode": "BN24 5NP",
+    "phoneNumber": "01323 769233",
+    "emailAddress": "msutton@suttonz.com",
+    "mainContactName": "Mark Sutton",
+    "openToRepeatWork": null,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [],
+    "brandSpecifics": "",
+    "capabilities": [],
+    "diagnosticsEquipment": [],
+    "drivetrainTypes": [],
+    "labourRate": null,
+    "providesRecovery": null,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "",
+    "hasDealerRelationship": null,
+    "dealerNames": "",
+    "apgComments": "Awaiting further info",
+    "id": "suttonz-garage",
+    "lat": 50.811838,
+    "lon": 0.324711,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
