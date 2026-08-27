@@ -4331,5 +4331,33 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "AWS Autoworkshop Limited T/A Autoworkshop",
+    "tradingAddress": "",
+    "postcode": "CV1 3JQ",
+    "phoneNumber": "02476 673100",
+    "emailAddress": "ryan@awsautoworkshop.co.uk",
+    "mainContactName": "Ryan Garlick",
+    "openToRepeatWork": null,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [],
+    "brandSpecifics": "",
+    "capabilities": [],
+    "diagnosticsEquipment": [],
+    "drivetrainTypes": [],
+    "labourRate": null,
+    "providesRecovery": null,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "",
+    "hasDealerRelationship": null,
+    "dealerNames": "",
+    "apgComments": "",
+    "id": "aws-autoworkshop-limited-t-a-autoworkshop",
+    "lat": 52.409599,
+    "lon": -1.528202,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
