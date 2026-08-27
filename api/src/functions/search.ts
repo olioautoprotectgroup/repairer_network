@@ -65,6 +65,8 @@ export async function search(request: HttpRequest, context: InvocationContext): 
   const make = request.query.get("make");
   const capability = request.query.get("capability");
   const recoveryOnly = request.query.get("recoveryOnly") === "true";
+  const maxLabourRateRaw = request.query.get("maxLabourRate");
+  const maxLabourRate = maxLabourRateRaw ? Number(maxLabourRateRaw) : null;
 
   const results: SearchResult[] = allRepairers
     .filter((r) => r.geocoded && r.lat != null && r.lon != null)
@@ -73,6 +75,7 @@ export async function search(request: HttpRequest, context: InvocationContext): 
       (r) => !capability || r.capabilities.some((c) => c.toLowerCase() === capability.toLowerCase()),
     )
     .filter((r) => !recoveryOnly || r.providesRecovery)
+    .filter((r) => !maxLabourRate || (r.labourRate != null && r.labourRate <= maxLabourRate))
     .map((r) => ({
       ...r,
       distanceMiles: haversineMiles(searchPoint, { lat: r.lat!, lon: r.lon! }),

@@ -23,6 +23,7 @@ export async function searchRepairers(
   if (filters.vehicleManufacturer) params.set("make", filters.vehicleManufacturer);
   if (filters.capability) params.set("capability", filters.capability);
   if (filters.recoveryOnly) params.set("recoveryOnly", "true");
+  if (filters.maxLabourRate != null) params.set("maxLabourRate", String(filters.maxLabourRate));
 
   const res = await fetch(`/api/search?${params.toString()}`);
   return handle<SearchResponse>(res);

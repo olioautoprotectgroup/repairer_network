@@ -66,6 +66,25 @@ export default function Filters({ filters, onChange }: Props) {
         />
         Recovery only
       </label>
+
+      <label className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700">
+        Max labour rate £
+        <input
+          type="number"
+          min={0}
+          step={1}
+          inputMode="numeric"
+          value={filters.maxLabourRate ?? ""}
+          onChange={(e) => {
+            const value = e.target.value;
+            const parsed = value === "" ? undefined : Number(value);
+            onChange({ ...filters, maxLabourRate: parsed != null && parsed >= 0 ? parsed : undefined });
+          }}
+          placeholder="Any"
+          className="w-16 rounded border border-slate-200 px-1.5 py-0.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
+        />
+        /hr
+      </label>
     </div>
   );
 }

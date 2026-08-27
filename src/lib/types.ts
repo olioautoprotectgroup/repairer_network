@@ -38,6 +38,7 @@ export interface SearchFilters {
   vehicleManufacturer?: string;
   capability?: string;
   recoveryOnly?: boolean;
+  maxLabourRate?: number;
 }
 
 export interface SearchResponse {
