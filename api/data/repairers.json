@@ -4611,5 +4611,47 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "William Rutter Motor Services",
+    "tradingAddress": "Unit 2 Hammond Road Elms Farm Industrial Estate Bedford MK41 0UD",
+    "postcode": "MK41 0UD",
+    "phoneNumber": "01234217060",
+    "emailAddress": "info@wrms.co.uk",
+    "mainContactName": "Helen Rutter",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "william-rutter-motor-services",
+    "lat": 52.153289,
+    "lon": -0.415121,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
