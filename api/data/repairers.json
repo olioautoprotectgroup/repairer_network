@@ -4653,5 +4653,53 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "FRM Automotive",
+    "tradingAddress": "Unit11 Lionsquare Business Park\nSaville Road\nWestwood\nPeterborough\nPE37PR",
+    "postcode": "PE3 7PR",
+    "phoneNumber": "01733333838",
+    "emailAddress": "info@frmautomotive.co.uk",
+    "mainContactName": "Francis Richards or Susan Fraser",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Launch",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 100,
+    "providesRecovery": true,
+    "recoveryChargeRate": 150,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "most",
+    "apgComments": null,
+    "id": "frm-automotive",
+    "lat": 52.587255,
+    "lon": -0.264391,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
