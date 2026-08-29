@@ -4701,5 +4701,53 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "RYE MOTORS (VAN & TRUCK) LTD",
+    "tradingAddress": "REDGATE ROAD, SOUTH LANCS IND EST, ASHTON IN MAKERFIELD, WIGAN WN4 8DT",
+    "postcode": "WN4 8DT",
+    "phoneNumber": "01942712409",
+    "emailAddress": "servicedesk@ryemotors.co.uk",
+    "mainContactName": "Emma/Louis",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "OEM",
+      "Autologic (Opus IVS)",
+      "TOP DON/ OSCA"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 65,
+    "providesRecovery": true,
+    "recoveryChargeRate": 65,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "rye-motors-van-truck-ltd",
+    "lat": 53.501174,
+    "lon": -2.637283,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
