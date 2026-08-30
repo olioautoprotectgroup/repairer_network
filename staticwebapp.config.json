@@ -19,6 +19,11 @@
       "allowedRoles": ["anonymous"]
     },
     {
+      "route": "/api/tyre-price/precache",
+      "methods": ["POST"],
+      "allowedRoles": ["anonymous"]
+    },
+    {
       "route": "/*",
       "allowedRoles": ["authenticated"]
     }

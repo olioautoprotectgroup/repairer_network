@@ -54,3 +54,22 @@ export function isAuthorizedWriteback(request: HttpRequest): boolean {
   if (expectedBuf.length !== providedBuf.length) return false;
   return timingSafeEqual(expectedBuf, providedBuf);
 }
+
+/**
+ * Authorizes the scheduled GitHub Actions pre-cache trigger via a shared
+ * secret in the `x-precache-key` header, checked against
+ * TYRE_PRICE_PRECACHE_KEY. Deliberately a separate secret from
+ * DATABRICKS_WRITEBACK_KEY -- a leak of one shouldn't expose the other,
+ * same least-privilege reasoning as every other credential in this project.
+ */
+export function isAuthorizedPrecache(request: HttpRequest): boolean {
+  const expected = process.env.TYRE_PRICE_PRECACHE_KEY;
+  if (!expected) return false;
+  const provided = request.headers.get("x-precache-key");
+  if (!provided) return false;
+
+  const expectedBuf = Buffer.from(expected, "utf-8");
+  const providedBuf = Buffer.from(provided, "utf-8");
+  if (expectedBuf.length !== providedBuf.length) return false;
+  return timingSafeEqual(expectedBuf, providedBuf);
+}

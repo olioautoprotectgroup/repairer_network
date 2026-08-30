@@ -1,0 +1,29 @@
+name: Tyre Price Pre-cache
+
+# Refreshes the Databricks price cache for the ~20 common tyre sizes in
+# api/src/lib/tyrePrice/config.ts, so a claims handler's search usually hits
+# a warm cache instead of a live scrape. Calls the app's own protected
+# pre-cache endpoint -- this workflow does no scraping itself.
+#
+# Static Web Apps' colocated ("managed") Functions support HTTP triggers
+# only, not Timer triggers, so this GitHub Actions cron is the scheduler,
+# not an Azure Function Timer trigger.
+#
+# Starts manual-dispatch-only. Uncomment the schedule below once a manual
+# run has been verified end-to-end (a real commit/log entry landing,
+# reasonable run time) -- same "manual first" discipline this project
+# already uses for its Databricks notebooks.
+on:
+  workflow_dispatch: {}
+  # schedule:
+  #   - cron: "0 2 * * *" # 02:00 UTC nightly, once verified
+
+jobs:
+  precache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger pre-cache
+        run: |
+          curl -sf -X POST "https://lemon-rock-0b1176203.7.azurestaticapps.net/api/tyre-price/precache" \
+            -H "x-precache-key: ${{ secrets.TYRE_PRICE_PRECACHE_KEY }}" \
+            --max-time 200

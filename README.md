@@ -197,3 +197,13 @@ the lake-side pointer to this):
 The full phased plan (cost tradeoffs, the join-key validation prerequisite,
 rollout/verification steps) is tracked outside this repo; ask before
 building the Databricks-side jobs if you don't have that context.
+
+## Tyre Price Check
+
+A separate feature: lets a claims handler compare a tyre claim's cost
+against live/cached retailer prices. Has its own architecture (a live
+per-request Databricks connection, server-side retailer scraping adapters
+that ship disabled by default pending Legal/Compliance sign-off, a GitHub
+Actions cron for pre-caching) — see **[`docs/TYRE_PRICE_CHECK.md`](docs/TYRE_PRICE_CHECK.md)**
+for the full write-up, including the legal/ToS notice for the scraping
+adapters.

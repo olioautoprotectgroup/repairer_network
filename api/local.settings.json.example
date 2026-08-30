@@ -7,6 +7,14 @@
     "GITHUB_OWNER": "olioautoprotectgroup",
     "GITHUB_REPO": "repairer_network",
     "GITHUB_BRANCH": "main",
-    "GITHUB_DATA_PATH": "api/data/repairers.json"
+    "GITHUB_DATA_PATH": "api/data/repairers.json",
+    "DATABRICKS_SQL_HOST": "<workspace hostname, no scheme, e.g. adb-1234567890123456.7.azuredatabricks.net>",
+    "DATABRICKS_SQL_WAREHOUSE_ID": "<id of a dedicated serverless SQL Warehouse with auto-stop>",
+    "DATABRICKS_SQL_TOKEN": "<narrowly-scoped service-principal token: CAN_USE on the warehouse above, read/write on only tyre_price_cache/tyre_price_lookup_log>",
+    "TYRE_PRICE_CACHE_TTL_HOURS": "24",
+    "TYRE_PRICE_VARIANCE_THRESHOLD_PERCENT": "20",
+    "TYRE_PRICE_HALFORDS_ENABLED": "false",
+    "TYRE_PRICE_KWIKFIT_ENABLED": "false",
+    "TYRE_PRICE_PRECACHE_KEY": "<random shared secret, matching the GitHub Actions repo secret of the same name>"
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import Search from "./pages/Search";
 import ManageRepairers from "./pages/ManageRepairers";
+import TyrePriceCheck from "./pages/TyrePriceCheck";
 import { getClientPrincipal, type ClientPrincipal } from "./lib/api";
 import logo from "./assets/autoprotect-logo.png";
 
@@ -85,6 +86,9 @@ export default function App() {
             <NavLink to="/manage" className={navClass}>
               Manage Repairers
             </NavLink>
+            <NavLink to="/tyre-price" className={navClass}>
+              Tyre Price Check
+            </NavLink>
           </nav>
         </div>
         <div className="flex items-center gap-3 text-sm text-brand-100">
@@ -98,6 +102,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Search />} />
           <Route path="/manage" element={<ManageRepairers />} />
+          <Route path="/tyre-price" element={<TyrePriceCheck />} />
         </Routes>
       </main>
     </div>

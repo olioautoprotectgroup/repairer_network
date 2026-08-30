@@ -1,4 +1,5 @@
 import type { Repairer, SearchFilters, SearchResponse } from "./types";
+import type { TyrePriceRequest, TyrePriceResponse } from "./tyrePriceTypes";
 
 async function handle<T>(res: Response): Promise<T> {
   if (!res.ok) {
@@ -52,6 +53,15 @@ export async function updateRepairer(id: string, repairer: Partial<Repairer>) {
     body: JSON.stringify(repairer),
   });
   return handle<Repairer>(res);
+}
+
+export async function checkTyrePrice(input: TyrePriceRequest): Promise<TyrePriceResponse> {
+  const res = await fetch("/api/tyre-price", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  return handle<TyrePriceResponse>(res);
 }
 
 export interface ClientPrincipal {

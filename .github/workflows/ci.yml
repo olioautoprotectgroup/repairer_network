@@ -1,0 +1,36 @@
+name: CI
+
+# Advisory checks -- typecheck/build/test for both packages. Deliberately a
+# separate workflow from the Azure deploy one (azure-static-web-apps-*.yml):
+# this project had no test suite until the Tyre Price Check feature added
+# one, and a first-ever test gate shouldn't risk blocking the
+# already-working deploy path in the same change that introduces it.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - run: npm run build
+
+  api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+        working-directory: api
+      - run: npm run build
+        working-directory: api
+      - run: npm test
+        working-directory: api

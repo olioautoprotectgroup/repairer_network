@@ -1,0 +1,33 @@
+<!--
+  SYNTHETIC fixture -- not real Halfords markup. This sandbox has no way to
+  responsibly capture live HTML from a retailer's site. Structure is a
+  plausible generic e-commerce listing shape, used only to exercise the
+  parser's logic in tests. Whoever does the Legal/Compliance-cleared rollout
+  of this adapter must replace this file with real captured search-result
+  HTML (for a size such as 205/55 R16) and update adapters/halfords.ts's
+  selectors + this fixture + its test together.
+-->
+<html>
+  <body>
+    <div class="product-list">
+      <div class="product-card">
+        <a class="product-card__link" href="/tyres/continental-premiumcontact-6-205-55-r16">
+          <span class="product-card__title">Continental PremiumContact 6 205/55 R16 91V</span>
+        </a>
+        <span class="product-card__price">£104.99</span>
+      </div>
+      <div class="product-card">
+        <a class="product-card__link" href="/tyres/hankook-ventus-prime-3-205-55-r16">
+          <span class="product-card__title">Hankook Ventus Prime3 205/55 R16 91V</span>
+        </a>
+        <span class="product-card__price">£78.50</span>
+      </div>
+      <div class="product-card">
+        <a class="product-card__link" href="/tyres/nexen-nfera-su1-205-55-r16">
+          <span class="product-card__title">Nexen N'Fera SU1 205/55 R16 91V</span>
+        </a>
+        <span class="product-card__price">£58.00</span>
+      </div>
+    </div>
+  </body>
+</html>
