@@ -79,8 +79,11 @@ export async function writeCachedQuote(retailer: RetailerKey, spec: TyreSpec, qu
   const now = new Date().toISOString();
 
   await executeStatement(
+    // CAST on the marker in the USING projection: a bare parameter marker
+    // there has no column to infer its type from, which is exactly where
+    // Spark's analyzer is most likely to reject it.
     `MERGE INTO ${TABLE} AS t
-     USING (SELECT :cacheKey AS cache_key) AS s
+     USING (SELECT CAST(:cacheKey AS STRING) AS cache_key) AS s
      ON t.cache_key = s.cache_key
      WHEN MATCHED THEN UPDATE SET
        product_name = :productName, matched_brand = :brand, tier = :tier,

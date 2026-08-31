@@ -79,6 +79,7 @@ export async function executeStatement(
   sql: string,
   params: DatabricksParam[] = [],
   waitTimeoutSeconds = 20,
+  pollBudgetMs = 25000,
 ): Promise<StatementResult> {
   const { host, warehouseId, token } = config();
 
@@ -88,11 +89,22 @@ export async function executeStatement(
     body: JSON.stringify({
       warehouse_id: warehouseId,
       statement: sql,
-      parameters: params.map((p) => ({
-        name: p.name,
-        value: p.value == null ? null : String(p.value),
-        type: p.type ?? "STRING",
-      })),
+      // A NULL is expressed by OMITTING `value` entirely, not by sending an
+      // explicit JSON null -- several columns here are legitimately nullable
+      // (load_index, price_gbp on an unavailable source, handler_email on a
+      // precache row), so getting this wrong would fail most writes.
+      // Timestamps are sent as ISO-8601 with an explicit `Z` rather than
+      // "yyyy-MM-dd HH:mm:ss": a zone-less string would be read in the
+      // warehouse's session timezone, silently skewing every cache-TTL
+      // comparison if that isn't UTC.
+      parameters: params.map((p) => {
+        const param: { name: string; type: string; value?: string } = {
+          name: p.name,
+          type: p.type ?? "STRING",
+        };
+        if (p.value != null) param.value = String(p.value);
+        return param;
+      }),
       wait_timeout: `${waitTimeoutSeconds}s`,
       on_wait_timeout: "CONTINUE",
       format: "JSON_ARRAY",
@@ -104,7 +116,7 @@ export async function executeStatement(
   }
 
   const submitted = (await submitRes.json()) as StatementStatusResponse;
-  const final = await pollUntilDone(submitted, host, token);
+  const final = await pollUntilDone(submitted, host, token, pollBudgetMs);
 
   if (final.status.state !== "SUCCEEDED") {
     throw new Error(`Databricks statement failed (${final.status.state}): ${final.status.error?.message ?? "unknown error"}`);
