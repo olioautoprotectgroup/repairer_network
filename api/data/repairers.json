@@ -4749,5 +4749,49 @@
     "geocoded": true,
     "recentRepairCount": 0,
     "repairCountAsOf": "2026-08-30T01:26:39.538415+00:00"
+  },
+  {
+    "companyName": "Vehicle Matters Ltd",
+    "tradingAddress": "Block 14 unit 2c cater road bs13 7tw",
+    "postcode": "BS13 7TW",
+    "phoneNumber": "01179359564",
+    "emailAddress": "Vehiclematters@outlook.com",
+    "mainContactName": "Anthony",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 25,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 78,
+    "providesRecovery": true,
+    "recoveryChargeRate": 150,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "vehicle-matters-ltd",
+    "lat": 51.415163,
+    "lon": -2.61094,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
