@@ -3,6 +3,7 @@ import { isAuthorizedPrecache } from "../lib/auth";
 import { orchestrateLookup } from "../lib/tyrePrice/adapters";
 import { COMMON_TYRE_SIZES } from "../lib/tyrePrice/config";
 import { appendLookupLog } from "../lib/tyrePrice/log";
+import { checkTokenExpiry } from "../lib/tyrePrice/tokenExpiry";
 import { computeSummary, computeVariance } from "../lib/tyrePrice/varianceCalc";
 
 const FORBIDDEN: HttpResponseInit = {
@@ -21,6 +22,19 @@ const FORBIDDEN: HttpResponseInit = {
  */
 export async function runPrecache(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
   if (!isAuthorizedPrecache(request)) return FORBIDDEN;
+
+  // Checked first so it's reported even if every size below fails, and
+  // surfaced in the response so the GitHub Actions caller can go red on it --
+  // that workflow failing is the only thing that actually reaches a human
+  // when this token is about to lapse.
+  const tokenExpiry = await checkTokenExpiry();
+  if (tokenExpiry.status === "expired") {
+    context.error(`Tyre-price token expiry: ${tokenExpiry.detail}`);
+  } else if (tokenExpiry.status === "expiring") {
+    context.warn(`Tyre-price token expiry: ${tokenExpiry.detail}`);
+  } else {
+    context.log(`Tyre-price token expiry: ${tokenExpiry.detail}`);
+  }
 
   const results: { size: string; season: string; quoteCount: number }[] = [];
 
@@ -45,7 +59,7 @@ export async function runPrecache(request: HttpRequest, context: InvocationConte
     }
   }
 
-  return { jsonBody: { processed: results.length, results } };
+  return { jsonBody: { processed: results.length, results, tokenExpiry } };
 }
 
 app.http("tyre-price-precache", {

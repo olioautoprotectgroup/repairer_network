@@ -15,6 +15,7 @@
     "TYRE_PRICE_VARIANCE_THRESHOLD_PERCENT": "20",
     "TYRE_PRICE_HALFORDS_ENABLED": "false",
     "TYRE_PRICE_KWIKFIT_ENABLED": "false",
-    "TYRE_PRICE_PRECACHE_KEY": "<random shared secret, matching the GitHub Actions repo secret of the same name>"
+    "TYRE_PRICE_PRECACHE_KEY": "<random shared secret, matching the GitHub Actions repo secret of the same name>",
+    "TYRE_PRICE_TOKEN_EXPIRY_WARNING_DAYS": "14"
   }
 }

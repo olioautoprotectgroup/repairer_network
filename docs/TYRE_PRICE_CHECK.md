@@ -122,6 +122,25 @@ fitter lookup against canned Overpass JSON (no real Overpass call).
 | `TYRE_PRICE_VARIANCE_THRESHOLD_PERCENT` | Azure app setting (optional, default `20`) | "review" flag threshold |
 | `TYRE_PRICE_HALFORDS_ENABLED` / `TYRE_PRICE_KWIKFIT_ENABLED` | Azure app setting (unset = off) | per-retailer kill switch |
 | `TYRE_PRICE_PRECACHE_KEY` | Azure app setting **and** GitHub Actions repo secret (same value) | authorizes the scheduled pre-cache trigger — deliberately separate from `DATABRICKS_WRITEBACK_KEY` |
+| `TYRE_PRICE_TOKEN_EXPIRY_WARNING_DAYS` | Azure app setting (optional, default `14`) | how far ahead the pre-cache job starts failing on an approaching `DATABRICKS_SQL_TOKEN` expiry |
+
+### Token expiry alerting
+
+`DATABRICKS_SQL_TOKEN` is the single point of failure for this feature: when
+it lapses, live cache reads and the nightly pre-cache both start failing and
+nothing else would say so. The pre-cache endpoint therefore reports a
+`tokenExpiry` block, and the GitHub Actions workflow **fails the run** when
+the status is `expiring` or `expired`.
+
+That red run is the alert — a warning inside a green run reaches nobody. It
+will stay red every night until the token is rotated, which is the intent.
+Rotating it (and updating the app setting) clears it.
+
+Two deliberate non-alarms: a `no-expiry` token reports OK (nothing to
+action), and `unknown` only prints a notice — listing tokens is a separate
+permission from using the warehouse, so a 403 there is common and says
+nothing about whether the sync itself works. The check never throws; it
+can't break the job it's attached to.
 
 See `api/local.settings.json.example` for local-dev placeholders.
 

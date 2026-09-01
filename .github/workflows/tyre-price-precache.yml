@@ -24,6 +24,30 @@ jobs:
     steps:
       - name: Trigger pre-cache
         run: |
-          curl -sf -X POST "https://lemon-rock-0b1176203.7.azurestaticapps.net/api/tyre-price/precache" \
+          set -euo pipefail
+          response=$(curl -sf -X POST "https://lemon-rock-0b1176203.7.azurestaticapps.net/api/tyre-price/precache" \
             -H "x-precache-key: ${{ secrets.TYRE_PRICE_PRECACHE_KEY }}" \
-            --max-time 200
+            --max-time 200)
+          echo "$response" | jq .
+
+          # The Databricks token is the single point of failure for this whole
+          # feature, and nothing else would tell anyone it had lapsed. Failing
+          # this job is the alert: a red nightly run emails someone, a warning
+          # buried in a green run does not. Rotating the token clears it.
+          status=$(echo "$response" | jq -r '.tokenExpiry.status // "unknown"')
+          detail=$(echo "$response" | jq -r '.tokenExpiry.detail // "no detail"')
+          case "$status" in
+            expired|expiring)
+              echo "::error::$detail"
+              exit 1
+              ;;
+            unknown)
+              # Not alarming: listing tokens is a separate permission from
+              # using the warehouse, so this is often just a 403 and says
+              # nothing about whether the sync itself is working.
+              echo "::notice::Token expiry not checked -- $detail"
+              ;;
+            *)
+              echo "Token expiry OK -- $detail"
+              ;;
+          esac
