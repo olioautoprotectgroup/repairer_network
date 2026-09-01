@@ -127,9 +127,31 @@ See `api/local.settings.json.example` for local-dev placeholders.
 
 ## One-time Databricks setup
 
-Run `repairer_network_databricks/notebooks/setup_tyre_price_tables.py`
-once (manually, "Run all") to create the two tables above, before setting
-the `DATABRICKS_SQL_*` app settings.
+In `repairer_network_databricks/notebooks/`:
+
+1. **`setup_tyre_price_tables.py`** — creates the two tables and applies the
+   service principal's table grants (`USE CATALOG`/`USE SCHEMA` plus
+   `SELECT, MODIFY` on just those two tables — nothing else in
+   `sandbox.oliver_oakes` becomes reachable). Set
+   `SERVICE_PRINCIPAL_APPLICATION_ID` in its Config cell; if the SP doesn't
+   exist yet, leave the placeholder and the grants cell skips cleanly, then
+   re-run once it does. Idempotent throughout.
+
+   Two things it *can't* do, because they aren't SQL-grantable: `CAN USE` on
+   the SQL Warehouse (UI → SQL Warehouses → your warehouse → Permissions) and
+   the SP's **Databricks SQL access** entitlement. The notebook header also
+   carries the admin API call that mints the token itself, since the UI
+   generally won't issue a PAT on behalf of a service principal.
+
+2. **`smoke_test_tyre_price_sql_api.py`** — run this *before* setting the
+   `DATABRICKS_SQL_*` app settings. It sends the exact statements the app
+   sends, using the app's own token, so a failure tells you the client's SQL
+   shape or the SP's grants are wrong rather than leaving you to guess
+   between that and the Azure config. Use the SP's token, not your own — a
+   personal token would sail through even if the SP's grants are wrong,
+   which is the failure this is here to catch.
+
+Only then set the `DATABRICKS_SQL_*` app settings.
 
 ## Deployment notes (pre-cache schedule)
 
