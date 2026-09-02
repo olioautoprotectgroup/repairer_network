@@ -57,16 +57,33 @@ consumer websites for internal claims-benchmarking purposes only. No
 scraped content is republished externally or resold, and no attempt is
 made to bypass authentication, paywalls, or technical access controls.
 
-**Both adapters ship disabled by default** (`TYRE_PRICE_HALFORDS_ENABLED` /
-`TYRE_PRICE_KWIKFIT_ENABLED` unset) and must not be enabled in any
-environment until AutoProtect Group's Legal/Compliance function has
-reviewed the specific retailer(s)' current Terms of Service and
-`robots.txt`, and given written sign-off for this specific use case. Each
-adapter respects the target site's `robots.txt` at request time, applies a
-conservative per-retailer rate limit, uses a self-identifying User-Agent
-(not a browser-mimicking one — see `config.ts`), and treats a 403/429
-response as an immediate, non-retried "unavailable" result rather than
-attempting to work around it.
+### Sign-off status
+
+**Sign-off for both Halfords and Kwik Fit was confirmed by Oliver Oakes on
+2026-09-01.** The underlying Legal/Compliance record is held outside this
+repo — this line records only that the gate was reported as cleared, not
+the review itself. Anyone relying on it should confirm the actual record
+exists and still covers the current use.
+
+Both adapters nonetheless **remain disabled by default in code**
+(`TYRE_PRICE_HALFORDS_ENABLED` / `TYRE_PRICE_KWIKFIT_ENABLED` unset =
+off). That is deliberate and unchanged by sign-off: it keeps local dev,
+preview environments and any future clone inert unless someone
+deliberately opts in. Enabling is an Azure app-setting change per
+environment, not a code change.
+
+Each adapter respects the target site's `robots.txt` at request time,
+applies a conservative per-retailer rate limit, uses a self-identifying
+User-Agent (not a browser-mimicking one — see `config.ts`), and treats a
+403/429 response as an immediate, non-retried "unavailable" result rather
+than attempting to work around it.
+
+**Do not enable a retailer before the Databricks cache is live.** With no
+cache, every handler lookup scrapes both retailers directly — no
+deduplication, no reuse, straight to the origin on every keystroke-driven
+search. That is both the fastest route to being blocked and a poor way to
+behave towards a retailer immediately after obtaining their-ToS sign-off.
+Order: Databricks first, then real selectors, then the flags.
 
 If a retailer's Terms of Service change, or the retailer objects to this
 traffic, the relevant flag must be turned off immediately (an Azure
