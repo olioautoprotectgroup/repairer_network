@@ -35,6 +35,9 @@ interface Props {
   onCancel: () => void;
 }
 
+/** Comma-separated free-text fields backed by a string[] on the record. */
+type ListKey = "vehicleManufacturers" | "capabilities";
+
 function listToText(list: string[]): string {
   return list.join(", ");
 }
@@ -51,8 +54,25 @@ export default function RepairerForm({ initial, onSubmit, onCancel }: Props) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // The comma-separated inputs keep their own raw text rather than being
+  // rendered back from the parsed array. Deriving the displayed value from
+  // textToList(...) made them unusable: a trailing space or comma is
+  // trimmed/dropped on parse, so the round-trip erased the character the
+  // moment it was typed -- you could never type a space in "Land Rover", nor
+  // the comma that separates two entries at all. `values` still holds the
+  // parsed array, so submit is unaffected.
+  const [listText, setListText] = useState<Record<ListKey, string>>(() => ({
+    vehicleManufacturers: listToText((initial ?? BLANK).vehicleManufacturers),
+    capabilities: listToText((initial ?? BLANK).capabilities),
+  }));
+
   function set<K extends keyof RepairerFormValues>(key: K, value: RepairerFormValues[K]) {
     setValues((v) => ({ ...v, [key]: value }));
+  }
+
+  function setList(key: ListKey, text: string) {
+    setListText((t) => ({ ...t, [key]: text }));
+    setValues((v) => ({ ...v, [key]: textToList(text) }));
   }
 
   async function handleSubmit(e: FormEvent) {
@@ -133,16 +153,16 @@ export default function RepairerForm({ initial, onSubmit, onCancel }: Props) {
       <label className="col-span-full flex flex-col gap-1 text-sm">
         Vehicle manufacturers (comma-separated)
         <input
-          value={listToText(values.vehicleManufacturers)}
-          onChange={(e) => set("vehicleManufacturers", textToList(e.target.value))}
+          value={listText.vehicleManufacturers}
+          onChange={(e) => setList("vehicleManufacturers", e.target.value)}
           className="rounded-lg border border-slate-200 px-3 py-2"
         />
       </label>
       <label className="col-span-full flex flex-col gap-1 text-sm">
         Capabilities (comma-separated)
         <input
-          value={listToText(values.capabilities)}
-          onChange={(e) => set("capabilities", textToList(e.target.value))}
+          value={listText.capabilities}
+          onChange={(e) => setList("capabilities", e.target.value)}
           className="rounded-lg border border-slate-200 px-3 py-2"
         />
       </label>
