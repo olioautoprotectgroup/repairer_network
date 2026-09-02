@@ -30,9 +30,10 @@ sandbox.oliver_oakes.tyre_price_lookup_log -- the future benchmark dataset.
 - **Frontend**: `src/pages/TyrePriceCheck.tsx` + `src/components/tyrePrice/*`.
 - **Main endpoint**: `api/src/functions/tyre-price.ts` (`POST /api/tyre-price`,
   human-only, `isAuthorizedStaff`).
-- **Retailer adapters**: `api/src/lib/tyrePrice/adapters/{halfords,kwikfit}.ts`,
-  one file per retailer, each isolated behind its own feature flag and never
-  throwing — a failure always resolves to a status, never an exception that
+- **Retailer adapters**: `api/src/lib/tyrePrice/adapters/halfords.ts`
+  (Halfords is currently the only price source -- see "Retailer status"
+  below), one file per retailer, each isolated behind its own feature flag
+  and never throwing — a failure always resolves to a status, never an exception that
   could affect the other retailer's result.
 - **Cache/log**: `api/src/lib/tyrePrice/{cache,log,databricksClient}.ts` —
   live, per-request calls to Databricks' SQL Statement Execution API. This
@@ -51,8 +52,8 @@ sandbox.oliver_oakes.tyre_price_lookup_log -- the future benchmark dataset.
 
 ## Retailer price scraping — legal/compliance notice
 
-The Halfords and Kwik Fit adapters in `api/src/lib/tyrePrice/adapters/`
-retrieve publicly published retail prices from those retailers' own
+The retailer adapters in `api/src/lib/tyrePrice/adapters/` retrieve
+publicly published retail prices from those retailers' own
 consumer websites for internal claims-benchmarking purposes only. No
 scraped content is republished externally or resold, and no attempt is
 made to bypass authentication, paywalls, or technical access controls.
@@ -63,10 +64,12 @@ made to bypass authentication, paywalls, or technical access controls.
 2026-09-01.** The underlying Legal/Compliance record is held outside this
 repo — this line records only that the gate was reported as cleared, not
 the review itself. Anyone relying on it should confirm the actual record
-exists and still covers the current use.
+exists and still covers the current use. Kwik Fit was subsequently dropped
+on technical grounds (see "Retailer status" below), so only the Halfords
+half of that sign-off is actually exercised today.
 
-Both adapters nonetheless **remain disabled by default in code**
-(`TYRE_PRICE_HALFORDS_ENABLED` / `TYRE_PRICE_KWIKFIT_ENABLED` unset =
+The adapter nonetheless **remains disabled by default in code**
+(`TYRE_PRICE_HALFORDS_ENABLED` unset =
 off). That is deliberate and unchanged by sign-off: it keeps local dev,
 preview environments and any future clone inert unless someone
 deliberately opts in. Enabling is an Azure app-setting change per
@@ -79,7 +82,7 @@ User-Agent (not a browser-mimicking one — see `config.ts`), and treats a
 than attempting to work around it.
 
 **Do not enable a retailer before the Databricks cache is live.** With no
-cache, every handler lookup scrapes both retailers directly — no
+cache, every handler lookup scrapes the retailer directly — no
 deduplication, no reuse, straight to the origin on every keystroke-driven
 search. That is both the fastest route to being blocked and a poor way to
 behave towards a retailer immediately after obtaining their-ToS sign-off.
@@ -113,26 +116,26 @@ the real markup forced, which a synthetic fixture had wrong:
   there and prepends it, guarding against titles that already carry their
   brand -- the real data is inconsistent about this.
 
-**Kwik Fit -- not a usable price source.** Their listing page
-(`/tyres/205-55-16`) lists 107 tyres with brand, size and the EU
-fuel/grip/noise labels but contains **no prices at all** -- zero
-occurrences of a price figure anywhere in the product table; the only two
-money values on the page are an MOT promotion and a fitting-charge
-footnote. That is by design on their side: Kwik Fit quotes a fitted price
-for a specific centre, so a price only exists after choosing a tyre and
-supplying a postcode.
+**Kwik Fit -- removed.** Their listing page (`/tyres/205-55-16`) lists 107
+tyres with brand, size and the EU fuel/grip/noise labels but contains **no
+prices at all** -- zero occurrences of a price figure anywhere in the
+product table; the only two money values on the page are an MOT promotion
+and a fitting-charge footnote. That is by design on their side: Kwik Fit
+quotes a fitted price for a specific centre, so a price only exists after
+choosing a tyre and supplying a postcode.
 
 Retrieving one would mean driving a multi-step, stateful, postcode-gated
 quote flow rather than reading a public listing -- materially more
 invasive than what was reviewed and signed off, and a separate decision
-rather than a selector change. So `adapters/kwikfit.ts` makes **no request
-at all** and returns `unavailable` with that reason, which the UI shows as
-"source unavailable" -- never a fabricated or implied price. Setting
-`TYRE_PRICE_KWIKFIT_ENABLED=true` is harmless but achieves nothing today.
+rather than a selector change. Oliver Oakes' call on 2026-09-02 was to
+drop Kwik Fit and ship Halfords alone, so the adapter, its config entry,
+its tests and its `TYRE_PRICE_KWIKFIT_ENABLED` flag were all removed
+rather than left in place returning a permanent "unavailable".
 
-Deciding what to do about Kwik Fit (drop it, scope the quote flow as its
-own reviewed piece, or substitute a different retailer under fresh
-sign-off) is an open item, not a code gap.
+This is recorded here so the same page isn't re-investigated later as a
+missing integration: it is a deliberate exclusion with a known cause, not
+an unfinished one. Restoring Kwik Fit means scoping the quote flow as its
+own reviewed piece.
 
 ## Adding a new retailer adapter
 
@@ -146,9 +149,10 @@ sign-off) is an open item, not a code gap.
    `ListingSelectors` matched against the captured fixture.
 4. Register the adapter in `adapters/index.ts`'s `REGISTRY`.
 5. Write `adapters/<name>.test.ts` against the fixture (see
-   `halfords.test.ts` for the parsing pattern; `kwikfit.test.ts` shows the
-   other case -- a retailer that structurally cannot answer the question,
-   and says so instead of fetching).
+   `halfords.test.ts` for the pattern). If the retailer turns out not to
+   publish prices on a public listing page at all, stop there and raise it
+   -- see the Kwik Fit entry under "Retailer status" for why that is a
+   decision, not a selector problem.
 6. Get Legal/Compliance sign-off on that retailer's ToS/robots.txt before
    ever setting its flag to `"true"` anywhere.
 
@@ -160,7 +164,7 @@ cd api && npm test
 
 Runs the full Vitest suite: pure logic (`varianceCalc`, `tierMap`), the
 cache layer against a **mocked** Databricks client (no real Databricks
-calls in CI), both adapters against their saved HTML fixtures, and the
+calls in CI), the Halfords adapter against its saved HTML fixture, and the
 fitter lookup against canned Overpass JSON (no real Overpass call).
 
 ## New secrets
@@ -172,7 +176,7 @@ fitter lookup against canned Overpass JSON (no real Overpass call).
 | `DATABRICKS_SQL_TOKEN` | Azure app setting (secret) | New, narrowly-scoped service-principal token: `CAN_USE` on the one warehouse above, read/write on only `tyre_price_cache`/`tyre_price_lookup_log` — not a reused/broader credential |
 | `TYRE_PRICE_CACHE_TTL_HOURS` | Azure app setting (optional, default `24`) | cache staleness window |
 | `TYRE_PRICE_VARIANCE_THRESHOLD_PERCENT` | Azure app setting (optional, default `20`) | "review" flag threshold |
-| `TYRE_PRICE_HALFORDS_ENABLED` / `TYRE_PRICE_KWIKFIT_ENABLED` | Azure app setting (unset = off) | per-retailer kill switch |
+| `TYRE_PRICE_HALFORDS_ENABLED` | Azure app setting (unset = off) | per-retailer kill switch |
 | `TYRE_PRICE_PRECACHE_KEY` | Azure app setting **and** GitHub Actions repo secret (same value) | authorizes the scheduled pre-cache trigger — deliberately separate from `DATABRICKS_WRITEBACK_KEY` |
 | `TYRE_PRICE_TOKEN_EXPIRY_WARNING_DAYS` | Azure app setting (optional, default `14`) | how far ahead the pre-cache job starts failing on an approaching `DATABRICKS_SQL_TOKEN` expiry |
 

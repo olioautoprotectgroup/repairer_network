@@ -3,10 +3,9 @@ import { isRetailerEnabled, type RetailerKey } from "../config";
 import { tierForBrand } from "../tierMap";
 import type { PriceQuote, TyreSpec } from "../types";
 import { halfordsAdapter } from "./halfords";
-import { kwikfitAdapter } from "./kwikfit";
 import type { RetailerAdapter, RetailerAdapterInput } from "./types";
 
-const REGISTRY: RetailerAdapter[] = [halfordsAdapter, kwikfitAdapter];
+const REGISTRY: RetailerAdapter[] = [halfordsAdapter];
 
 function normalizedSize(spec: TyreSpec): string {
   return `${spec.width}/${spec.profile}R${spec.rim}`;

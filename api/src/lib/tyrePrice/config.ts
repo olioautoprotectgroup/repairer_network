@@ -1,6 +1,6 @@
 import type { TyreSpec } from "./types";
 
-export type RetailerKey = "halfords" | "kwikfit";
+export type RetailerKey = "halfords";
 
 export interface RetailerConfig {
   key: RetailerKey;
@@ -31,20 +31,6 @@ export const RETAILERS: Record<RetailerKey, RetailerConfig> = {
     timeoutMs: 10000,
     userAgent: "AutoProtect-TyrePriceCheck/1.0 (internal claims tool; contact: oliver.oakes@autoprotectgroup.co.uk)",
   },
-  // Kept for the registry/kill-switch/display name only: the Kwik Fit adapter
-  // makes no HTTP request at all, because their listing pages publish no
-  // prices (see adapters/kwikfit.ts). baseUrl/robotsUrl/rate limits below are
-  // therefore currently unused, and retained so the entry stays complete if
-  // the postcode-gated quote flow is ever scoped and approved.
-  kwikfit: {
-    key: "kwikfit",
-    displayName: "Kwik Fit",
-    baseUrl: "https://www.kwik-fit.com",
-    robotsUrl: "https://www.kwik-fit.com/robots.txt",
-    minRequestIntervalMs: 3000,
-    timeoutMs: 10000,
-    userAgent: "AutoProtect-TyrePriceCheck/1.0 (internal claims tool; contact: oliver.oakes@autoprotectgroup.co.uk)",
-  },
 };
 
 /**
@@ -53,9 +39,12 @@ export const RETAILERS: Record<RetailerKey, RetailerConfig> = {
  * "true" as an Azure app setting, after Legal/Compliance sign-off on that
  * retailer's current Terms of Service and robots.txt.
  */
+const ENABLED_ENV_VAR: Record<RetailerKey, string> = {
+  halfords: "TYRE_PRICE_HALFORDS_ENABLED",
+};
+
 export function isRetailerEnabled(key: RetailerKey): boolean {
-  const envVar = key === "halfords" ? "TYRE_PRICE_HALFORDS_ENABLED" : "TYRE_PRICE_KWIKFIT_ENABLED";
-  return process.env[envVar] === "true";
+  return process.env[ENABLED_ENV_VAR[key]] === "true";
 }
 
 export function cacheTtlHours(): number {
