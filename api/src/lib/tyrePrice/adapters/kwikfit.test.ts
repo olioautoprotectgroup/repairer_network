@@ -1,15 +1,13 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-
-vi.mock("../robotsCheck", () => ({ isPathAllowed: vi.fn().mockResolvedValue(true) }));
-vi.mock("../rateLimiter", () => ({ waitForRateLimit: vi.fn().mockResolvedValue(undefined) }));
-
 import { kwikfitAdapter } from "./kwikfit";
 import type { RetailerAdapterInput } from "./types";
 
-const FIXTURE = readFileSync(join(__dirname, "__fixtures__", "kwikfit-search-result.html"), "utf-8");
-
+/**
+ * Kwik Fit's listing page publishes no prices (verified against real
+ * captured markup, 2026-09-02 -- 107 tyres, zero "£"). These tests lock in
+ * that the adapter says so honestly and sends no pointless traffic, rather
+ * than degrading to a confusing "no matching product found".
+ */
 const INPUT: RetailerAdapterInput = { size: "205/55R16", season: "summer", runFlat: false };
 
 const fetchMock = vi.fn();
@@ -21,27 +19,15 @@ beforeEach(() => {
 afterEach(() => vi.unstubAllGlobals());
 
 describe("kwikfitAdapter", () => {
-  it("picks the cheapest product when no brand is requested", async () => {
-    fetchMock.mockResolvedValue(new Response(FIXTURE, { status: 200 }));
-    const result = await kwikfitAdapter.fetchPrice(INPUT);
-    expect(result.status).toBe("ok");
-    expect(result.priceGbp).toBe(54.99);
-    expect(result.matchedBrand).toBe("Landsail");
-  });
-
-  it("respects robots.txt disallow", async () => {
-    const { isPathAllowed } = await import("../robotsCheck");
-    vi.mocked(isPathAllowed).mockResolvedValueOnce(false);
-    fetchMock.mockResolvedValue(new Response(FIXTURE, { status: 200 }));
+  it("reports unavailable with the reason, never a fabricated price", async () => {
     const result = await kwikfitAdapter.fetchPrice(INPUT);
     expect(result.status).toBe("unavailable");
-    expect(result.statusDetail).toMatch(/robots/i);
+    expect(result.priceGbp).toBeNull();
+    expect(result.statusDetail).toMatch(/does not publish prices/i);
+  });
+
+  it("makes no HTTP request to a page that cannot answer the question", async () => {
+    await kwikfitAdapter.fetchPrice(INPUT);
     expect(fetchMock).not.toHaveBeenCalled();
-  });
-
-  it("returns 'unavailable' on a rate-limited (429) response", async () => {
-    fetchMock.mockResolvedValue(new Response("too many requests", { status: 429 }));
-    const result = await kwikfitAdapter.fetchPrice(INPUT);
-    expect(result.status).toBe("unavailable");
   });
 });

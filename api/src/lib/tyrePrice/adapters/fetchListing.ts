@@ -2,7 +2,7 @@ import type { RetailerConfig } from "../config";
 import { fetchWithTimeout } from "../httpFetch";
 import { waitForRateLimit } from "../rateLimiter";
 import { isPathAllowed } from "../robotsCheck";
-import { guessBrand, parseProductListing, pickBestMatch, type ListingSelectors } from "./htmlParsing";
+import { parseProductListing, pickBestMatch, resolveBrand, type ListingSelectors } from "./htmlParsing";
 import type { RetailerAdapterInput, RetailerAdapterResult } from "./types";
 
 const UNAVAILABLE = (statusDetail: string): RetailerAdapterResult => ({
@@ -43,12 +43,18 @@ export async function fetchListingAndMatch(
 
     const html = await res.text();
     const products = parseProductListing(html, selectors, config.baseUrl);
-    const best = pickBestMatch(products, input.brand);
+    const best = pickBestMatch(products, input.brand, selectors.brandSource);
     if (!best) return { productName: null, matchedBrand: null, priceGbp: null, url: null, status: "no-match" };
 
+    const matchedBrand = resolveBrand(best, selectors.brandSource);
     return {
-      productName: best.title,
-      matchedBrand: guessBrand(best.title),
+      // Retailers like Halfords title their products model-only, so prepend
+      // the brand: "EfficientGrip Performance 2" alone doesn't tell a handler
+      // whose tyre they're looking at.
+      productName: matchedBrand && !best.title.toLowerCase().includes(matchedBrand.toLowerCase())
+        ? `${matchedBrand} ${best.title}`
+        : best.title,
+      matchedBrand,
       priceGbp: best.priceGbp,
       url: best.url,
       status: "ok",

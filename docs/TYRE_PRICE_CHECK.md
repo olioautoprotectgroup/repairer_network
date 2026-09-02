@@ -93,13 +93,46 @@ extrapolated when a source is blocked or fails — the UI shows "source
 unavailable" instead, so a claims handler is never shown pricing data that
 didn't actually come from a live or freshly cached retailer response.
 
-**Before either flag is ever turned on**, the person doing the compliance
-review must also capture real search-result HTML from the live site and
-update `adapters/{halfords,kwikfit}.ts`'s selectors (and the fixtures in
-`adapters/__fixtures__/` + their tests) to match — the selectors shipped
-here are placeholders matched against synthetic fixtures, not verified
-against either retailer's real markup (this environment has no way to
-responsibly capture that).
+## Retailer status (verified against real markup, 2026-09-02)
+
+Real search-result HTML for 205/55 R16 was captured from both retailers'
+live sites and the adapters were written against it. The outcome differs
+per retailer, and the difference is not a selector detail:
+
+**Halfords -- usable.** `adapters/halfords.ts`'s selectors are matched
+against the real captured markup, committed as
+`adapters/__fixtures__/halfords-search-result.html` (18 product tiles) and
+asserted on in `halfords.test.ts`, so a site redesign surfaces as a
+deliberate fixture update rather than silently in production. Two things
+the real markup forced, which a synthetic fixture had wrong:
+
+- Selectors are keyed on `data-testid`, never on class, because Halfords
+  renders build-volatile Emotion class hashes (`css-fggpq3`).
+- Product titles are **model-only** ("EfficientGrip Performance"); the
+  brand appears only in the product URL path. The adapter recovers it from
+  there and prepends it, guarding against titles that already carry their
+  brand -- the real data is inconsistent about this.
+
+**Kwik Fit -- not a usable price source.** Their listing page
+(`/tyres/205-55-16`) lists 107 tyres with brand, size and the EU
+fuel/grip/noise labels but contains **no prices at all** -- zero
+occurrences of a price figure anywhere in the product table; the only two
+money values on the page are an MOT promotion and a fitting-charge
+footnote. That is by design on their side: Kwik Fit quotes a fitted price
+for a specific centre, so a price only exists after choosing a tyre and
+supplying a postcode.
+
+Retrieving one would mean driving a multi-step, stateful, postcode-gated
+quote flow rather than reading a public listing -- materially more
+invasive than what was reviewed and signed off, and a separate decision
+rather than a selector change. So `adapters/kwikfit.ts` makes **no request
+at all** and returns `unavailable` with that reason, which the UI shows as
+"source unavailable" -- never a fabricated or implied price. Setting
+`TYRE_PRICE_KWIKFIT_ENABLED=true` is harmless but achieves nothing today.
+
+Deciding what to do about Kwik Fit (drop it, scope the quote flow as its
+own reviewed piece, or substitute a different retailer under fresh
+sign-off) is an open item, not a code gap.
 
 ## Adding a new retailer adapter
 
@@ -113,7 +146,9 @@ responsibly capture that).
    `ListingSelectors` matched against the captured fixture.
 4. Register the adapter in `adapters/index.ts`'s `REGISTRY`.
 5. Write `adapters/<name>.test.ts` against the fixture (see
-   `halfords.test.ts`/`kwikfit.test.ts` for the pattern).
+   `halfords.test.ts` for the parsing pattern; `kwikfit.test.ts` shows the
+   other case -- a retailer that structurally cannot answer the question,
+   and says so instead of fetching).
 6. Get Legal/Compliance sign-off on that retailer's ToS/robots.txt before
    ever setting its flag to `"true"` anywhere.
 

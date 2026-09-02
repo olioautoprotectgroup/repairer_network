@@ -31,6 +31,11 @@ export const RETAILERS: Record<RetailerKey, RetailerConfig> = {
     timeoutMs: 10000,
     userAgent: "AutoProtect-TyrePriceCheck/1.0 (internal claims tool; contact: oliver.oakes@autoprotectgroup.co.uk)",
   },
+  // Kept for the registry/kill-switch/display name only: the Kwik Fit adapter
+  // makes no HTTP request at all, because their listing pages publish no
+  // prices (see adapters/kwikfit.ts). baseUrl/robotsUrl/rate limits below are
+  // therefore currently unused, and retained so the entry stays complete if
+  // the postcode-gated quote flow is ever scoped and approved.
   kwikfit: {
     key: "kwikfit",
     displayName: "Kwik Fit",
