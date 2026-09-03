@@ -17,8 +17,24 @@ on:
 # Serialising here makes the outcome deterministic: a newer push cancels the
 # older in-flight run, and the newer checkout already contains the older
 # commit, so nothing is lost. Grouped by ref so PR previews stay independent.
+#
+# Keyed on the event as well as the ref, because ref alone let a PR-close
+# run cancel a production deploy. Merging PR #1 queued both at the same
+# second -- the push to main (the real deploy) and the pull_request
+# "closed" run -- and the push run was cancelled one second in, before any
+# step ran, so the merge never went live. Nothing else in this repo cancels
+# runs, and GitHub records no reason for a cancellation, so this is the
+# cause by elimination rather than from a log. Including the event name
+# keeps pushes and PR runs in separate groups whatever GitHub resolves
+# github.ref to for a closed PR, which is the part that wasn't obvious:
+# refs/heads/main vs refs/pull/N/merge *should* already have separated
+# them.
+#
+# The original intent is unchanged: a newer push to a ref still cancels the
+# older in-flight run for that same ref, and PR previews stay independent
+# of main.
 concurrency:
-  group: swa-deploy-${{ github.ref }}
+  group: swa-deploy-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -67,4 +83,10 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          # Required even to tear a preview environment down: without it the
+          # action stops at "deployment_token was not provided" and the job
+          # fails. Missing since this workflow was generated, but PR #1 was
+          # this repo's first pull request, so this job had never run before
+          # -- on a push to main it's skipped by the `if` above.
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_ROCK_0B1176203 }}
           action: "close"
