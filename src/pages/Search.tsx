@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ResultsList from "../components/ResultsList";
 import MapView from "../components/MapView";
 import Filters from "../components/Filters";
-import { searchRepairers } from "../lib/api";
-import type { SearchFilters, SearchResult } from "../lib/types";
+import { getFeedbackSummaries, searchRepairers } from "../lib/api";
+import type { RepairerFeedbackSummary, SearchFilters, SearchResult } from "../lib/types";
 
-export default function Search() {
+interface Props {
+  /** The signed-in handler, passed down from App rather than re-fetched --
+   * App has already resolved /.auth/me before any route renders. */
+  currentUserEmail: string;
+  canModerate: boolean;
+}
+
+export default function Search({ currentUserEmail, canModerate }: Props) {
   const [queryInput, setQueryInput] = useState("");
   const [filters, setFilters] = useState<SearchFilters>({});
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -15,6 +22,16 @@ export default function Search() {
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState<Record<string, RepairerFeedbackSummary>>({});
+
+  // Fetched once on mount, not per search, and deliberately not folded
+  // into the search response: a feedback failure then leaves the cards
+  // rating-less rather than failing the search itself.
+  useEffect(() => {
+    getFeedbackSummaries()
+      .then(setFeedback)
+      .catch(() => setFeedback({}));
+  }, []);
 
   async function runSearch(query: string, f: SearchFilters) {
     if (!query.trim()) return;
@@ -84,6 +101,9 @@ export default function Search() {
           onSelect={handleSelect}
           loading={loading}
           hasSearched={hasSearched}
+          feedback={feedback}
+          currentUserEmail={currentUserEmail}
+          canModerate={canModerate}
         />
       </div>
       <div className="h-[50vh] min-h-0 flex-1 lg:h-auto">

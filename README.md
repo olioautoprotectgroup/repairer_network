@@ -11,6 +11,10 @@ interactive map, restricted to `@autoprotectgroup.co.uk` staff.
   spreadsheet by `scripts/build-data.ts`. Editable in-app via **Manage
   Repairers** — edits are committed back to this file in git (see
   [Data storage](#data-storage-today) below), so no database is needed yet.
+- **Feedback**: handlers rate repairers 1-5 with an optional note, and
+  report whether a repairer negotiated and by how much. Stored in
+  `api/data/repairer-feedback.json` on the same GitHub-commit model, and
+  documented in `docs/REPAIRER_FEEDBACK.md`.
 - **Data (future)**: swap the data source in `api/src/lib/data.ts` for a
   Databricks SQL Warehouse query once a repairer table exists in the
   datalake. See `Databricks_MetaData`'s `catalogs/curated/<schema>/` +
@@ -152,6 +156,16 @@ start failing.
   Databricks intake-merge job is unaffected: it authorizes
   `POST /api/repairers` with the `x-writeback-key` shared secret, not a
   signed-in identity.
+- **Reviews and discount reports go the other way — deliberately open to
+  the whole domain.** Any handler who used a repairer can rate it, so those
+  routes gate on `isAuthorizedStaff()`, not the owner check. Two narrower
+  rules sit on top: the author is always read from the signed
+  `x-ms-client-principal` header and never from the request body (otherwise
+  anyone could forge a colleague's review of a named supplier), and while
+  authors edit only their own submissions, `isAuthorizedRepairerManager`
+  may *delete* anyone's — a route to remove something inaccurate about a
+  named business without handing everyone that power. See
+  `docs/REPAIRER_FEEDBACK.md`.
 - If a Standard-SKU custom Entra app registration (single-tenant, so
   outside accounts can't even reach the login screen) is wanted later for
   belt-and-braces, it's an additive change plus the SKU upgrade —
@@ -159,7 +173,22 @@ start failing.
 
 ## Data storage (today)
 
-There's no database. `api/data/repairers.json` is the source of truth.
+There's no database. Two JSON files under `api/data/` are the source of
+truth, both persisted the same way:
+
+| File | Written by | Read by |
+|---|---|---|
+| `repairers.json` | Manage Repairers, the Databricks intake-merge job, the nightly repair-count sync | search (bundled copy), Manage Repairers (live) |
+| `repairer-feedback.json` | any signed-in handler, via the review / discount forms on a repairer card | card aggregates (bundled copy), the feedback panel (live) |
+
+They are deliberately **separate blobs, not one file**. Every write goes
+out with the sha it was read at, so same-file writes conflict: a handler
+leaving a review at 02:26 would 409 against the nightly repair-count sync.
+Different paths mean different shas and no contention at all. Feedback also
+stays outside `scripts/build-data.ts`'s blast radius that way — re-running
+that script rebuilds `repairers.json` from the spreadsheet and would drop
+anything it doesn't know about.
+
 Saving a change in **Manage Repairers** commits it back to this file via the
 GitHub API (`api/src/lib/github.ts`), which triggers the existing CI/CD to
 redeploy — edits go live for everyone in about a minute (the person who
@@ -170,12 +199,19 @@ instant same-instance visibility — the GitHub commit is the only
 persistence step.
 
 Writes always read the *current* file straight from GitHub right before
-merging in an edit (`getCurrentRepairers()`), never the local copy search/
+merging in an edit (`getCurrentFile()`), never the local copy search/
 list use for fast reads — that copy can be stale by design, and building a
 "full array" write on top of it would silently erase anyone else's change
 made in the meantime. The commit is sent with the sha it was read at, so a
 genuine conflict (two saves landing at once) fails with a clear "please
 retry" instead of one silently overwriting the other.
+
+Feedback writes are the one exception: an append re-applied to a freshly
+re-read file converges on the same result, so those retry once
+automatically before surfacing the same message (see
+`api/src/lib/feedback/store.ts`). Repairer-list writes deliberately do not
+— they replace a whole array built from a snapshot, where a blind retry
+could resurrect stale rows.
 
 This keeps everything on already-free services. If
 instant writes are ever needed before the Databricks migration, swapping

@@ -1,9 +1,18 @@
-import type { SearchResult } from "../lib/types";
+import { useState } from "react";
+import type { RepairerFeedbackSummary, SearchResult } from "../lib/types";
+import RepairerFeedbackPanel from "./RepairerFeedbackPanel";
+import { StarRatingDisplay } from "./StarRating";
 
 interface Props {
   repairer: SearchResult;
   selected: boolean;
   onSelect: (id: string) => void;
+  /** Undefined when nobody has left feedback for this repairer yet, which
+   * the summaries endpoint reports by omission rather than by sending a
+   * zeroed row for all ~114 repairers. */
+  feedback: RepairerFeedbackSummary | undefined;
+  currentUserEmail: string;
+  canModerate: boolean;
 }
 
 function Badge({ children }: { children: string }) {
@@ -23,7 +32,21 @@ function formatAsOfDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
-export default function RepairerCard({ repairer, selected, onSelect }: Props) {
+export default function RepairerCard({
+  repairer,
+  selected,
+  onSelect,
+  feedback,
+  currentUserEmail,
+  canModerate,
+}: Props) {
+  const [panelOpen, setPanelOpen] = useState(false);
+  // Seeded from the bundled summaries, then replaced by whatever the panel
+  // last read live -- so a handler's own review shows on the card
+  // immediately instead of after the next redeploy.
+  const [liveSummary, setLiveSummary] = useState<RepairerFeedbackSummary | null>(null);
+  const summary = liveSummary ?? feedback;
+
   return (
     <div
       role="button"
@@ -55,6 +78,64 @@ export default function RepairerCard({ repairer, selected, onSelect }: Props) {
         {repairer.providesRecovery && <Badge>Recovery available</Badge>}
         {repairer.hasDealerRelationship && <Badge>Dealer relationship</Badge>}
       </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+        <button
+          type="button"
+          aria-expanded={panelOpen}
+          onClick={(e) => {
+            // The card root is itself a button; without this, opening the
+            // panel would also re-select the card.
+            e.stopPropagation();
+            setPanelOpen((open) => !open);
+          }}
+          className="inline-flex items-center gap-1.5 rounded-lg px-1.5 py-0.5 -ml-1.5 hover:bg-brand-50"
+        >
+          {summary?.averageRating != null ? (
+            <>
+              <StarRatingDisplay rating={summary.averageRating} />
+              <span className="font-medium text-slate-800">
+                {summary.averageRating.toFixed(1)}
+              </span>
+              <span className="text-slate-500">
+                ({summary.reviewCount} review{summary.reviewCount === 1 ? "" : "s"})
+              </span>
+            </>
+          ) : (
+            <span className="font-medium text-brand-600">Rate this repairer</span>
+          )}
+          <span className="text-slate-400">{panelOpen ? "▾" : "▸"}</span>
+        </button>
+
+        {summary != null && summary.discountReportCount > 0 && (
+          <span className="text-slate-600">
+            {summary.openToNegotiationCount > 0 ? (
+              <span className="font-medium text-emerald-600">Open to discount</span>
+            ) : (
+              <span className="font-medium text-amber-700">Wouldn't negotiate</span>
+            )}
+            {summary.averageDiscountPercent != null && (
+              <span className="font-medium text-slate-800">
+                {" "}
+                &middot; avg {summary.averageDiscountPercent}% off
+              </span>
+            )}
+            <span className="text-slate-500">
+              {" "}
+              ({summary.discountReportCount} report{summary.discountReportCount === 1 ? "" : "s"})
+            </span>
+          </span>
+        )}
+      </div>
+
+      {panelOpen && (
+        <RepairerFeedbackPanel
+          repairerId={repairer.id}
+          currentUserEmail={currentUserEmail}
+          canModerate={canModerate}
+          onSummaryChange={setLiveSummary}
+        />
+      )}
 
       <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-slate-600">
         {repairer.labourRate != null && (

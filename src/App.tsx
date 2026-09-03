@@ -143,7 +143,15 @@ export default function App() {
       </header>
       <main className="min-h-0 flex-1">
         <Routes>
-          <Route path="/" element={<Search />} />
+          <Route
+            path="/"
+            element={
+              <Search
+                currentUserEmail={principal.userDetails.toLowerCase()}
+                canModerate={canManageRepairers}
+              />
+            }
+          />
           <Route
             path="/manage"
             element={canManageRepairers ? <ManageRepairers /> : <ManageRepairersRestricted />}
