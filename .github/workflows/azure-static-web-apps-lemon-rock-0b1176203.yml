@@ -9,6 +9,18 @@ on:
     branches:
       - main
 
+# The nightly Databricks chain pushes two commits seconds apart (the intake
+# merge adds a repairer, then the repair-count sync). Both deploys then race,
+# and Azure cancels one of them server-side by upload order rather than commit
+# order -- so the OLDER commit can win and the newer one silently never goes
+# live. That is exactly what happened on 2026-09-03 (run #95, commit 459e7e4).
+# Serialising here makes the outcome deterministic: a newer push cancels the
+# older in-flight run, and the newer checkout already contains the older
+# commit, so nothing is lost. Grouped by ref so PR previews stay independent.
+concurrency:
+  group: swa-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
