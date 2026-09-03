@@ -5,7 +5,11 @@ on:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    # No `closed` -- with close_pull_request_job removed (see below) a
+    # closed PR would start a run whose only job is skipped, and it was
+    # exactly that second run, racing the merge's push, that cancelled the
+    # production deploy when PR #1 merged.
+    types: [opened, synchronize, reopened]
     branches:
       - main
 
@@ -74,19 +78,25 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
 
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          # Required even to tear a preview environment down: without it the
-          # action stops at "deployment_token was not provided" and the job
-          # fails. Missing since this workflow was generated, but PR #1 was
-          # this repo's first pull request, so this job had never run before
-          # -- on a push to main it's skipped by the `if` above.
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_LEMON_ROCK_0B1176203 }}
-          action: "close"
+# There is deliberately no close_pull_request_job. Azure's generated
+# workflow includes one, which tears the PR's preview environment down on
+# close, but it cannot succeed against this app: with the deployment token
+# missing (as generated) it fails on "deployment_token was not provided",
+# and with the token supplied it fails on the content server's
+# "BadRequest -- No matching static site found" instead. Both were observed
+# here, on PR #1 and PR #2 respectively. That second error is an open
+# upstream issue with no maintainer response and no known fix
+# (Azure/static-web-apps#1638); its reporter tried regenerating the token
+# and adding repo_token, neither of which helped, so there was no fix left
+# to try that wasn't a guess.
+#
+# Removed rather than left failing or marked continue-on-error: a job that
+# can never go green trains everyone to ignore a red run on this workflow,
+# which is the opposite of what the red is for here (see 6abc325, where a
+# run is deliberately failed so a lapsing token can't pass unnoticed).
+#
+# The cost is that preview environments are not cleaned up automatically --
+# delete them under Environments in the Static Web App in the Azure portal.
+# The Free tier caps how many can exist at once, so leaving them to
+# accumulate will eventually start failing PR preview deploys. Restoring
+# this job is the right move if the upstream issue is ever fixed.

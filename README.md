@@ -111,6 +111,18 @@ below. This is still a solid gate: nobody can forge a verified
 `@autoprotectgroup.co.uk` UPN without a real, DNS-verified AutoProtect Group
 account.
 
+**PR preview environments need deleting by hand.** Every pull request gets
+its own preview deploy (`...-<pr-number>.westeurope.7.azurestaticapps.net`),
+and Azure's generated workflow normally tears that down when the PR closes.
+That teardown job has been removed, because it cannot succeed against this
+app — with the deployment token supplied it fails on the content server's
+"No matching static site found", an open upstream issue with no fix
+([Azure/static-web-apps#1638](https://github.com/Azure/static-web-apps/issues/1638));
+the reasoning is commented in the workflow. So delete old ones under
+**Environments** in the Static Web App in the portal: the Free tier caps how
+many can exist at once, and once that cap is reached new PR preview deploys
+start failing.
+
 ## How access control works
 
 - Login goes through Azure Static Web Apps' built-in AAD provider
