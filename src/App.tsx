@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import Search from "./pages/Search";
 import ManageRepairers from "./pages/ManageRepairers";
 import TyrePriceCheck from "./pages/TyrePriceCheck";
@@ -8,10 +8,43 @@ import logo from "./assets/autoprotect-logo.png";
 
 const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
 
+/**
+ * Manage Repairers is restricted to the owner of the repairer data; the rest
+ * of the domain gets Search only. Kept in hand-sync with REPAIRER_MANAGERS
+ * in api/src/lib/auth.ts, which is the actual enforcement -- hiding the nav
+ * link and the route here is UX, same as the ALLOWED_DOMAIN check below.
+ * (The frontend and the API are separate packages with no shared module,
+ * which is why ALLOWED_DOMAIN is duplicated across them too.)
+ */
+const REPAIRER_MANAGERS = ["jake.quaradeghini@autoprotectgroup.co.uk"];
+
 function navClass({ isActive }: { isActive: boolean }) {
   return `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
     isActive ? "bg-white/15 text-white" : "text-brand-100 hover:bg-white/10 hover:text-white"
   }`;
+}
+
+/**
+ * Shown instead of Manage Repairers to anyone outside REPAIRER_MANAGERS. The
+ * route stays registered rather than being dropped, so a colleague's old
+ * bookmark explains itself instead of landing on an empty page.
+ */
+function ManageRepairersRestricted() {
+  return (
+    <div className="mx-auto max-w-md p-10 text-center">
+      <h1 className="text-lg font-semibold text-slate-800">Manage Repairers isn't available</h1>
+      <p className="mt-2 text-sm text-slate-600">
+        Adding and editing repairers is restricted to the owner of the repairer network. If a
+        repairer needs adding or correcting, ask them to make the change.
+      </p>
+      <Link
+        to="/"
+        className="mt-5 inline-block rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
+      >
+        Back to search
+      </Link>
+    </div>
+  );
 }
 
 export default function App() {
@@ -71,6 +104,8 @@ export default function App() {
     );
   }
 
+  const canManageRepairers = REPAIRER_MANAGERS.includes(principal.userDetails.toLowerCase());
+
   return (
     <div className="flex h-full flex-col">
       <header className="flex items-center justify-between bg-brand-600 px-6 py-2.5 shadow-sm">
@@ -83,9 +118,11 @@ export default function App() {
             <NavLink to="/" end className={navClass}>
               Search
             </NavLink>
-            <NavLink to="/manage" className={navClass}>
-              Manage Repairers
-            </NavLink>
+            {canManageRepairers && (
+              <NavLink to="/manage" className={navClass}>
+                Manage Repairers
+              </NavLink>
+            )}
             {/*
               Tyre Price Check is deliberately not linked in the nav yet. The
               route below still works for anyone who knows the URL, so it can
@@ -107,7 +144,10 @@ export default function App() {
       <main className="min-h-0 flex-1">
         <Routes>
           <Route path="/" element={<Search />} />
-          <Route path="/manage" element={<ManageRepairers />} />
+          <Route
+            path="/manage"
+            element={canManageRepairers ? <ManageRepairers /> : <ManageRepairersRestricted />}
+          />
           <Route path="/tyre-price" element={<TyrePriceCheck />} />
         </Routes>
       </main>
