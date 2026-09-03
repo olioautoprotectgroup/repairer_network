@@ -1,4 +1,12 @@
-import type { Repairer, SearchFilters, SearchResponse } from "./types";
+import type {
+  DiscountReport,
+  Repairer,
+  RepairerFeedbackDetail,
+  RepairerFeedbackSummary,
+  RepairerReview,
+  SearchFilters,
+  SearchResponse,
+} from "./types";
 import type { TyrePriceRequest, TyrePriceResponse } from "./tyrePriceTypes";
 
 async function handle<T>(res: Response): Promise<T> {
@@ -53,6 +61,80 @@ export async function updateRepairer(id: string, repairer: Partial<Repairer>) {
     body: JSON.stringify(repairer),
   });
   return handle<Repairer>(res);
+}
+
+/**
+ * Per-repairer rollups keyed by repairer id, for the cards. Fetched
+ * separately from the search rather than joined into it server-side, so a
+ * feedback failure degrades to cards without ratings instead of breaking
+ * the search itself. Repairers with no feedback are simply absent from the
+ * map.
+ */
+export async function getFeedbackSummaries(): Promise<Record<string, RepairerFeedbackSummary>> {
+  const res = await fetch("/api/repairer-feedback");
+  return handle<Record<string, RepairerFeedbackSummary>>(res);
+}
+
+/** Full reviews and discount reports for one repairer, newest first. */
+export async function getRepairerFeedback(repairerId: string): Promise<RepairerFeedbackDetail> {
+  const res = await fetch(`/api/repairer-feedback/${encodeURIComponent(repairerId)}`);
+  return handle<RepairerFeedbackDetail>(res);
+}
+
+export async function submitReview(
+  repairerId: string,
+  input: { rating: number; note: string | null },
+): Promise<RepairerReview> {
+  const res = await fetch(`/api/repairer-feedback/${encodeURIComponent(repairerId)}/reviews`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  return handle<RepairerReview>(res);
+}
+
+export async function submitDiscountReport(
+  repairerId: string,
+  input: { openToNegotiation: boolean; discountPercent: number | null; note: string | null },
+): Promise<DiscountReport> {
+  const res = await fetch(`/api/repairer-feedback/${encodeURIComponent(repairerId)}/discounts`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(input),
+  });
+  return handle<DiscountReport>(res);
+}
+
+/**
+ * 204 responses carry no body, so these two can't go through handle<T>()
+ * -- it would try to parse an empty body as JSON. The error path is kept
+ * identical by reusing the same message shape.
+ */
+async function handleNoContent(res: Response): Promise<void> {
+  if (res.ok) return;
+  const text = await res.text().catch(() => "");
+  let message = text || res.statusText;
+  try {
+    const parsed = JSON.parse(text) as { error?: string; detail?: string };
+    if (parsed.error) message = [parsed.error, parsed.detail].filter(Boolean).join(" — ");
+  } catch {
+    // not JSON -- use the raw text as-is
+  }
+  throw new Error(`Request failed (${res.status}): ${message}`);
+}
+
+export async function deleteReview(reviewId: string): Promise<void> {
+  const res = await fetch(`/api/repairer-feedback/reviews/${encodeURIComponent(reviewId)}`, {
+    method: "DELETE",
+  });
+  return handleNoContent(res);
+}
+
+export async function deleteDiscountReport(reportId: string): Promise<void> {
+  const res = await fetch(`/api/repairer-feedback/discounts/${encodeURIComponent(reportId)}`, {
+    method: "DELETE",
+  });
+  return handleNoContent(res);
 }
 
 export async function checkTyrePrice(input: TyrePriceRequest): Promise<TyrePriceResponse> {

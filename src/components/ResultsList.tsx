@@ -1,4 +1,4 @@
-import type { SearchResult } from "../lib/types";
+import type { RepairerFeedbackSummary, SearchResult } from "../lib/types";
 import RepairerCard from "./RepairerCard";
 
 interface Props {
@@ -7,9 +7,22 @@ interface Props {
   onSelect: (id: string) => void;
   loading: boolean;
   hasSearched: boolean;
+  /** Keyed by repairer id; repairers without feedback are absent. */
+  feedback: Record<string, RepairerFeedbackSummary>;
+  currentUserEmail: string;
+  canModerate: boolean;
 }
 
-export default function ResultsList({ results, selectedId, onSelect, loading, hasSearched }: Props) {
+export default function ResultsList({
+  results,
+  selectedId,
+  onSelect,
+  loading,
+  hasSearched,
+  feedback,
+  currentUserEmail,
+  canModerate,
+}: Props) {
   if (loading) {
     return <div className="p-6 text-slate-400">Searching&hellip;</div>;
   }
@@ -30,7 +43,14 @@ export default function ResultsList({ results, selectedId, onSelect, loading, ha
     <div className="flex flex-col gap-3 overflow-y-auto p-4">
       {results.map((r) => (
         <div key={r.id} id={`result-${r.id}`}>
-          <RepairerCard repairer={r} selected={r.id === selectedId} onSelect={onSelect} />
+          <RepairerCard
+            repairer={r}
+            selected={r.id === selectedId}
+            onSelect={onSelect}
+            feedback={feedback[r.id]}
+            currentUserEmail={currentUserEmail}
+            canModerate={canModerate}
+          />
         </div>
       ))}
     </div>
