@@ -121,13 +121,25 @@ account.
   `x-ms-client-principal` header SWA attaches to every request once a user
   is logged in:
   - **Server-side (the real enforcement)**: `api/src/lib/auth.ts`'s
-    `isAuthorizedStaff()` is checked at the top of every function in
-    `api/src/functions/` (`search`, `repairers` list/create/update) — a
-    logged-in user from outside `@autoprotectgroup.co.uk` gets a 403 from
-    every endpoint.
+    `isAuthorizedStaff()` is checked at the top of `search` — a logged-in
+    user from outside `@autoprotectgroup.co.uk` gets a 403 from every
+    endpoint.
   - **Client-side (UX only)**: `src/App.tsx` shows an "access restricted"
     screen instead of the app for the same reason, so an unauthorized user
     doesn't just see the app fail silently against 403s.
+- **Manage Repairers is restricted further, to one person.** Search is for
+  the whole domain; adding and editing repairers is not. The allowed
+  addresses live in `REPAIRER_MANAGERS` in `api/src/lib/auth.ts`
+  (`isAuthorizedRepairerManager()`, gating `repairers`
+  list/create/update — again the real enforcement) and in a hand-synced
+  copy of the same list in `src/App.tsx`, which hides the nav link and
+  serves an explanatory page on `/manage` instead of the editor. Everyone
+  else on the domain gets a 403 from those three endpoints. To grant
+  someone access, add their address to **both** lists — the frontend copy
+  alone only un-hides a screen whose every request still 403s. The
+  Databricks intake-merge job is unaffected: it authorizes
+  `POST /api/repairers` with the `x-writeback-key` shared secret, not a
+  signed-in identity.
 - If a Standard-SKU custom Entra app registration (single-tenant, so
   outside accounts can't even reach the login screen) is wanted later for
   belt-and-braces, it's an additive change plus the SKU upgrade —

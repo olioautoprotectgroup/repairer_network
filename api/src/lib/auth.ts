@@ -36,6 +36,25 @@ export function isAuthorizedStaff(request: HttpRequest): boolean {
 }
 
 /**
+ * Manage Repairers is restricted further than the rest of the app: only the
+ * named owner(s) of the repairer data may list or edit it. Everyone else on
+ * the domain keeps their read-only access through Search, and has the nav
+ * link and route hidden in `src/App.tsx` -- but that is UX only, exactly as
+ * with the domain check, so these endpoints are the real gate.
+ *
+ * Kept as a list so granting a second person access later is a one-line
+ * change here (plus the matching list in `src/App.tsx`) rather than a
+ * rethink. Compared case-insensitively because AAD echoes back whatever
+ * casing the user typed at the login prompt.
+ */
+const REPAIRER_MANAGERS = ["jake.quaradeghini@autoprotectgroup.co.uk"];
+
+export function isAuthorizedRepairerManager(request: HttpRequest): boolean {
+  const email = getClientPrincipal(request)?.userDetails?.toLowerCase();
+  return Boolean(email && REPAIRER_MANAGERS.includes(email));
+}
+
+/**
  * Authorizes a machine caller (a scheduled Databricks job, not a signed-in
  * AAD user) via a shared secret in the `x-writeback-key` header, checked
  * against the DATABRICKS_WRITEBACK_KEY app setting. Used by automated

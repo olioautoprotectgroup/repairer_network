@@ -2,12 +2,17 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 import { getCurrentRepairers, commitRepairersJson } from "../lib/github";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
-import { isAuthorizedStaff, isAuthorizedWriteback } from "../lib/auth";
+import { isAuthorizedRepairerManager, isAuthorizedWriteback } from "../lib/auth";
 import type { Repairer } from "../lib/types";
 
+// Every endpoint here backs the Manage Repairers screen, which is
+// restricted to the repairer network owner rather than to staff at large --
+// so these gate on isAuthorizedRepairerManager(), not isAuthorizedStaff().
+// Search (api/src/functions/search.ts) is unchanged and stays open to the
+// whole domain.
 const FORBIDDEN: HttpResponseInit = {
   status: 403,
-  jsonBody: { error: "Access restricted to AutoProtect Group staff" },
+  jsonBody: { error: "Editing repairers is restricted to the repairer network owner" },
 };
 
 type RepairerInput = Omit<
@@ -41,7 +46,7 @@ export function saveFailureResponse(err: unknown): HttpResponseInit {
 }
 
 export async function listRepairers(request: HttpRequest): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return FORBIDDEN;
+  if (!isAuthorizedRepairerManager(request)) return FORBIDDEN;
   // Manage Repairers reads live from GitHub rather than the locally bundled
   // (up to ~1 minute stale) copy -- staff expect a just-added repairer to
   // show up on reload, not only within the tab that added it.
@@ -50,10 +55,10 @@ export async function listRepairers(request: HttpRequest): Promise<HttpResponseI
 }
 
 export async function createRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  // Accepts either a signed-in AAD staff member (Manage Repairers form) or
-  // the Databricks new-repairer intake-merge job (shared-secret writeback
+  // Accepts either the signed-in repairer network owner (Manage Repairers
+  // form) or the Databricks new-repairer intake-merge job (shared-secret writeback
   // auth) -- both go through the same geocoding/slug/sha-safe commit logic.
-  if (!isAuthorizedStaff(request) && !isAuthorizedWriteback(request)) return FORBIDDEN;
+  if (!isAuthorizedRepairerManager(request) && !isAuthorizedWriteback(request)) return FORBIDDEN;
   const input = (await request.json()) as RepairerInput;
   if (!input.companyName?.trim()) {
     return { status: 400, jsonBody: { error: "companyName is required" } };
@@ -91,7 +96,7 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
 }
 
 export async function updateRepairer(request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> {
-  if (!isAuthorizedStaff(request)) return FORBIDDEN;
+  if (!isAuthorizedRepairerManager(request)) return FORBIDDEN;
   const id = request.params.id;
   const input = (await request.json()) as Partial<RepairerInput>;
 
