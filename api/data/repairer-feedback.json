@@ -11,5 +11,17 @@
       "updatedAt": null
     }
   ],
-  "discountReports": []
+  "discountReports": [
+    {
+      "id": "ca22615c-4438-48d3-bd11-c3e606614ea9",
+      "repairerId": "albert-road-service-station-ltd",
+      "openToNegotiation": true,
+      "discountPercent": 10,
+      "note": "off a part sensor",
+      "authorEmail": "oliver.oakes@autoprotectgroup.co.uk",
+      "authorName": "Oliver Oakes",
+      "submittedAt": "2026-09-03T09:49:03.233Z",
+      "updatedAt": null
+    }
+  ]
 }
