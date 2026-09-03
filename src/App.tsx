@@ -86,9 +86,15 @@ export default function App() {
             <NavLink to="/manage" className={navClass}>
               Manage Repairers
             </NavLink>
-            <NavLink to="/tyre-price" className={navClass}>
-              Tyre Price Check
-            </NavLink>
+            {/*
+              Tyre Price Check is deliberately not linked in the nav yet. The
+              route below still works for anyone who knows the URL, so it can
+              be demoed -- but until Databricks is live and
+              TYRE_PRICE_HALFORDS_ENABLED is set, every lookup honestly
+              reports "Not yet enabled" and returns no prices, which reads as
+              a broken page rather than an unfinished one. Restore this link
+              when the first retailer goes live.
+            */}
           </nav>
         </div>
         <div className="flex items-center gap-3 text-sm text-brand-100">
