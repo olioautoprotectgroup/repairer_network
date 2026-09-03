@@ -1,16 +1,5 @@
 {
-  "reviews": [
-    {
-      "id": "84558c0f-7a55-4b6a-949a-4a69a97ad346",
-      "repairerId": "albert-road-service-station-ltd",
-      "rating": 5,
-      "note": "This is a test, OO to delete.",
-      "authorEmail": "oliver.oakes@autoprotectgroup.co.uk",
-      "authorName": "Oliver Oakes",
-      "submittedAt": "2026-09-03T09:48:57.424Z",
-      "updatedAt": null
-    }
-  ],
+  "reviews": [],
   "discountReports": [
     {
       "id": "ca22615c-4438-48d3-bd11-c3e606614ea9",
