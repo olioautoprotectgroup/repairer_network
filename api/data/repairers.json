@@ -4793,5 +4793,47 @@
     "geocoded": true,
     "recentRepairCount": 0,
     "repairCountAsOf": "2026-09-02T01:26:38.074038+00:00"
+  },
+  {
+    "companyName": "Lukas Engine Specialist LTD",
+    "tradingAddress": "Unit 3 Former Travis Perkins Commercial Street\nOswaldtwistle\nAccrington\nLancashire BB5 3JL",
+    "postcode": "BB5 3JL",
+    "phoneNumber": "07514773956",
+    "emailAddress": "LUKASENGINESPECIALIST@GMAIL.COM",
+    "mainContactName": "Lukas",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "LAND ROVER , RANGE ROVER, JAGUAR",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "lukas-engine-specialist-ltd",
+    "lat": 53.74085,
+    "lon": -2.400506,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
