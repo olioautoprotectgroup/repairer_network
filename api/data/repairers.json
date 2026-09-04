@@ -4302,7 +4302,9 @@
     "lon": -3.579103,
     "geocoded": true,
     "recentRepairCount": 3,
-    "repairCountAsOf": "2026-09-04T01:26:40.945944+00:00"
+    "repairCountAsOf": "2026-09-04T01:26:40.945944+00:00",
+    "archivedAt": "2026-09-04T12:38:48.362Z",
+    "archivedBy": "jake.quaradeghini@autoprotectgroup.co.uk"
   },
   {
     "companyName": "Suttonz Garage",
