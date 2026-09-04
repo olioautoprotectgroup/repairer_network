@@ -47,7 +47,10 @@ export function isAuthorizedStaff(request: HttpRequest): boolean {
  * rethink. Compared case-insensitively because AAD echoes back whatever
  * casing the user typed at the login prompt.
  */
-const REPAIRER_MANAGERS = ["jake.quaradeghini@autoprotectgroup.co.uk"];
+const REPAIRER_MANAGERS = [
+  "jake.quaradeghini@autoprotectgroup.co.uk",
+  "oliver.oakes@autoprotectgroup.co.uk",
+];
 
 export function isAuthorizedRepairerManager(request: HttpRequest): boolean {
   const email = getClientPrincipal(request)?.userDetails?.toLowerCase();

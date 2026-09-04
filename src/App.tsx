@@ -16,7 +16,10 @@ const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
  * (The frontend and the API are separate packages with no shared module,
  * which is why ALLOWED_DOMAIN is duplicated across them too.)
  */
-const REPAIRER_MANAGERS = ["jake.quaradeghini@autoprotectgroup.co.uk"];
+const REPAIRER_MANAGERS = [
+  "jake.quaradeghini@autoprotectgroup.co.uk",
+  "oliver.oakes@autoprotectgroup.co.uk",
+];
 
 function navClass({ isActive }: { isActive: boolean }) {
   return `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
