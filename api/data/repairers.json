@@ -4883,5 +4883,51 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "Network Vehicle Solutions Ltd",
+    "tradingAddress": "33 Cunliffe Drive \nKettering",
+    "postcode": null,
+    "phoneNumber": "01536416311",
+    "emailAddress": "Service@networkvs.co.uk",
+    "mainContactName": "Niall Hearty\nLewis Chambers",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 125,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Transmission and Drive Train Repairs",
+      "Repairs Requiring Engine Removal",
+      "Auto Electrical",
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autel",
+      "Launch",
+      "Bosch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 95,
+    "providesRecovery": true,
+    "recoveryChargeRate": 1.5,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "All dealers",
+    "apgComments": null,
+    "id": "network-vehicle-solutions-ltd",
+    "lat": null,
+    "lon": null,
+    "geocoded": false,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
