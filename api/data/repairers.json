@@ -4887,7 +4887,7 @@
   {
     "companyName": "Network Vehicle Solutions Ltd",
     "tradingAddress": "33 Cunliffe Drive \nKettering",
-    "postcode": null,
+    "postcode": "NN16 8LD",
     "phoneNumber": "01536416311",
     "emailAddress": "Service@networkvs.co.uk",
     "mainContactName": "Niall Hearty\nLewis Chambers",
@@ -4924,9 +4924,9 @@
     "dealerNames": "All dealers",
     "apgComments": null,
     "id": "network-vehicle-solutions-ltd",
-    "lat": null,
-    "lon": null,
-    "geocoded": false,
+    "lat": 52.408562,
+    "lon": -0.733823,
+    "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
   }
