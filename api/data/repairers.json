@@ -4835,5 +4835,53 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "Rent A Tech Vehicle Service Ltd",
+    "tradingAddress": "51 Chilcott Avenue, Brynmennyn Industrial Estate, Bridgend CF32 9RQ",
+    "postcode": "CF32 9RQ",
+    "phoneNumber": "01656725195",
+    "emailAddress": "craig@retatech.wales",
+    "mainContactName": "Craig Sheppard",
+    "openToRepeatWork": false,
+    "coverageRadiusMiles": 20,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Bosch",
+      "Topdon",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 88,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "rent-a-tech-vehicle-service-ltd",
+    "lat": 51.548026,
+    "lon": -3.579103,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null
   }
 ]
