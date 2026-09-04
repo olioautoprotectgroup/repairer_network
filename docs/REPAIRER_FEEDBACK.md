@@ -125,7 +125,7 @@ is also disabled while saving.
 
 ## Permissions
 
-- **Submitting** is open to the whole `@autoprotectgroup.co.uk` domain
+- **Submitting** is open to every staff domain in `ALLOWED_DOMAINS`
   (`isAuthorizedStaff`), not the narrower repairer-network-owner check that
   guards Manage Repairers. Restricting it to the data owner would defeat
   the point.

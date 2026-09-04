@@ -63,12 +63,36 @@ describe("isAuthorizedRepairerManager", () => {
 
 describe("isAuthorizedStaff", () => {
   // Search is deliberately unaffected by the Manage Repairers restriction:
-  // the whole domain keeps read-only access.
-  it("still allows any signed-in member of the domain", () => {
+  // every staff domain keeps read-only access.
+  it("still allows any signed-in member of the primary domain", () => {
     expect(isAuthorizedStaff(requestAs("someone.else@autoprotectgroup.co.uk"))).toBe(true);
   });
 
-  it("rejects an address outside the domain", () => {
+  it("allows the second staff domain", () => {
+    expect(isAuthorizedStaff(requestAs("someone.else@autoprotect.net"))).toBe(true);
+  });
+
+  it("ignores casing on either domain", () => {
+    expect(isAuthorizedStaff(requestAs("Someone.Else@AutoProtect.net"))).toBe(true);
+  });
+
+  it("rejects an address outside every staff domain", () => {
     expect(isAuthorizedStaff(requestAs("someone@example.com"))).toBe(false);
+    expect(isAuthorizedStaff(requestAs(null))).toBe(false);
+  });
+
+  // This is why every entry keeps its leading "@". Matching on the bare
+  // "autoprotect.net" would hand the whole repairer network to anyone who
+  // registered a domain ending in it.
+  it("rejects a lookalike domain that merely ends with a staff domain", () => {
+    expect(isAuthorizedStaff(requestAs("attacker@not-autoprotect.net"))).toBe(false);
+    expect(isAuthorizedStaff(requestAs("attacker@evilautoprotect.net"))).toBe(false);
+    expect(isAuthorizedStaff(requestAs("attacker@fake-autoprotectgroup.co.uk"))).toBe(false);
+  });
+
+  // A subdomain is a different mail domain and is not covered by either
+  // entry -- worth pinning so a future "helpful" loosening is deliberate.
+  it("rejects a subdomain of a staff domain", () => {
+    expect(isAuthorizedStaff(requestAs("someone@mail.autoprotect.net"))).toBe(false);
   });
 });

@@ -2,7 +2,8 @@
 
 An internal tool for AutoProtect Group claims handlers: search the approved
 repairer network by postcode, see results ranked by distance with an
-interactive map, restricted to `@autoprotectgroup.co.uk` staff.
+interactive map, restricted to AutoProtect Group staff
+(`@autoprotectgroup.co.uk` and `@autoprotect.net`).
 
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS, map via MapLibre GL
   (free, no API key).
@@ -22,9 +23,9 @@ interactive map, restricted to `@autoprotectgroup.co.uk` staff.
   Databricks SQL Warehouse query once a repairer table exists in the
   datalake. See `Databricks_MetaData`'s `catalogs/curated/<schema>/` +
   `INDEX` convention for how that table should be documented there. Keep
-  auth exactly as-is — the `@autoprotectgroup.co.uk` restriction must stay
-  enforced at this app's login layer, not as Databricks-side row-level
-  security with a shared service principal.
+  auth exactly as-is — the staff-domain restriction must stay enforced at
+  this app's login layer, not as Databricks-side row-level security with a
+  shared service principal.
 
 ## Sensitive data handled deliberately
 
@@ -113,10 +114,18 @@ roles (`rolesSource`) — both are **Standard SKU** features (~$9+/month).
 Free tier only has two built-in roles: `anonymous` and `authenticated` (any
 successfully logged-in user, any provider, any tenant). So the routes in
 `staticwebapp.config.json` just require `authenticated`, and the real
-`@autoprotectgroup.co.uk` check happens in application code instead — see
-below. This is still a solid gate: nobody can forge a verified
-`@autoprotectgroup.co.uk` UPN without a real, DNS-verified AutoProtect Group
-account.
+staff-domain check happens in application code instead — see below. This is
+still a solid gate: nobody can forge a verified UPN at one of those domains
+without a real, DNS-verified AutoProtect Group account.
+
+**That makes `ALLOWED_DOMAINS` in `api/src/lib/auth.ts` the entire access
+boundary, and adding to it a security decision rather than a config tweak.**
+Because the login is not tenant-scoped, anyone able to obtain an address at
+a listed domain can read the whole repairer network — contact details,
+labour rates, commercial terms, and colleagues' notes about named
+suppliers. Only list a domain AutoProtect Group owns and has DNS-verified
+in its own tenant. Every entry keeps its leading `@`, so a lookalike like
+`not-autoprotect.net` can't match.
 
 **PR preview environments need deleting by hand.** Every pull request gets
 its own preview deploy (`...-<pr-number>.westeurope.7.azurestaticapps.net`),
@@ -141,8 +150,7 @@ start failing.
   is logged in:
   - **Server-side (the real enforcement)**: `api/src/lib/auth.ts`'s
     `isAuthorizedStaff()` is checked at the top of `search` — a logged-in
-    user from outside `@autoprotectgroup.co.uk` gets a 403 from every
-    endpoint.
+    user from outside the staff domains gets a 403 from every endpoint.
   - **Client-side (UX only)**: `src/App.tsx` shows an "access restricted"
     screen instead of the app for the same reason, so an unauthorized user
     doesn't just see the app fail silently against 403s.
