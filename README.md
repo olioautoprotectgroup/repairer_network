@@ -146,11 +146,11 @@ start failing.
   - **Client-side (UX only)**: `src/App.tsx` shows an "access restricted"
     screen instead of the app for the same reason, so an unauthorized user
     doesn't just see the app fail silently against 403s.
-- **Manage Repairers is restricted further, to one person.** Search is for
+- **Manage Repairers is restricted further, to a named few.** Search is for
   the whole domain; adding and editing repairers is not. The allowed
   addresses live in `REPAIRER_MANAGERS` in `api/src/lib/auth.ts`
   (`isAuthorizedRepairerManager()`, gating `repairers`
-  list/create/update — again the real enforcement) and in a hand-synced
+  list/create/update/archive — again the real enforcement) and in a hand-synced
   copy of the same list in `src/App.tsx`, which hides the nav link and
   serves an explanatory page on `/manage` instead of the editor. Everyone
   else on the domain gets a 403 from those three endpoints. To grant
@@ -159,7 +159,7 @@ start failing.
   Databricks intake-merge job is unaffected: it authorizes
   `POST /api/repairers` with the `x-writeback-key` shared secret, not a
   signed-in identity.
-- **Removing a repairer is the network owner's alone**, and is an *archive*,
+- **Removing a repairer is limited to that same list**, and is an *archive*,
   not a delete — see [Removing a repairer](#removing-a-repairer) for why.
   `PUT /api/repairers/{id}/archive` gates on `isAuthorizedRepairerManager`
   like the rest of Manage Repairers, and deliberately has no

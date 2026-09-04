@@ -40,6 +40,12 @@ describe("isAuthorizedRepairerManager", () => {
     );
   });
 
+  it("allows every address on the list, not just the first", () => {
+    expect(isAuthorizedRepairerManager(requestAs("oliver.oakes@autoprotectgroup.co.uk"))).toBe(
+      true,
+    );
+  });
+
   it("rejects other staff on the allowed domain", () => {
     expect(isAuthorizedRepairerManager(requestAs("someone.else@autoprotectgroup.co.uk"))).toBe(
       false,
