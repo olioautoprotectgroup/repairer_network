@@ -44,7 +44,10 @@ export async function listRepairers(): Promise<Repairer[]> {
 }
 
 export async function createRepairer(
-  repairer: Omit<Repairer, "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf">,
+  repairer: Omit<
+    Repairer,
+    "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf" | "archivedAt" | "archivedBy"
+  >,
 ) {
   const res = await fetch("/api/repairers", {
     method: "POST",
@@ -70,6 +73,20 @@ export async function updateRepairer(id: string, repairer: Partial<Repairer>) {
  * the search itself. Repairers with no feedback are simply absent from the
  * map.
  */
+/**
+ * Archives a repairer, or restores one. This is how a repairer is removed
+ * from the network -- see docs/REPAIRER_FEEDBACK.md and
+ * api/src/lib/archive.ts for why it is an archive and not a delete.
+ */
+export async function archiveRepairer(id: string, archived: boolean): Promise<Repairer> {
+  const res = await fetch(`/api/repairers/${encodeURIComponent(id)}/archive`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ archived }),
+  });
+  return handle<Repairer>(res);
+}
+
 export async function getFeedbackSummaries(): Promise<Record<string, RepairerFeedbackSummary>> {
   const res = await fetch("/api/repairer-feedback");
   return handle<Record<string, RepairerFeedbackSummary>>(res);

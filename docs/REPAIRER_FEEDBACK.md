@@ -149,6 +149,22 @@ PII, and they already flow through the app's auth on every request — but
 they are the reason feedback data should not be exported outside the
 business without thought.
 
+## Archived repairers
+
+Taking a repairer out of the network archives it rather than deleting it (see
+the README's "Removing a repairer"). Its reviews and discount reports are
+**kept untouched** — an admin removing a supplier shouldn't erase colleagues'
+recorded experience of it, and the rows come back intact if the repairer is
+restored. While archived, the repairer is absent from Search, so nothing looks
+its aggregate up and none of it renders.
+
+Note this is not enforced by a check: `summarizeAll` derives its key set purely
+from feedback rows and never asks whether the repairer still exists
+(`summarize.ts`). With archiving that is inert, because the id never reaches a
+card. It would not, however, have protected a hard delete — the rows would have
+been orphaned, still editable by their author via their own row id, and
+unattributable to a business except by reading the slug.
+
 ## Conflict handling
 
 Feedback writes retry **once** automatically on a GitHub 409, then fall

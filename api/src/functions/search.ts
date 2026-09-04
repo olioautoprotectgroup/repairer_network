@@ -3,6 +3,7 @@ import { loadRepairers } from "../lib/data";
 import { geocodePostcode, geocodePlace, Coordinates } from "../lib/geocode";
 import { haversineMiles } from "../lib/distance";
 import { isAuthorizedStaff } from "../lib/auth";
+import { isActive } from "../lib/archive";
 import type { Repairer, SearchResult } from "../lib/types";
 
 /**
@@ -11,7 +12,11 @@ import type { Repairer, SearchResult } from "../lib/types";
  *  1. Postcode (postcodes.io already 404s cleanly for anything else, so no
  *     separate "does this look like a postcode" check is needed).
  *  2. A repairer's own company name -- lets a handler search "from" a
- *     known repairer. More than one substring match (a few company names
+ *     known repairer. Only ACTIVE repairers are offered: an archived one
+ *     working as a search origin while being absent from the results would
+ *     be baffling, and with duplicated company names in the live data the
+ *     id tie-break below would silently hand the origin to a different
+ *     business at a different postcode. More than one substring match (a few company names
  *     really are duplicated in the live data) picks the first
  *     deterministically rather than introducing a distinct response shape
  *     for "no single origin" -- a rare-edge-case simplification.
@@ -48,7 +53,9 @@ export async function search(request: HttpRequest, context: InvocationContext): 
     return { status: 400, jsonBody: { error: "q query parameter is required" } };
   }
 
-  const allRepairers = loadRepairers();
+  // Archived repairers are out of the network: they must not appear in
+  // results, and must not be usable as a search origin either.
+  const allRepairers = loadRepairers().filter(isActive);
 
   let resolved;
   try {

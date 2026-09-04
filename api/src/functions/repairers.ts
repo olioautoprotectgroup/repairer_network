@@ -2,7 +2,8 @@ import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/fu
 import { getCurrentRepairers, commitRepairersJson } from "../lib/github";
 import { geocodePostcode } from "../lib/geocode";
 import { uniqueSlug } from "../lib/slug";
-import { isAuthorizedRepairerManager, isAuthorizedWriteback } from "../lib/auth";
+import { getClientPrincipal, isAuthorizedRepairerManager, isAuthorizedWriteback } from "../lib/auth";
+import { RepairerNotFoundError, applyArchive } from "../lib/archive";
 import type { Repairer } from "../lib/types";
 
 // Every endpoint here backs the Manage Repairers screen, which is
@@ -18,6 +19,7 @@ const FORBIDDEN: HttpResponseInit = {
 type RepairerInput = Omit<
   Repairer,
   "id" | "lat" | "lon" | "geocoded" | "recentRepairCount" | "repairCountAsOf"
+  | "archivedAt" | "archivedBy"
 >;
 
 async function geocodeOrNull(postcode: string | null) {
@@ -82,6 +84,8 @@ export async function createRepairer(request: HttpRequest, context: InvocationCo
     geocoded: Boolean(coords),
     recentRepairCount: null,
     repairCountAsOf: null,
+    archivedAt: null,
+    archivedBy: null,
   };
 
   const updated = [...repairers, newRepairer];
@@ -134,6 +138,61 @@ export async function updateRepairer(request: HttpRequest, context: InvocationCo
   return { jsonBody: merged };
 }
 
+/**
+ * Archives a repairer (or restores one), which is how a repairer is
+ * "removed" from the network here -- see api/src/lib/archive.ts for why
+ * this is not a delete. Archived repairers disappear from Search but stay
+ * in the data file, and stay visible to the network owner in Manage
+ * Repairers so a mistaken click is one click to undo.
+ *
+ * Same guard as the rest of this file: the repairer network owner only.
+ * Unlike create, there is deliberately no writeback branch -- no Databricks
+ * job should ever be able to remove a repairer from the network.
+ */
+export async function setRepairerArchived(
+  request: HttpRequest,
+  context: InvocationContext,
+): Promise<HttpResponseInit> {
+  if (!isAuthorizedRepairerManager(request)) return FORBIDDEN;
+
+  const actorEmail = getClientPrincipal(request)?.userDetails?.toLowerCase();
+  if (!actorEmail) return FORBIDDEN;
+
+  const body = (await request.json()) as { archived?: unknown };
+  if (typeof body.archived !== "boolean") {
+    return { status: 400, jsonBody: { error: "archived must be true or false" } };
+  }
+
+  // Read live from GitHub, not the bundled copy, for the same reason every
+  // other write here does: a full-array write built on a stale snapshot
+  // would silently discard anyone else's change.
+  const { data: repairers, sha } = await getCurrentRepairers<Repairer[]>();
+
+  let result;
+  try {
+    result = applyArchive(repairers, request.params.id, body.archived, actorEmail);
+  } catch (err) {
+    if (err instanceof RepairerNotFoundError) {
+      return { status: 404, jsonBody: { error: err.message } };
+    }
+    throw err;
+  }
+
+  const action = body.archived ? "Archive" : "Restore";
+  try {
+    await commitRepairersJson(
+      result.next,
+      sha,
+      `${action} repairer: ${result.updated.companyName}`,
+    );
+  } catch (err) {
+    context.error(`Failed to ${action.toLowerCase()} repairer`, err);
+    return saveFailureResponse(err);
+  }
+
+  return { jsonBody: result.updated };
+}
+
 app.http("repairers-list", {
   methods: ["GET"],
   authLevel: "anonymous",
@@ -153,4 +212,11 @@ app.http("repairers-update", {
   authLevel: "anonymous",
   route: "repairers/{id}",
   handler: updateRepairer,
+});
+
+app.http("repairers-archive", {
+  methods: ["PUT"],
+  authLevel: "anonymous",
+  route: "repairers/{id}/archive",
+  handler: setRepairerArchived,
 });
