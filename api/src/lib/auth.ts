@@ -6,11 +6,28 @@ import { timingSafeEqual } from "node:crypto";
  * Standard SKU feature), so `authenticated-staff`-style role gating in
  * staticwebapp.config.json isn't available. Instead, every route is gated
  * only on the built-in `authenticated` role (any successfully logged-in
- * user, any provider), and this module does the real
- * `@autoprotectgroup.co.uk` domain check here, server-side, using the
- * `x-ms-client-principal` header SWA attaches to every proxied request.
+ * user, any provider), and this module does the real staff-domain check
+ * here, server-side, using the `x-ms-client-principal` header SWA attaches
+ * to every proxied request.
  */
-const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
+
+/**
+ * The company email domains whose staff may use this tool. This list is
+ * the ENTIRE access boundary: SWA's Free-tier AAD provider is not scoped
+ * to a tenant, so any Microsoft account at all can reach the login screen
+ * and earn the built-in `authenticated` role. What keeps outsiders out is
+ * that they cannot hold an address at one of these domains.
+ *
+ * That makes adding a domain a real security decision, not a config tweak:
+ * only add one AutoProtect Group owns and has DNS-verified in its own
+ * tenant. Anyone able to obtain an address at a domain listed here can
+ * read the whole repairer network -- contact details, labour rates,
+ * commercial terms and colleagues' notes about named suppliers.
+ *
+ * Each entry keeps its leading "@" on purpose. Matching on
+ * "autoprotect.net" without it would also admit "not-autoprotect.net".
+ */
+const ALLOWED_DOMAINS = ["@autoprotectgroup.co.uk", "@autoprotect.net"];
 
 export interface ClientPrincipal {
   identityProvider: string;
@@ -31,8 +48,8 @@ export function getClientPrincipal(request: HttpRequest): ClientPrincipal | null
 }
 
 export function isAuthorizedStaff(request: HttpRequest): boolean {
-  const principal = getClientPrincipal(request);
-  return Boolean(principal?.userDetails?.toLowerCase().endsWith(ALLOWED_DOMAIN));
+  const email = getClientPrincipal(request)?.userDetails?.toLowerCase();
+  return Boolean(email && ALLOWED_DOMAINS.some((domain) => email.endsWith(domain)));
 }
 
 /**

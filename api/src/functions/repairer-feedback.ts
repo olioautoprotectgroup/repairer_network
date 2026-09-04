@@ -1,9 +1,9 @@
 /**
  * Staff reviews, ratings and discount reports for repairers.
  *
- * Auth: every route is gated on isAuthorizedStaff() -- the whole
- * @autoprotectgroup.co.uk domain, not the narrower repairer-network-owner
- * check that guards `repairers`. The point of this feature is that any
+ * Auth: every route is gated on isAuthorizedStaff() -- every staff domain
+ * in ALLOWED_DOMAINS, not the narrower repairer-network-owner check that
+ * guards `repairers`. The point of this feature is that any
  * handler who used a repairer can say so, so restricting submission to the
  * data owner would defeat it. Two narrower rules sit on top:
  *

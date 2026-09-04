@@ -6,15 +6,25 @@ import TyrePriceCheck from "./pages/TyrePriceCheck";
 import { getClientPrincipal, type ClientPrincipal } from "./lib/api";
 import logo from "./assets/autoprotect-logo.png";
 
-const ALLOWED_DOMAIN = "@autoprotectgroup.co.uk";
+/**
+ * Kept in hand-sync with ALLOWED_DOMAINS in api/src/lib/auth.ts, which is
+ * the real enforcement -- the screens below are UX, so a user rejected
+ * here would be rejected by every endpoint anyway. Each entry keeps its
+ * leading "@": matching "autoprotect.net" without it would also admit
+ * "not-autoprotect.net".
+ */
+const ALLOWED_DOMAINS = ["@autoprotectgroup.co.uk", "@autoprotect.net"];
+
+/** "@a.co.uk or @b.net" -- for the sign-in and access-restricted copy. */
+const ALLOWED_DOMAINS_LABEL = ALLOWED_DOMAINS.join(" or ");
 
 /**
  * Manage Repairers is restricted to the owner of the repairer data; the rest
  * of the domain gets Search only. Kept in hand-sync with REPAIRER_MANAGERS
  * in api/src/lib/auth.ts, which is the actual enforcement -- hiding the nav
- * link and the route here is UX, same as the ALLOWED_DOMAIN check below.
+ * link and the route here is UX, same as the ALLOWED_DOMAINS check below.
  * (The frontend and the API are separate packages with no shared module,
- * which is why ALLOWED_DOMAIN is duplicated across them too.)
+ * which is why ALLOWED_DOMAINS is duplicated across them too.)
  */
 const REPAIRER_MANAGERS = [
   "jake.quaradeghini@autoprotectgroup.co.uk",
@@ -75,7 +85,7 @@ export default function App() {
         <h1 className="text-2xl font-black text-white">Repairer Network Search</h1>
         <p className="max-w-sm text-brand-100">
           This tool is restricted to AutoProtect Group staff. Sign in with your
-          @autoprotectgroup.co.uk account to continue.
+          {" "}{ALLOWED_DOMAINS_LABEL} account to continue.
         </p>
         <a
           href="/.auth/login/aad?post_login_redirect_uri=/"
@@ -87,7 +97,8 @@ export default function App() {
     );
   }
 
-  if (!principal.userDetails.toLowerCase().endsWith(ALLOWED_DOMAIN)) {
+  const email = principal.userDetails.toLowerCase();
+  if (!ALLOWED_DOMAINS.some((domain) => email.endsWith(domain))) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-5 bg-gradient-to-br from-brand-600 to-brand-800 px-6 text-center">
         <img src={logo} alt="AutoProtect" className="h-24 w-auto" />
@@ -95,7 +106,7 @@ export default function App() {
         <p className="max-w-sm text-brand-100">
           This tool is restricted to AutoProtect Group staff. You're signed in as{" "}
           <strong className="text-white">{principal.userDetails}</strong>, which isn't an{" "}
-          {ALLOWED_DOMAIN} account.
+          {ALLOWED_DOMAINS_LABEL} account.
         </p>
         <a
           href="/.auth/logout?post_logout_redirect_uri=/"
