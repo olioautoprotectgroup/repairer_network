@@ -28,6 +28,18 @@ export interface Repairer {
    * "zero repairs." */
   recentRepairCount: number | null;
   repairCountAsOf: string | null;
+  /** Archive stamp -- set only by the archive endpoint, never by the Manage
+   * Repairers form, the same admin-only convention recentRepairCount uses
+   * for the sync. An archived repairer is hidden from Search but
+   * deliberately KEPT in this file: the nightly Databricks mirror is a copy
+   * of it and the intake-merge job anti-joins new sign-ups against that
+   * mirror by company name, so a hard-deleted repairer would be re-added as
+   * brand new on the next intake run -- and its freed slug could be handed
+   * to a different business, inheriting its reviews. Null or absent means
+   * active; always test with `!= null`, since the key is absent on records
+   * that predate this field. */
+  archivedAt: string | null;
+  archivedBy: string | null;
 }
 
 export interface SearchResult extends Repairer {

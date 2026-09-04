@@ -11,6 +11,9 @@ interactive map, restricted to `@autoprotectgroup.co.uk` staff.
   spreadsheet by `scripts/build-data.ts`. Editable in-app via **Manage
   Repairers** — edits are committed back to this file in git (see
   [Data storage](#data-storage-today) below), so no database is needed yet.
+- **Removing a repairer**: the network owner can archive one, taking it out
+  of Search while keeping the record — see
+  [Removing a repairer](#removing-a-repairer).
 - **Feedback**: handlers rate repairers 1-5 with an optional note, and
   report whether a repairer negotiated and by how much. Stored in
   `api/data/repairer-feedback.json` on the same GitHub-commit model, and
@@ -156,6 +159,12 @@ start failing.
   Databricks intake-merge job is unaffected: it authorizes
   `POST /api/repairers` with the `x-writeback-key` shared secret, not a
   signed-in identity.
+- **Removing a repairer is the network owner's alone**, and is an *archive*,
+  not a delete — see [Removing a repairer](#removing-a-repairer) for why.
+  `PUT /api/repairers/{id}/archive` gates on `isAuthorizedRepairerManager`
+  like the rest of Manage Repairers, and deliberately has no
+  `isAuthorizedWriteback` branch: no Databricks job should ever be able to
+  take a repairer out of the network.
 - **Reviews and discount reports go the other way — deliberately open to
   the whole domain.** Any handler who used a repairer can rate it, so those
   routes gate on `isAuthorizedStaff()`, not the owner check. Two narrower
@@ -217,6 +226,42 @@ This keeps everything on already-free services. If
 instant writes are ever needed before the Databricks migration, swapping
 in Azure Table Storage is
 a small, isolated change to `api/src/lib/data.ts`.
+
+## Removing a repairer
+
+Manage Repairers can **archive** a repairer, which is how one is taken out of
+the network. An archived repairer disappears from Search — both from the
+results and from the "search from this repairer" origin match — but stays in
+`api/data/repairers.json` with an `archivedAt`/`archivedBy` stamp, and stays
+visible to the network owner in an Archived section with an Un-archive button.
+
+**It is an archive rather than a delete for two concrete reasons**, both of
+which a hard delete would trip:
+
+1. The nightly mirror below is a copy of `repairers.json`, and the
+   intake-merge job anti-joins new Microsoft Forms sign-ups against that
+   mirror **by company name**. Delete the row and the repairer's original
+   sign-up reads as brand new, so the next intake run POSTs it straight back
+   in. That notebook lives outside this repo, so nothing here could stop it.
+2. Ids are only unique against what is currently in the file
+   (`uniqueSlug`, `api/src/functions/repairers.ts`). A deleted repairer frees
+   its slug, so a later create for a similarly named business could take it
+   and silently inherit the old repairer's reviews and discount reports,
+   which are keyed on that id. Five ids already carry `-2` collision
+   suffixes, so same-name creates demonstrably happen.
+
+Keeping the row solves both, and makes a mistaken click one click to undo.
+Their reviews and discount reports are kept untouched and come back with them.
+
+Two consequences worth knowing:
+
+- The nightly repair-count sync keeps updating archived repairers. That is
+  harmless, and is the point — the id still matches, so the sync doesn't
+  start logging unmatched ids that nobody would ever see.
+- **Re-running `scripts/build-data.ts` un-archives everything**, because it
+  rebuilds the file from the spreadsheet and drops any field it doesn't know
+  about. That is the same trap that already wipes `recentRepairCount` and
+  `repairCountAsOf`; the script is a one-off import, not a sync.
 
 ## Databricks integration
 
