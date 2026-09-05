@@ -4931,5 +4931,47 @@
     "geocoded": true,
     "recentRepairCount": null,
     "repairCountAsOf": null
+  },
+  {
+    "companyName": "Auto Prep Solutions",
+    "tradingAddress": "Valentines Farm, Rose Lane, Ripley, Gu236NE",
+    "postcode": "GU23 6NE",
+    "phoneNumber": "01483654499",
+    "emailAddress": "info@auto-prep.co.uk",
+    "mainContactName": "Lino Machado",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics"
+    ],
+    "diagnosticsEquipment": [
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 60,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "MB Brooklands",
+    "apgComments": null,
+    "id": "auto-prep-solutions",
+    "lat": 51.29926,
+    "lon": -0.491471,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
