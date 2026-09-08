@@ -1,4 +1,15 @@
 {
-  "reviews": [],
+  "reviews": [
+    {
+      "id": "6ee50561-a507-4069-942d-1c36aac0851e",
+      "repairerId": "nexa-max-garages-ltd",
+      "rating": 3,
+      "note": "repairer was unaware of the claims process that was provided even after explanation",
+      "authorEmail": "erin.murphy@autoprotectgroup.co.uk",
+      "authorName": "Erin Murphy",
+      "submittedAt": "2026-09-08T14:22:01.274Z",
+      "updatedAt": null
+    }
+  ],
   "discountReports": []
 }
