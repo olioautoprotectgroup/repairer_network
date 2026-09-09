@@ -4973,5 +4973,49 @@
     "repairCountAsOf": "2026-09-08T01:26:39.904597+00:00",
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "Plympton MOT Centre",
+    "tradingAddress": "27-29 Market Road, Plympton Plymouth, PL7 1QW",
+    "postcode": "PL7 1QW",
+    "phoneNumber": "01752345359",
+    "emailAddress": "mark@plymptonmotcentre.co.uk",
+    "mainContactName": "Neil Hardy",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 100,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 89.5,
+    "providesRecovery": null,
+    "recoveryChargeRate": 89.5,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": true,
+    "dealerNames": "Plympton Car Centre",
+    "apgComments": null,
+    "id": "plympton-mot-centre",
+    "lat": 50.387111,
+    "lon": -4.059753,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
