@@ -5017,5 +5017,54 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "TSR performance",
+    "tradingAddress": "Taunton Road\nBridgwater\nSomerset",
+    "postcode": null,
+    "phoneNumber": "01278453036",
+    "emailAddress": "Sales@tsr-performance.com",
+    "mainContactName": "Robert ellick",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 50,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel",
+      "OEM",
+      "Snap-on",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": true,
+    "recoveryChargeRate": 150,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Taunton road car centre",
+    "apgComments": null,
+    "id": "tsr-performance",
+    "lat": null,
+    "lon": null,
+    "geocoded": false,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
