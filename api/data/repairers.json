@@ -5066,5 +5066,48 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "SHOLING SERVICE STATION",
+    "tradingAddress": "UNIT 19/21 BOTNAYBAY ROAD SHOLING SOUTHAMPTON SO19 8LT",
+    "postcode": "SO19 8LT",
+    "phoneNumber": "02380422888",
+    "emailAddress": "SHOLINGSERVICESTATION@GMAIL.COM",
+    "mainContactName": "KARL CAVIE",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "MOT",
+      "Tyre",
+      "Auto Electrical",
+      "Engine Management System Diagnostics"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 85,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "sholing-service-station",
+    "lat": 50.900704,
+    "lon": -1.352807,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
