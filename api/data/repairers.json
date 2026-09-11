@@ -1327,7 +1327,9 @@
     "apgComments": null,
     "lat": 54.990385,
     "lon": -3.262257,
-    "geocoded": true
+    "geocoded": true,
+    "archivedAt": "2026-09-11T10:25:37.519Z",
+    "archivedBy": "jake.quaradeghini@autoprotectgroup.co.uk"
   },
   {
     "id": "leziate-drove-garage-ltd",
