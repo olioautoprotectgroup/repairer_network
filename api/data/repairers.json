@@ -5111,5 +5111,50 @@
     "repairCountAsOf": "2026-09-11T01:26:36.259743+00:00",
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "K and s autoservices",
+    "tradingAddress": "K ands Autoservices",
+    "postcode": null,
+    "phoneNumber": "01884822857",
+    "emailAddress": "Info@kandsautoserices.co.uk",
+    "mainContactName": "Joanne",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Engine Management System Diagnostics",
+      "Level 1 Maintenenance Services",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 80,
+    "providesRecovery": null,
+    "recoveryChargeRate": 90,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "k-and-s-autoservices",
+    "lat": null,
+    "lon": null,
+    "geocoded": false,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
