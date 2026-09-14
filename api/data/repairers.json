@@ -1763,7 +1763,9 @@
     "apgComments": null,
     "lat": 54.990385,
     "lon": -3.262257,
-    "geocoded": true
+    "geocoded": true,
+    "archivedAt": "2026-09-14T14:01:58.493Z",
+    "archivedBy": "jake.quaradeghini@autoprotectgroup.co.uk"
   },
   {
     "id": "audio-video-care",
