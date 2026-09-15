@@ -5256,5 +5256,51 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "Blee's Garage Ltd",
+    "tradingAddress": "The old grain store, Station yard, Liskeard, Cornwall PL14 4DX",
+    "postcode": "PL14 4DX",
+    "phoneNumber": "01579344777",
+    "emailAddress": "blee259@hotmail.co.uk",
+    "mainContactName": "Ryan Blee",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "Thinkcar"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel"
+    ],
+    "labourRate": 70,
+    "providesRecovery": null,
+    "recoveryChargeRate": 0,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "blee-s-garage-ltd",
+    "lat": 50.446897,
+    "lon": -4.467429,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
