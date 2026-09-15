@@ -9,6 +9,16 @@
       "authorName": "Erin Murphy",
       "submittedAt": "2026-09-08T14:22:01.274Z",
       "updatedAt": null
+    },
+    {
+      "id": "1816e399-b797-4c88-a4bd-e333066e2eed",
+      "repairerId": "gateshead-garage-ltd",
+      "rating": 5,
+      "note": "Customer was happy with the communication from the garage",
+      "authorEmail": "harrison.murray@autoprotectgroup.co.uk",
+      "authorName": "Harrison Murray",
+      "submittedAt": "2026-09-15T15:52:34.007Z",
+      "updatedAt": null
     }
   ],
   "discountReports": []
