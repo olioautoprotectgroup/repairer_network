@@ -5209,5 +5209,52 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "Chelsea Autobridge",
+    "tradingAddress": "8 Leverson street, Streatham, SW16 6DD",
+    "postcode": "SW16 6DD",
+    "phoneNumber": "02081437607",
+    "emailAddress": "info@chelseaautobridge.co.uk",
+    "mainContactName": "Harry Mears",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 5,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Snap-on",
+      "Autel",
+      "Launch"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Diesel",
+      "Hybrid"
+    ],
+    "labourRate": 100,
+    "providesRecovery": true,
+    "recoveryChargeRate": 90,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "chelsea-autobridge",
+    "lat": 51.42062,
+    "lon": -0.14015,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
