@@ -1,5 +1,5 @@
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
-import { loadRepairers } from "../lib/data";
+import { getLiveRepairers } from "../lib/repairerSource";
 import { geocodePostcode, geocodePlace, Coordinates } from "../lib/geocode";
 import { haversineMiles } from "../lib/distance";
 import { isAuthorizedStaff } from "../lib/auth";
@@ -55,7 +55,13 @@ export async function search(request: HttpRequest, context: InvocationContext): 
 
   // Archived repairers are out of the network: they must not appear in
   // results, and must not be usable as a search origin either.
-  const allRepairers = loadRepairers().filter(isActive);
+  //
+  // Read through GitHub rather than the deployed copy of repairers.json.
+  // Archiving is the one edit whose whole purpose is that Search stops
+  // returning the repairer, so it must not wait on a redeploy to take
+  // effect -- see lib/repairerSource.ts. Falls back to the deployed copy if
+  // GitHub can't be reached, so Search never fails on this.
+  const allRepairers = (await getLiveRepairers(context.warn.bind(context))).filter(isActive);
 
   let resolved;
   try {
