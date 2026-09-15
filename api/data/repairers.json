@@ -5158,5 +5158,56 @@
     "repairCountAsOf": "2026-09-14T01:26:38.713198+00:00",
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "Blights Motors ltd",
+    "tradingAddress": "Clovelly rd\nHandy Cross \nBideford",
+    "postcode": null,
+    "phoneNumber": "01237472282",
+    "emailAddress": "reception@blightsmotors.co.uk",
+    "mainContactName": "Becky Stringer/Nick Blight",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 10,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Snap-on",
+      "Autel",
+      "Bosch",
+      "Osca"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 78,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "blights-motors-ltd",
+    "lat": null,
+    "lon": null,
+    "geocoded": false,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
