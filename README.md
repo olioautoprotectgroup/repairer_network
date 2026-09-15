@@ -195,7 +195,7 @@ truth, both persisted the same way:
 
 | File | Written by | Read by |
 |---|---|---|
-| `repairers.json` | Manage Repairers, the Databricks intake-merge job, the nightly repair-count sync | search (bundled copy), Manage Repairers (live) |
+| `repairers.json` | Manage Repairers, the Databricks intake-merge job, the nightly repair-count sync | search (live, cached 60s), Manage Repairers (live) |
 | `repairer-feedback.json` | any signed-in handler, via the review / discount forms on a repairer card | card aggregates (bundled copy), the feedback panel (live) |
 
 They are deliberately **separate blobs, not one file**. Every write goes
@@ -215,11 +215,23 @@ are deployed read-only, so this can't also write to local disk for
 instant same-instance visibility — the GitHub commit is the only
 persistence step.
 
+**Search reads through GitHub too**, cached in-process for 60 seconds
+(`api/src/lib/repairerSource.ts`). It used to read the copy bundled into the
+deployment, which meant a change was invisible to Search until a deploy
+succeeded. That was fine for an edit and wrong for an archive: the entire
+point of archiving a repairer is that Search stops returning it, so the
+owner would watch it move into the Archived section and then still find it
+coming up in Search. The window is normally ~90 seconds but is bounded by
+nothing — on 2026-09-04 production deploys were failing outright, and an
+archive committed then stayed live in Search for hours. If GitHub can't be
+reached the read falls back to the deployed copy, so an outage costs Search
+freshness rather than breaking it.
+
 Writes always read the *current* file straight from GitHub right before
-merging in an edit (`getCurrentFile()`), never the local copy search/
-list use for fast reads — that copy can be stale by design, and building a
-"full array" write on top of it would silently erase anyone else's change
-made in the meantime. The commit is sent with the sha it was read at, so a
+merging in an edit (`getCurrentFile()`), never a cached or bundled copy —
+they need the blob sha for the conflict check, and building a "full array"
+write on a stale snapshot would silently erase anyone else's change made in
+the meantime. The commit is sent with the sha it was read at, so a
 genuine conflict (two saves landing at once) fails with a clear "please
 retry" instead of one silently overwriting the other.
 
@@ -238,8 +250,9 @@ a small, isolated change to `api/src/lib/data.ts`.
 ## Removing a repairer
 
 Manage Repairers can **archive** a repairer, which is how one is taken out of
-the network. An archived repairer disappears from Search — both from the
-results and from the "search from this repairer" origin match — but stays in
+the network. An archived repairer disappears from Search within a minute —
+both from the results and from the "search from this repairer" origin match,
+and without waiting for a deploy — but stays in
 `api/data/repairers.json` with an `archivedAt`/`archivedBy` stamp, and stays
 visible to the network owner in an Archived section with an Un-archive button.
 
@@ -261,8 +274,14 @@ which a hard delete would trip:
 Keeping the row solves both, and makes a mistaken click one click to undo.
 Their reviews and discount reports are kept untouched and come back with them.
 
-Two consequences worth knowing:
+Three consequences worth knowing:
 
+- **Duplicate records are archived one at a time.** Several businesses have
+  two rows under near-identical names (`-2` id suffixes, and pairs like
+  `rent-a-tech` / `rent-a-tech-vehicle-service-ltd` at the same postcode).
+  Archiving one leaves its twin in Search, which looks exactly like the
+  archive not working. Check the Archived section for a second copy before
+  concluding something is wrong.
 - The nightly repair-count sync keeps updating archived repairers. That is
   harmless, and is the point — the id still matches, so the sync doesn't
   start logging unmatched ids that nobody would ever see.
