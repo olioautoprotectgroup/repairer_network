@@ -127,17 +127,20 @@ suppliers. Only list a domain AutoProtect Group owns and has DNS-verified
 in its own tenant. Every entry keeps its leading `@`, so a lookalike like
 `not-autoprotect.net` can't match.
 
-**PR preview environments need deleting by hand.** Every pull request gets
-its own preview deploy (`...-<pr-number>.westeurope.7.azurestaticapps.net`),
-and Azure's generated workflow normally tears that down when the PR closes.
-That teardown job has been removed, because it cannot succeed against this
-app — with the deployment token supplied it fails on the content server's
-"No matching static site found", an open upstream issue with no fix
-([Azure/static-web-apps#1638](https://github.com/Azure/static-web-apps/issues/1638));
-the reasoning is commented in the workflow. So delete old ones under
-**Environments** in the Static Web App in the portal: the Free tier caps how
-many can exist at once, and once that cap is reached new PR preview deploys
-start failing.
+**Pull requests do not get a preview environment.** They are typechecked,
+built and tested by the `CI` workflow, and a change reaches the live site when
+it merges to `main`. Azure's generated per-PR preview was dropped because its
+teardown job cannot succeed against this app — with the deployment token
+supplied it fails on the content server's "No matching static site found", an
+open upstream issue with no fix
+([Azure/static-web-apps#1638](https://github.com/Azure/static-web-apps/issues/1638)).
+Previews therefore accumulated with no way to clean them up, and the Free tier
+caps how many can exist at once; once that cap was reached every PR preview
+failed, sometimes reporting it as a bogus "api key was invalid". The full
+reasoning is commented at the bottom of the deploy workflow.
+
+Any environments stranded before that change still want deleting by hand, under
+**Environments** in the Static Web App in the portal.
 
 ## How access control works
 

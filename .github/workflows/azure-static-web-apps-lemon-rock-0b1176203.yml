@@ -1,15 +1,12 @@
 name: Azure Static Web Apps CI/CD
 
+# Production deploys only. This workflow deliberately does NOT run on
+# pull_request -- see the note at the bottom for why PR previews were
+# dropped. PRs are still validated, by the separate CI workflow
+# (.github/workflows/ci.yml), which typechecks, builds and tests both
+# packages on every PR.
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    # No `closed` -- with close_pull_request_job removed (see below) a
-    # closed PR would start a run whose only job is skipped, and it was
-    # exactly that second run, racing the merge's push, that cancelled the
-    # production deploy when PR #1 merged.
-    types: [opened, synchronize, reopened]
     branches:
       - main
 
@@ -20,30 +17,22 @@ on:
 # live. That is exactly what happened on 2026-09-03 (run #95, commit 459e7e4).
 # Serialising here makes the outcome deterministic: a newer push cancels the
 # older in-flight run, and the newer checkout already contains the older
-# commit, so nothing is lost. Grouped by ref so PR previews stay independent.
+# commit, so nothing is lost.
 #
-# Keyed on the event as well as the ref, because ref alone let a PR-close
-# run cancel a production deploy. Merging PR #1 queued both at the same
-# second -- the push to main (the real deploy) and the pull_request
-# "closed" run -- and the push run was cancelled one second in, before any
-# step ran, so the merge never went live. Nothing else in this repo cancels
-# runs, and GitHub records no reason for a cancellation, so this is the
-# cause by elimination rather than from a log. Including the event name
-# keeps pushes and PR runs in separate groups whatever GitHub resolves
-# github.ref to for a closed PR, which is the part that wasn't obvious:
-# refs/heads/main vs refs/pull/N/merge *should* already have separated
-# them.
-#
-# The original intent is unchanged: a newer push to a ref still cancels the
-# older in-flight run for that same ref, and PR previews stay independent
-# of main.
+# github.event_name is still in the key, though only pushes reach this
+# workflow now, so it is constant. It is kept because it records a real
+# incident: ref alone once let a PR-close run cancel a production deploy.
+# Merging PR #1 queued both at the same second -- the push to main (the
+# real deploy) and the pull_request "closed" run -- and the push run was
+# cancelled one second in, before any step ran, so the merge never went
+# live. Dropping the trigger above makes that unreachable; leaving the key
+# alone keeps it unreachable if a PR trigger is ever added back.
 concurrency:
   group: swa-deploy-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     permissions:
@@ -78,25 +67,47 @@ jobs:
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
 
-# There is deliberately no close_pull_request_job. Azure's generated
-# workflow includes one, which tears the PR's preview environment down on
-# close, but it cannot succeed against this app: with the deployment token
-# missing (as generated) it fails on "deployment_token was not provided",
-# and with the token supplied it fails on the content server's
-# "BadRequest -- No matching static site found" instead. Both were observed
-# here, on PR #1 and PR #2 respectively. That second error is an open
-# upstream issue with no maintainer response and no known fix
-# (Azure/static-web-apps#1638); its reporter tried regenerating the token
-# and adding repo_token, neither of which helped, so there was no fix left
-# to try that wasn't a guess.
+# Why there are no PR preview environments
 #
-# Removed rather than left failing or marked continue-on-error: a job that
-# can never go green trains everyone to ignore a red run on this workflow,
-# which is the opposite of what the red is for here (see 6abc325, where a
-# run is deliberately failed so a lapsing token can't pass unnoticed).
+# Azure's generated workflow builds a preview environment per pull request
+# and tears it down with a close_pull_request_job when the PR closes. Both
+# halves are gone here, and the teardown is the reason the previews had to
+# go too.
 #
-# The cost is that preview environments are not cleaned up automatically --
-# delete them under Environments in the Static Web App in the Azure portal.
-# The Free tier caps how many can exist at once, so leaving them to
-# accumulate will eventually start failing PR preview deploys. Restoring
-# this job is the right move if the upstream issue is ever fixed.
+# That teardown job cannot succeed against this app. Without the deployment
+# token (as generated) it fails on "deployment_token was not provided"; with
+# the token supplied it fails on the content server's "BadRequest -- No
+# matching static site found" instead. Both were observed here, on PR #1 and
+# PR #2. The second is an open upstream issue with no maintainer response
+# and no known fix (Azure/static-web-apps#1638); its reporter tried
+# regenerating the token and adding repo_token, neither of which helped, so
+# there was nothing left to try that wasn't a guess.
+#
+# It was removed rather than left failing or marked continue-on-error: a job
+# that can never go green trains everyone to ignore a red run on this
+# workflow, which is the opposite of what the red is for here (see 6abc325,
+# where a run is deliberately failed so a lapsing token can't pass
+# unnoticed).
+#
+# So previews accumulated with no way to clean them up automatically, and
+# the Free tier caps how many can exist at once. Once that cap was reached
+# every subsequent PR preview deploy failed -- PRs #6, #7 and #8 each got a
+# red check and a failed-build email for it. The message is usually
+# "This Static Web App already has the maximum number of staging
+# environments", but the same cap has also surfaced as the badly misleading
+# "No matching Static Web App was found or the api key was invalid" (runs
+# #115 and #120), which cost a day chasing a deployment token that was never
+# broken. Production deploys were succeeding with that same secret
+# throughout.
+#
+# Dropping the pull_request trigger ends all of that: no previews created,
+# no cap to hit, no permanently-red check. What is lost is the per-PR
+# preview URL for clicking through a change before merge. PRs are still
+# typechecked, built and tested by .github/workflows/ci.yml.
+#
+# Restoring previews is the right move if Azure/static-web-apps#1638 is ever
+# fixed: add the pull_request trigger and close_pull_request_job back
+# together -- previews without working teardown are what got us here. Any
+# environments still stranded from before this change have to be deleted by
+# hand under Environments in the Static Web App in the Azure portal; nothing
+# in this repo can remove them.
