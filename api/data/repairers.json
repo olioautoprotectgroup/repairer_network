@@ -5320,7 +5320,9 @@
     "openToRepeatWork": true,
     "coverageRadiusMiles": null,
     "vehicleManufacturers": [
-      "Brand specific"
+      "BMW",
+      "Mini",
+      "Mercedes"
     ],
     "brandSpecifics": "BMW \nMercedes \nMINI",
     "capabilities": [
