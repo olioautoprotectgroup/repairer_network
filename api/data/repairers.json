@@ -2475,7 +2475,11 @@
     "openToRepeatWork": false,
     "coverageRadiusMiles": null,
     "vehicleManufacturers": [
-      "Brand specific"
+      "BMW",
+      "Land Rover",
+      "Jaguar",
+      "Audi",
+      "Mercedes"
     ],
     "brandSpecifics": "BMW, Land Rover, Jaguar, Audi, Mercedes",
     "capabilities": [
