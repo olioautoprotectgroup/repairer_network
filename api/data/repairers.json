@@ -5304,5 +5304,52 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "H&C Motors Ltd",
+    "tradingAddress": "19-25 Rawdon Road\nMaidstone\nKent\nME15 6PT",
+    "postcode": "ME15 6PT",
+    "phoneNumber": "01622752364",
+    "emailAddress": "gary@handcmotors.co.uk",
+    "mainContactName": "Gary Micallef\nHarry Butler",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "BMW \nMercedes \nMINI",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Autel"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel"
+    ],
+    "labourRate": 90,
+    "providesRecovery": true,
+    "recoveryChargeRate": 123456,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "h-c-motors-ltd",
+    "lat": 51.267012,
+    "lon": 0.525751,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
