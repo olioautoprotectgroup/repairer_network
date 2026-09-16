@@ -4,6 +4,7 @@ import { geocodePostcode, geocodePlace, Coordinates } from "../lib/geocode";
 import { haversineMiles } from "../lib/distance";
 import { isAuthorizedStaff } from "../lib/auth";
 import { isActive } from "../lib/archive";
+import { listMakes, matchesMake } from "../lib/makes";
 import type { Repairer, SearchResult } from "../lib/types";
 
 /**
@@ -83,7 +84,11 @@ export async function search(request: HttpRequest, context: InvocationContext): 
 
   const results: SearchResult[] = allRepairers
     .filter((r) => r.geocoded && r.lat != null && r.lon != null)
-    .filter((r) => !make || r.vehicleManufacturers.some((m) => m.toLowerCase() === make.toLowerCase()))
+    // matchesMake(), not an equality test on vehicleManufacturers: that
+    // field is a category ("All makes and models" / "Brand specific") far
+    // more often than a make, so exact matching hid the 89 garages that
+    // handle everything from every brand filter. See lib/makes.ts.
+    .filter((r) => !make || matchesMake(r, make))
     .filter(
       (r) => !capability || r.capabilities.some((c) => c.toLowerCase() === capability.toLowerCase()),
     )
@@ -98,9 +103,36 @@ export async function search(request: HttpRequest, context: InvocationContext): 
   return { jsonBody: { searchPoint, resolvedLabel, results } };
 }
 
+/**
+ * The manufacturer dropdown's options, derived from the repairers themselves
+ * rather than a hardcoded list -- so a make typed into Manage Repairers is
+ * offered in Search, and a make nobody works on is not.
+ *
+ * Reads the same live-with-fallback source as search, so a new make appears
+ * within a minute rather than at the next deploy, and archived repairers
+ * contribute nothing.
+ */
+export async function listRepairerMakes(
+  request: HttpRequest,
+  context: InvocationContext,
+): Promise<HttpResponseInit> {
+  if (!isAuthorizedStaff(request)) {
+    return { status: 403, jsonBody: { error: "Access restricted to AutoProtect Group staff" } };
+  }
+  const repairers = (await getLiveRepairers(context.warn.bind(context))).filter(isActive);
+  return { jsonBody: listMakes(repairers) };
+}
+
 app.http("search", {
   methods: ["GET"],
   authLevel: "anonymous",
   route: "search",
   handler: search,
+});
+
+app.http("repairer-makes", {
+  methods: ["GET"],
+  authLevel: "anonymous",
+  route: "repairer-makes",
+  handler: listRepairerMakes,
 });

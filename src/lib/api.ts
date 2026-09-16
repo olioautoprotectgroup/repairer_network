@@ -38,6 +38,16 @@ export async function searchRepairers(
   return handle<SearchResponse>(res);
 }
 
+/**
+ * The manufacturer dropdown's options, derived from the repairer records
+ * rather than hardcoded in the component -- so a make typed into Manage
+ * Repairers is offered here, and a make nobody works on is not.
+ */
+export async function listRepairerMakes(): Promise<string[]> {
+  const res = await fetch("/api/repairer-makes");
+  return handle<string[]>(res);
+}
+
 export async function listRepairers(): Promise<Repairer[]> {
   const res = await fetch("/api/repairers");
   return handle<Repairer[]>(res);

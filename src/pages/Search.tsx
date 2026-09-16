@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ResultsList from "../components/ResultsList";
 import MapView from "../components/MapView";
 import Filters from "../components/Filters";
-import { getFeedbackSummaries, searchRepairers } from "../lib/api";
+import { getFeedbackSummaries, listRepairerMakes, searchRepairers } from "../lib/api";
 import type { RepairerFeedbackSummary, SearchFilters, SearchResult } from "../lib/types";
 
 interface Props {
@@ -23,6 +23,7 @@ export default function Search({ currentUserEmail, canModerate }: Props) {
   const [hasSearched, setHasSearched] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [feedback, setFeedback] = useState<Record<string, RepairerFeedbackSummary>>({});
+  const [makes, setMakes] = useState<string[]>([]);
 
   // Fetched once on mount, not per search, and deliberately not folded
   // into the search response: a feedback failure then leaves the cards
@@ -31,6 +32,15 @@ export default function Search({ currentUserEmail, canModerate }: Props) {
     getFeedbackSummaries()
       .then(setFeedback)
       .catch(() => setFeedback({}));
+  }, []);
+
+  // Same shape and the same reasoning as the feedback fetch above: once on
+  // mount, and a failure leaves the manufacturer filter unavailable rather
+  // than breaking the page.
+  useEffect(() => {
+    listRepairerMakes()
+      .then(setMakes)
+      .catch(() => setMakes([]));
   }, []);
 
   async function runSearch(query: string, f: SearchFilters) {
@@ -86,7 +96,7 @@ export default function Search({ currentUserEmail, canModerate }: Props) {
             </button>
           </form>
           <div className="mt-3">
-            <Filters filters={filters} onChange={handleFiltersChange} />
+            <Filters filters={filters} onChange={handleFiltersChange} makes={makes} />
           </div>
           {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
           {hasSearched && !loading && (

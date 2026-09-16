@@ -250,6 +250,37 @@ instant writes are ever needed before the Databricks migration, swapping
 in Azure Table Storage is
 a small, isolated change to `api/src/lib/data.ts`.
 
+## Searching by manufacturer
+
+The manufacturer dropdown is **derived from the repairer records**, not a
+fixed list — a make typed into Manage Repairers is offered in Search within a
+minute, and a make nobody works on is not offered at all. The logic is
+`api/src/lib/makes.ts`, behind `GET /api/repairer-makes`.
+
+Two things about how a make filter matches, both of which matter when reading
+results:
+
+- **Garages listed as "All makes and models" match every make.** That is what
+  the value means, and 89 of the 121 active repairers hold it, so a brand
+  filter returns most of the network plus the specialists. Select
+  *All makes and models* itself to narrow to only those garages.
+- **`brandSpecifics` free text is searched as well.** For the 16 repairers
+  marked *Brand specific*, that field is where their real brands live
+  (`VAG, Isuzu`, `VOLVO`, `Audi, VW, SEAT, Skoda`). Tidying it in Manage
+  Repairers therefore improves search directly. Matching is on whole words, so
+  `Mini` won't match inside an unrelated word, but a make typed with no
+  separator (`jaguar landrover`) is still found.
+
+Note `vehicleManufacturers` is really a *category* field in the imported data
+— almost every record holds `All makes and models` or `Brand specific` rather
+than a manufacturer. Entering actual makes there (as with `JLR` for Sussex
+vehicle services) is the cleanest way to make a repairer findable by brand.
+
+The **capability** dropdown is still a hardcoded list in
+`src/components/Filters.tsx`. It happens to match the data exactly today, so
+it is correct — but it is the same fragile pattern, and worth deriving the
+same way if those values ever change.
+
 ## Removing a repairer
 
 Manage Repairers can **archive** a repairer, which is how one is taken out of

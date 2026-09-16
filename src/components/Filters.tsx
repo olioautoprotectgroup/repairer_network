@@ -1,15 +1,10 @@
 import type { SearchFilters } from "../lib/types";
 
-const COMMON_MAKES = [
-  "All makes and models",
-  "BMW",
-  "Mercedes",
-  "VAG",
-  "Ford",
-  "Vauxhall",
-  "Toyota",
-  "Land Rover",
-];
+/** The value repairers use to mean "we'll work on anything". Offered as its
+ * own option because it is a useful filter in its own right, and because it
+ * is a category rather than a manufacturer so it never appears in the
+ * derived list (see api/src/lib/makes.ts). */
+const ALL_MAKES = "All makes and models";
 
 const COMMON_CAPABILITIES = [
   "Level 1 Maintenenance Services",
@@ -24,20 +19,26 @@ const COMMON_CAPABILITIES = [
 interface Props {
   filters: SearchFilters;
   onChange: (filters: SearchFilters) => void;
+  /** Derived from the live repairer data by GET /api/repairer-makes. Empty
+   * while loading, or if that call failed -- the select is disabled then
+   * rather than rendered as an empty dropdown that looks broken. */
+  makes: string[];
 }
 
-export default function Filters({ filters, onChange }: Props) {
+export default function Filters({ filters, onChange, makes }: Props) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <select
         value={filters.vehicleManufacturer ?? ""}
+        disabled={makes.length === 0}
         onChange={(e) =>
           onChange({ ...filters, vehicleManufacturer: e.target.value || undefined })
         }
-        className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700"
+        className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 disabled:opacity-60"
       >
         <option value="">Any manufacturer</option>
-        {COMMON_MAKES.map((m) => (
+        <option value={ALL_MAKES}>{ALL_MAKES}</option>
+        {makes.map((m) => (
           <option key={m} value={m}>
             {m}
           </option>
