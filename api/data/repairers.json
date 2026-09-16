@@ -3779,7 +3779,8 @@
     "openToRepeatWork": true,
     "coverageRadiusMiles": 30,
     "vehicleManufacturers": [
-      "Brand specific"
+      "BMW",
+      "Mini"
     ],
     "brandSpecifics": "BMW & MINI ONLY",
     "capabilities": [
