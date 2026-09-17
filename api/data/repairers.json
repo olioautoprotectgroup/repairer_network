@@ -5358,5 +5358,53 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "His and Hers Motors Limited",
+    "tradingAddress": "51 Loverock Road, Reading, Berkshire, RG30 1DZ",
+    "postcode": "RG30 1DZ",
+    "phoneNumber": "07903196626",
+    "emailAddress": "info@hisandhersmotors.com",
+    "mainContactName": "07903 196626",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": null,
+    "vehicleManufacturers": [
+      "Brand specific"
+    ],
+    "brandSpecifics": "Land Rover or Jaguar",
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Transmission and Drive Train Repairs",
+      "Auto Electrical",
+      "MOT",
+      "Tyre",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "Land Rover",
+      "OEM"
+    ],
+    "drivetrainTypes": [
+      "Full EV",
+      "Diesel",
+      "Hybrid",
+      "Petrol"
+    ],
+    "labourRate": 95,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "6 - 10",
+    "hasDealerRelationship": false,
+    "dealerNames": null,
+    "apgComments": null,
+    "id": "his-and-hers-motors-limited",
+    "lat": 51.461681,
+    "lon": -0.997731,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
