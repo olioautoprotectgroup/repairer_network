@@ -5406,5 +5406,55 @@
     "repairCountAsOf": null,
     "archivedAt": null,
     "archivedBy": null
+  },
+  {
+    "companyName": "Plymouth Motor Company",
+    "tradingAddress": "8 Holland Road \nPlymstock\nPlymouth \nPl9 9BP",
+    "postcode": "PL9 9BP",
+    "phoneNumber": "01752403209",
+    "emailAddress": "churchgarageplymouth@hotmail.co.uk",
+    "mainContactName": "Jason",
+    "openToRepeatWork": true,
+    "coverageRadiusMiles": 30,
+    "vehicleManufacturers": [
+      "All makes and models"
+    ],
+    "brandSpecifics": null,
+    "capabilities": [
+      "Level 1 Maintenenance Services",
+      "Engine Management System Diagnostics",
+      "Auto Electrical",
+      "MOT",
+      "Transmission and Drive Train Repairs",
+      "Repairs Requiring Engine Removal"
+    ],
+    "diagnosticsEquipment": [
+      "OEM",
+      "Autologic (Opus IVS)",
+      "Snap-on",
+      "Bosch",
+      "Autocom"
+    ],
+    "drivetrainTypes": [
+      "Petrol",
+      "Hybrid",
+      "Diesel",
+      "Full EV"
+    ],
+    "labourRate": 70,
+    "providesRecovery": false,
+    "recoveryChargeRate": null,
+    "workshopRampVolume": "1 - 5",
+    "hasDealerRelationship": true,
+    "dealerNames": "Elm Motor Company",
+    "apgComments": null,
+    "id": "plymouth-motor-company",
+    "lat": 50.357925,
+    "lon": -4.08644,
+    "geocoded": true,
+    "recentRepairCount": null,
+    "repairCountAsOf": null,
+    "archivedAt": null,
+    "archivedBy": null
   }
 ]
